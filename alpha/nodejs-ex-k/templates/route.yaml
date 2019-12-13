@@ -1,0 +1,9 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: "nodejs-example"
+spec:
+  host: 
+  to:
+    kind: Service
+    name: "nodejs-example"

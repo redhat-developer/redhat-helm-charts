@@ -1,0 +1,10 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: "nodejs-example"
+spec:
+  tags:
+    - name: latest
+      from:
+        kind: DockerImage
+        name: nodejs-ex

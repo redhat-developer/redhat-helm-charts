@@ -1,0 +1,38 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: "nodejs-example"
+  annotations:
+    description: Defines how to build the application
+spec:
+  source:
+    type: Git
+    git:
+      uri: "https://github.com/sclorg/nodejs-ex.git"
+      ref: 
+    contextDir: 
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: "openshift"
+        name: nodejs:8
+      env:
+      - name: NPM_MIRROR
+        value: 
+  output:
+    to:
+      kind: ImageStreamTag
+      name: nodejs-ex:latest
+  triggers:
+  - type: ImageChange
+  - type: ConfigChange
+  - type: GitHub
+    github:
+      secret: "cS3AFvpd1DLz7C0VW5OVmJhTnXM0qwuOy4JFtulV"
+  - type: Generic
+    generic:
+      secret: "gUE5VbKpAmDhz0dYMx5VkZUGK31jQxgE2uOfazNv"
+  postCommit:
+    script: npm test
