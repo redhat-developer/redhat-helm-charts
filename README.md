@@ -1,2 +1,24 @@
-# redhat-charts
-This repository contains the Helm charts that power the in-cluster Helm Chart Repository service
+# Red Hat Helm Charts
+This repository contains the charts are populated out-of-the-box in the OpenShift Developer Catalog
+
+The repository has been configured to serve the static helm index and chart files
+
+## Usage
+
+```
+
+$ helm repo add redhat-charts https://redhat-developer.github.com/redhat-helm-charts
+"redhat-charts" has been added to your repositories
+
+$ helm repo list 
+NAME           	URL                               
+redhat-charts	https://redhat-developer.github.com/redhat-helm-charts  
+
+```
+
+
+## Repository index
+
+https://redhat-developer.github.io/redhat-helm-charts/index.yaml
+ 
+
