@@ -17,7 +17,7 @@ redhat-charts	https://redhat-developer.github.com/redhat-helm-charts
 ```
 
 
-## Repository index
+## Helm index
 
 https://redhat-developer.github.io/redhat-helm-charts/index.yaml
  
