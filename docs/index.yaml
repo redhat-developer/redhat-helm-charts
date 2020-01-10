@@ -3,12 +3,12 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-01-10T09:21:57.91705-05:00"
+    created: "2020-01-10T09:31:38.847206-05:00"
     description: A Helm chart for Kubernetes
     digest: f1232cb104f967a91a6dd078749b6ab26df184f2841ef1a62ca27c8674971ae0
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/nodejs-ex-k-0.1.0.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/docs/nodejs-ex-k-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-10T09:21:57.915888-05:00"
+generated: "2020-01-10T09:31:38.846123-05:00"
