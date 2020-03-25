@@ -22,3 +22,4 @@ redhat-charts	https://redhat-developer.github.com/redhat-helm-charts
 https://redhat-developer.github.io/redhat-helm-charts/index.yaml
  
 
+## [How To Submit a New Chart](https://github.com/redhat-developer/redhat-helm-charts/wiki/Adding-a-New-Chart)
