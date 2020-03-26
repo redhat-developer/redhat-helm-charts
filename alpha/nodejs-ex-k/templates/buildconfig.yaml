@@ -17,7 +17,7 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: "openshift"
-        name: nodejs:8
+        name: nodejs:10
       env:
       - name: NPM_MIRROR
         value: 
