@@ -1,0 +1,47 @@
+replicaCount: 1
+maxUnavailableNodeCount: 1
+
+# Change license to true to indicate have read and agreed to license agreement
+# https://www.apache.org/licenses/LICENSE-2.0  
+license: false
+
+
+installDocumentation: https://cloud.ibm.com/kubernetes/helm/ibm-charts/ibm-object-storage-plugin#configuration
+image:
+  pluginImage:
+    ibmContainerRegistry: icr.io/ibm/ibmcloud-object-storage-plugin
+    publicRegistry: ibmcom/ibmcloud-object-storage-plugin
+  driverImage:
+    ibmContainerRegistry: icr.io/ibm/ibmcloud-object-storage-driver
+    publicRegistry: ibmcom/ibmcloud-object-storage-driver
+  pluginBuild: 1.8.15
+  driverBuild: 1.8.15
+  pullPolicy: Always
+
+# IAM endpoint url
+iamEndpoint: https://iam.bluemix.net
+
+# COS endpoints and COS storageClass configuration
+cos:
+  endpoint: https://<Endpoint URL>
+  storageClass: <StorageClass>
+
+# RHOCP Configuration
+provider: rhocp
+
+# Container platform K8S vs OpenShift (OpenShift)
+platform: OpenShift
+
+secondaryValueFile: ibm/values.yaml
+useCustomPSP: false
+
+arch: amd64
+# Datacenter name where cluster is deployed (required only for IKS)
+dcname: ""
+
+# Worker node's OS
+workerOS: redhat
+
+resource:
+  memory: 128Mi
+  cpu: 200m

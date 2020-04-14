@@ -1,0 +1,139 @@
+{{- if .Values.license }}
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: {{ template "ibm-object-storage-plugin.drivername" . }}
+  namespace: {{ template "ibm-object-storage-plugin.namespace" . }}
+  labels:
+    app: {{ template "ibm-object-storage-plugin.drivername" . }}
+    app.kubernetes.io/name: {{ template "ibm-object-storage-plugin.drivername" . }}
+    helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: {{ .Values.maxUnavailableNodeCount }}
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: {{ template "ibm-object-storage-plugin.drivername" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "ibm-object-storage-plugin.drivername" . }}
+        app.kubernetes.io/name: {{ template "ibm-object-storage-plugin.drivername" . }}
+        helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }}
+        release: {{ .Release.Name }}
+      annotations:
+        productID: "IBMCloudObjectStoragePlugin_{{ .Chart.AppVersion }}_Apache02_00000"
+        productName: "ibmcloud-object-storage-plugin"
+        productVersion: "{{ .Chart.AppVersion }}"
+        autoUpdate: {{ randAlphaNum 5 | quote }}
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+      tolerations:
+      - operator: "Exists"
+      hostNetwork: true
+      serviceAccountName: ibmcloud-object-storage-driver
+      containers:
+        - name: {{ template "ibm-object-storage-plugin.drivername" . }}-container
+          {{- if contains "RHOCP" (.Values.provider | quote | upper) }}
+          image: "{{ .Values.image.driverImage.publicRegistry }}:{{ .Values.image.driverBuild }}"
+          {{- else }}
+          image: "{{ .Values.image.driverImage.ibmContainerRegistry }}:{{ .Values.image.driverBuild }}"
+          {{- end }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            requests:
+              memory: {{ .Values.resource.memory }}
+              cpu: {{ .Values.resource.cpu }}
+            limits:
+              memory: {{ .Values.resource.memory }}
+              cpu: {{ .Values.resource.cpu }}
+          securityContext:
+            capabilities:
+              drop: ["ALL"]
+          livenessProbe:
+            exec:
+              command:
+              - sh
+              - -c
+              - version1=$(cat /home/s3-dep/version.txt | grep "^Version" );
+                version2=$(/host/kubernetes/kubelet-plugins/volume/exec/ibm~ibmc-s3fs/ibmc-s3fs version);
+                if [[ "$version1" == "$version2" ]]; then exit 0; else exit 1; fi
+            initialDelaySeconds: 60
+            periodSeconds: 60
+            failureThreshold: 1
+          readinessProbe:
+            exec:
+              command:
+              - sh
+              - -c
+              - version1=$(cat /home/s3-dep/version.txt | grep "^Version" );
+                version2=$(/host/kubernetes/kubelet-plugins/volume/exec/ibm~ibmc-s3fs/ibmc-s3fs version);
+                if [[ "$version1" == "$version2" ]]; then exit 0; else exit 1; fi
+            initialDelaySeconds: 60
+            periodSeconds: 60
+            failureThreshold: 1
+          volumeMounts:
+             - mountPath: /host/kubernetes
+               name: kube-driver
+             - mountPath: /run/systemd
+               name: sysd-run
+             - mountPath: /host/local
+               name: usr-local
+             - mountPath: /host/usr/lib
+               name: usr-lib
+               readOnly: true
+             - mountPath: /host/etc
+               name: etc-mount
+               readOnly: true
+             - mountPath: /hostetc/ssh
+               name: etc-ssh-mount
+             - mountPath: /host/.ssh
+               name: sshkeys-mount
+             - mountPath: /host/log
+               name: host-logs
+               readOnly: true
+      volumes:
+        - name: kube-driver
+          hostPath:
+             {{- if contains "RHOCP" (.Values.provider | quote | upper) }}
+             path: /etc/kubernetes
+             {{- else }}
+             path: /usr/libexec/kubernetes
+             {{- end }}
+        - name: sysd-run
+          hostPath:
+             path: /run/systemd
+        - name: usr-local
+          hostPath:
+             path: /usr/local
+        - name: usr-lib
+          hostPath:
+             path: /usr/lib
+        - name: etc-mount
+          hostPath:
+             path: /etc
+        - name: etc-ssh-mount
+          hostPath:
+             path: /etc/ssh
+        - name: sshkeys-mount
+          hostPath:
+             path: /root/.ssh
+        - name: host-logs
+          hostPath:
+             path: /var/log
+{{- end }} #license if condition

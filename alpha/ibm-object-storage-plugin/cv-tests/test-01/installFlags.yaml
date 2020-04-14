@@ -1,0 +1,9 @@
+# This file contains any flags to specify on helm install.  The key / value pairs
+# are translated to command line arguments.
+#
+# For example, if uncomment the debug:true entry below the helm install will be called
+# with '--debug=true' option.
+#
+debug: true
+#namespace: default
+#dry-run: true

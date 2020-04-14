@@ -1,0 +1,18 @@
+# This yaml file contains options to ignore or reduce the severity specific cv 
+# lint messages using regular expression to match on message text.  
+#
+
+# For example, if uncomment the ignoreMessages entry below with a list of regular 
+# expressions, the cv lint will ignore the messages in which the text of the message 
+# match the reqular expression.
+#
+#ignoreMessages:
+#  - "\\[WARNING\\] Parameter does not follow camelCase format standards: replica_Count in values\\.yaml"
+
+# For example, if uncomment the reduceMessages entry below with a list of regular 
+# expressions and the new severity, the cv lint will modify the severty for any 
+# message in which the text of the message match the regular expression.
+#
+#reduceMessages:
+#  - match: '\[ERROR\] Container is being run with privileged access.*'
+#    reduceTo: WARNING

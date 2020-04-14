@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    ibm.io/auto-create-bucket: "false"
+    ibm.io/auto-delete-bucket: "false"
+    ibm.io/validate-bucket: "no"
+    ibm.io/bucket: cosdevtest
+    ibm.io/secret-name: cos-test-secret
+    volume.beta.kubernetes.io/storage-class: ibmc-s3fs-default
+    volume.beta.kubernetes.io/storage-provisioner: ibm.io/ibmc-s3fs
+  name: cos-test-pvc
+  #namespace: default
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 8Gi

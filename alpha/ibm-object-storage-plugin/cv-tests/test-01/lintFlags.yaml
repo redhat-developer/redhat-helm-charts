@@ -1,0 +1,7 @@
+# This yaml file contains any name and namesapce options/flags to specify on cv lint command to be used rendering chart templates.  
+#
+# For example, if uncomment the name: test1 entry below the cv lint will use those values when rendering the chart templates.
+#
+
+#namespace: test1ns
+#name: test1

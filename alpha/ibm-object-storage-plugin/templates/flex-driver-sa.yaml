@@ -1,0 +1,71 @@
+---
+# ServiceAccount for ibmcloud-object-storage-driver
+{{- if .Values.license }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ibmcloud-object-storage-driver
+  namespace: {{template "ibm-object-storage-plugin.namespace" .}}
+  labels:
+    app.kubernetes.io/name: {{template "ibm-object-storage-plugin.drivername" .}}
+    helm.sh/chart: {{.Chart.Name}}-{{.Chart.Version | replace "+" "_"}}
+    app.kubernetes.io/instance: {{.Release.Name}}
+    app.kubernetes.io/managed-by: {{.Release.Service}}
+    release: {{.Release.Name}}
+{{- if contains "IBMC" (.Values.provider | quote | upper)}}
+imagePullSecrets:
+  - name: bluemix-default-secret
+  - name: bluemix-default-secret-regional
+  - name: bluemix-default-secret-international
+  - name: kube-system-icr-io
+  - name: kube-system-us-icr-io
+  - name: kube-system-uk-icr-io
+  - name: kube-system-de-icr-io
+  - name: kube-system-au-icr-io
+  - name: kube-system-jp-icr-io
+{{- end}}
+---
+# Create SCC / PSP
+{{- if contains "OPENSHIFT" (.Values.platform | quote | upper)}}
+# Create SCC for OpenShift, both form IKS and RHOCP
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
+metadata:
+  name: s3fs-cos-driver-scc
+priority: 0
+defaultAddCapabilities: []
+allowedCapabilities: []
+allowHostDirVolumePlugin: true
+allowHostIPC: false
+allowHostPID: false
+allowHostPorts: false
+allowHostNetwork: true
+allowPrivilegedContainer: false
+allowPrivilegeEscalation: true
+requiredDropCapabilities:
+ - KILL
+ - MKNOD
+ - SETUID
+ - SETGID
+readOnlyRootFilesystem: false
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
+fsGroup:
+  type: RunAsAny
+supplementalGroups:
+  type: RunAsAny
+users:
+- system:serviceaccount:{{template "ibm-object-storage-plugin.namespace" .}}:ibmcloud-object-storage-driver
+groups: []
+volumes:
+  - configMap
+  - downwardAPI
+  - emptyDir
+  - hostPath
+  - persistentVolumeClaim
+  - projected
+  - secret
+{{- end}}
+{{- end }} #license if condition

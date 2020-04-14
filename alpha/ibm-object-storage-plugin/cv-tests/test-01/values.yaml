@@ -1,0 +1,11 @@
+# This file contains any values to override (or specify in addition to) the <chartname>/values.yaml during chart
+# installation.
+#
+# Common overrides include image repository to point to an internal artifactory such as hyc-icpcontent-docker-local.artifactory.swg-devops.com/),
+# pullPolicy to Always pull latest if version isn't always updated for internal drops,  chart specific values to specify flow of test (i.e. use
+# dynamic storage, etc).
+#
+
+cos:
+  endpoint: dummy.default.svc.cluster.local
+  storageClass: standard
