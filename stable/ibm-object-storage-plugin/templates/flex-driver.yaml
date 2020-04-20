@@ -1,4 +1,3 @@
-{{- if .Values.license }}
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -136,4 +135,3 @@ spec:
         - name: host-logs
           hostPath:
              path: /var/log
-{{- end }} #license if condition

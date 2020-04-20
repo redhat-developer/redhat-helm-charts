@@ -1,11 +1,10 @@
-{{- if .Values.license }}
 {{- if contains "IBMC" (.Values.provider | quote | upper) }}
 {{- $secondaryValueFile := (.Files.Get .Values.secondaryValueFile) | fromYaml }}
 {{- $Provider := (.Values.provider | replace "-" "_" | lower) }}
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: ibmc-s3fs-flex-regional
+  name: ibmc-s3fs-flex-perf-regional
   labels:
     app: {{ template "ibm-object-storage-plugin.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
@@ -13,8 +12,8 @@ metadata:
     heritage: {{ .Release.Service }}
 provisioner: ibm.io/ibmc-s3fs
 parameters:
-  ibm.io/chunk-size-mb: "16"
-  ibm.io/parallel-count: "2"
+  ibm.io/chunk-size-mb: "52"
+  ibm.io/parallel-count: "20"
   ibm.io/multireq-max: "20"
   {{- if contains "REDHAT" (.Values.workerOS | quote | upper) }}
   ibm.io/tls-cipher-suite: "ecdhe_rsa_aes_128_gcm_sha_256"
@@ -92,4 +91,3 @@ parameters:
   ibm.io/object-store-storage-class: "NA"
   {{- end }}
 {{- end -}}
-{{- end }} #license if condition

@@ -1,6 +1,6 @@
 ---
 # ServiceAccount for ibmcloud-object-storage-driver
-{{- if .Values.license }}
+{{- include "ibm-object-storage-plugin.licenseValidate" .  | required "License must be accepted by setting license key to true" }}
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -32,6 +32,12 @@ apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
   name: s3fs-cos-driver-scc
+  labels:
+    app.kubernetes.io/name: {{template "ibm-object-storage-plugin.drivername" .}}
+    helm.sh/chart: {{.Chart.Name}}-{{.Chart.Version | replace "+" "_"}}
+    app.kubernetes.io/instance: {{.Release.Name}}
+    app.kubernetes.io/managed-by: {{.Release.Service}}
+    release: {{.Release.Name}}
 priority: 0
 defaultAddCapabilities: []
 allowedCapabilities: []
@@ -68,4 +74,3 @@ volumes:
   - projected
   - secret
 {{- end}}
-{{- end }} #license if condition

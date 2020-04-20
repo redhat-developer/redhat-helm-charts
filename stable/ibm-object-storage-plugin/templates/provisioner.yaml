@@ -1,4 +1,3 @@
-{{- if .Values.license }}
 #ibmcloud-object-storage-plugin deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -87,4 +86,3 @@ spec:
           env:
           - name: DEBUG_TRACE
             value: 'false'
-{{- end }} #license if condition

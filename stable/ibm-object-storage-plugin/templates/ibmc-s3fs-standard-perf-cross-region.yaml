@@ -1,4 +1,3 @@
-{{- if .Values.license }}
 {{- if contains "IBMC" (.Values.provider | quote | upper) }}
 {{- $secondaryValueFile := (.Files.Get .Values.secondaryValueFile) | fromYaml }}
 {{- $Provider := (.Values.provider | replace "-" "_" | lower) }}
@@ -92,4 +91,3 @@ parameters:
   ibm.io/object-store-storage-class: "NA"
   {{- end }}
 {{- end -}}
-{{- end }} #license if condition

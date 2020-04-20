@@ -14,8 +14,8 @@ image:
   driverImage:
     ibmContainerRegistry: icr.io/ibm/ibmcloud-object-storage-driver
     publicRegistry: ibmcom/ibmcloud-object-storage-driver
-  pluginBuild: 1.8.15
-  driverBuild: 1.8.15
+  pluginBuild: 1.8.16
+  driverBuild: 1.8.16
   pullPolicy: Always
 
 # IAM endpoint url
