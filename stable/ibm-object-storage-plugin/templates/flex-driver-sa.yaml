@@ -1,6 +1,6 @@
+{{- include "ibm-object-storage-plugin.licenseValidate" .  | required "License must be accepted by setting license key to true" }}
 ---
 # ServiceAccount for ibmcloud-object-storage-driver
-{{- include "ibm-object-storage-plugin.licenseValidate" .  | required "License must be accepted by setting license key to true" }}
 apiVersion: v1
 kind: ServiceAccount
 metadata:
