@@ -6,12 +6,13 @@ description: |
   the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in 
   that connects Cloud Object Storage buckets to pods in your cluster.
              
-  ### Documentation
-  For additional details regarding install parameters see [here](https://github.com/IBM/charts/blob/master/stable/ibm-object-storage-plugin/README.md#configuration)
+  Documentation
+  For additional details regarding install parameters see here
+  ibm.biz/BdqPR6
   
-  ### License  
+  License
   By installing this product you accept the license terms.
-  [License agreement]( https://www.apache.org/licenses/LICENSE-2.0) 
+  https://www.apache.org/licenses/LICENSE-2.0
 
 name: ibm-object-storage-plugin
 version: 2.0.0
