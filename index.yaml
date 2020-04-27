@@ -77,7 +77,7 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/ibm-oms-ent-prod-5.0.0.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
     version: 5.0.0
   ibm-oms-pro-prod:
   - apiVersion: v2
@@ -115,6 +115,6 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/ibm-oms-pro-prod-5.0.0.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
     version: 5.0.0
 generated: "2020-04-20T07:11:56.769061746-07:00"
