@@ -3,7 +3,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 1.1.4
-    created: "2020-04-27T04:50:51.668636309-07:00"
+    created: "2020-05-29T06:03:40.614068785-07:00"
     description: "Chart for deploying ibmcloud object storage plugin.\nIBM Cloud Object
       Storage is persistent, highly available storage \nthat you can mount to apps
       that run in a Kubernetes cluster by using \nthe IBM Cloud Object Storage plug-in.
@@ -27,12 +27,12 @@ entries:
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/charts/ibm-object-storage-plugin-2.0.0.tgz
     version: 2.0.0
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-04-27T04:50:51.698554194-07:00"
+    created: "2020-05-29T06:03:40.625787865-07:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -65,12 +65,12 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/charts/ibm-oms-ent-prod-5.0.0.tgz
     version: 5.0.0
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-04-27T04:50:51.726360196-07:00"
+    created: "2020-05-29T06:03:40.636626356-07:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -103,17 +103,17 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/charts/ibm-oms-pro-prod-5.0.0.tgz
     version: 5.0.0
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-04-27T04:50:51.727400923-07:00"
+    created: "2020-05-29T06:03:40.637807185-07:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-04-27T04:50:51.664591623-07:00"
+generated: "2020-05-29T06:03:40.612025216-07:00"
