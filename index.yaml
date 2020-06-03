@@ -3,7 +3,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.6
-    created: "2020-05-29T07:12:13.045301858-07:00"
+    created: "2020-06-03T15:43:50.175497776+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.\n
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.\n
@@ -45,7 +45,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 1.1.4
-    created: "2020-05-29T07:12:13.046712438-07:00"
+    created: "2020-06-03T15:43:50.176475775+05:30"
     description: "Chart for deploying ibmcloud object storage plugin.\nIBM Cloud Object
       Storage is persistent, highly available storage \nthat you can mount to apps
       that run in a Kubernetes cluster by using \nthe IBM Cloud Object Storage plug-in.
@@ -74,7 +74,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-05-29T07:12:13.057757428-07:00"
+    created: "2020-06-03T15:43:50.185436761+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -112,7 +112,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-05-29T07:12:13.069406198-07:00"
+    created: "2020-06-03T15:43:50.194899309+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -150,7 +150,17 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-05-29T07:12:13.069779768-07:00"
+    created: "2020-06-03T15:43:50.196081351+05:30"
+    description: A Helm chart for Kubernetes
+    digest: e8b7241a60dc005a866b99e969951795228d00ad3a808a1f9aebeb4af33c0ab2
+    name: nodejs-ex-k
+    type: application
+    urls:
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-06-03T15:43:50.195364541+05:30"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -158,4 +168,4 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-05-29T07:12:13.029177618-07:00"
+generated: "2020-06-03T15:43:50.162240415+05:30"

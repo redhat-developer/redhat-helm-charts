@@ -1,0 +1,300 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "NodeJS chart values schema",
+  "default": {},
+  "examples": [
+    {
+      "replicaCount": 1,
+      "image": {
+        "repository": "nginx",
+        "pullPolicy": "IfNotPresent"
+      },
+      "nameOverride": "",
+      "fullnameOverride": "",
+      "service": {
+        "type": "ClusterIP",
+        "port": 80
+      },
+      "ingress": {
+        "enabled": false,
+        "annotations": {},
+        "hosts": [
+          {
+            "host": "chart-example.local",
+            "paths": []
+          }
+        ],
+        "tls": []
+      },
+      "resources": {},
+      "nodeSelector": {},
+      "tolerations": [],
+      "affinity": {}
+    }
+  ],
+  "required": [
+    "replicaCount",
+    "image",
+    "nameOverride",
+    "fullnameOverride",
+    "service",
+    "ingress"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "replicaCount": {
+      "$id": "#/properties/replicaCount",
+      "type": "integer",
+      "title": "The replicaCount schema",
+      "description": "Define number of nodejs pods running",
+      "default": 1,
+      "examples": [1]
+    },
+    "image": {
+      "$id": "#/properties/image",
+      "type": "object",
+      "title": "The image schema",
+      "description": "Define where to pull latest image from",
+      "default": {},
+      "examples": [
+        {
+          "repository": "nginx",
+          "pullPolicy": "IfNotPresent"
+        }
+      ],
+      "required": ["repository", "pullPolicy"],
+      "additionalProperties": true,
+      "properties": {
+        "repository": {
+          "$id": "#/properties/image/properties/repository",
+          "type": "string",
+          "title": "The repository schema",
+          "description": "Define repository address",
+          "default": "",
+          "examples": ["nginx"]
+        },
+        "pullPolicy": {
+          "$id": "#/properties/image/properties/pullPolicy",
+          "type": "string",
+          "title": "The pullPolicy schema",
+          "description": "PullPolicy",
+          "default": "",
+          "examples": ["IfNotPresent"]
+        }
+      }
+    },
+    "nameOverride": {
+      "$id": "#/properties/nameOverride",
+      "type": "string",
+      "title": "The nameOverride schema",
+      "description": "Override pod name",
+      "default": "",
+      "examples": [""]
+    },
+    "fullnameOverride": {
+      "$id": "#/properties/fullnameOverride",
+      "type": "string",
+      "title": "The fullnameOverride schema",
+      "description": "Override pod name.",
+      "default": "",
+      "examples": [""]
+    },
+    "service": {
+      "$id": "#/properties/service",
+      "type": "object",
+      "title": "The service schema",
+      "description": "Define Service resource",
+      "default": {},
+      "examples": [
+        {
+          "type": "ClusterIP",
+          "port": 80
+        }
+      ],
+      "required": ["type", "port"],
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "$id": "#/properties/service/properties/type",
+          "type": "string",
+          "title": "The type schema",
+          "description": "Select Service type",
+          "default": "",
+          "examples": ["ClusterIP"]
+        },
+        "port": {
+          "$id": "#/properties/service/properties/port",
+          "type": "integer",
+          "title": "The port schema",
+          "description": "Define port address",
+          "default": 0,
+          "examples": [80]
+        }
+      }
+    },
+    "ingress": {
+      "$id": "#/properties/ingress",
+      "type": "object",
+      "title": "The ingress schema",
+      "description": "Define ingress if necessery",
+      "default": {},
+      "examples": [
+        {
+          "enabled": false,
+          "annotations": {},
+          "hosts": [
+            {
+              "host": "chart-example.local",
+              "paths": []
+            }
+          ],
+          "tls": []
+        }
+      ],
+      "required": ["enabled", "annotations", "hosts", "tls"],
+      "additionalProperties": true,
+      "properties": {
+        "enabled": {
+          "$id": "#/properties/ingress/properties/enabled",
+          "type": "boolean",
+          "title": "The enabled schema",
+          "description": "Check if you want to enable ingress server",
+          "default": false,
+          "examples": [false]
+        },
+        "annotations": {
+          "$id": "#/properties/ingress/properties/annotations",
+          "type": "object",
+          "title": "The annotations schema",
+          "description": "Define ingress annotations",
+          "default": {},
+          "examples": [{}],
+          "required": [],
+          "additionalProperties": true,
+          "properties": {}
+        },
+        "hosts": {
+          "$id": "#/properties/ingress/properties/hosts",
+          "type": "array",
+          "title": "The hosts schema",
+          "description": "Define ingress host host information",
+          "default": [],
+          "examples": [
+            [
+              {
+                "host": "chart-example.local",
+                "paths": []
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/ingress/properties/hosts/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "Host information",
+                "default": {},
+                "examples": [
+                  {
+                    "host": "chart-example.local",
+                    "paths": []
+                  }
+                ],
+                "required": ["host", "paths"],
+                "additionalProperties": true,
+                "properties": {
+                  "host": {
+                    "$id": "#/properties/ingress/properties/hosts/items/anyOf/0/properties/host",
+                    "type": "string",
+                    "title": "The host schema",
+                    "description": "Define DNS for ingress host",
+                    "default": "",
+                    "examples": ["chart-example.local"]
+                  },
+                  "paths": {
+                    "$id": "#/properties/ingress/properties/hosts/items/anyOf/0/properties/paths",
+                    "type": "array",
+                    "title": "The paths schema",
+                    "description": "Define available ingress paths",
+                    "default": [],
+                    "examples": [[]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [],
+                      "$id": "#/properties/ingress/properties/hosts/items/anyOf/0/properties/paths/items"
+                    }
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/ingress/properties/hosts/items"
+          }
+        },
+        "tls": {
+          "$id": "#/properties/ingress/properties/tls",
+          "type": "array",
+          "title": "The tls schema",
+          "description": "Setup TLS configuration if required",
+          "default": [],
+          "examples": [[]],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [],
+            "$id": "#/properties/ingress/properties/tls/items"
+          }
+        }
+      }
+    },
+    "resources": {
+      "$id": "#/properties/resources",
+      "type": "object",
+      "title": "The resources schema",
+      "description": "Define cpu and memory resources",
+      "default": {},
+      "examples": [{}],
+      "required": [],
+      "additionalProperties": true,
+      "properties": {}
+    },
+    "nodeSelector": {
+      "$id": "#/properties/nodeSelector",
+      "type": "object",
+      "title": "The nodeSelector schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [{}],
+      "required": [],
+      "additionalProperties": true,
+      "properties": {}
+    },
+    "tolerations": {
+      "$id": "#/properties/tolerations",
+      "type": "array",
+      "title": "The tolerations schema",
+      "description": "Define tolerations criteria",
+      "default": [],
+      "examples": [[]],
+      "additionalItems": true,
+      "items": {
+        "anyOf": [],
+        "$id": "#/properties/tolerations/items"
+      }
+    },
+    "affinity": {
+      "$id": "#/properties/affinity",
+      "type": "object",
+      "title": "The affinity schema",
+      "description": "Define affinity limits",
+      "default": {},
+      "examples": [{}],
+      "required": [],
+      "additionalProperties": true,
+      "properties": {}
+    }
+  }
+}
