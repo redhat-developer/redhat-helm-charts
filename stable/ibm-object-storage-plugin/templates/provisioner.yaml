@@ -44,6 +44,9 @@ spec:
                 - amd64
       tolerations:
       - operator: "Exists"
+      hostNetwork: false
+      hostPID: false
+      hostIPC: false
       serviceAccountName: ibmcloud-object-storage-plugin
       containers:
         - name: {{ template "ibm-object-storage-plugin.name" . }}-container
@@ -63,6 +66,11 @@ spec:
           securityContext:
             capabilities:
               drop: ["ALL"]
+            privileged: false
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: true
+            runAsUser: 2121
           livenessProbe:
             exec:
               command:
