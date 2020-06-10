@@ -3,7 +3,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.6
-    created: "2020-06-03T15:43:50.175497776+05:30"
+    created: "2020-06-10T16:58:20.575221+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.\n
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.\n
@@ -40,20 +40,27 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-cpq-prod-2.0.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-cpq-prod-2.0.0.tgz
     version: 2.0.0
   ibm-object-storage-plugin:
   - apiVersion: v2
-    appVersion: 1.1.4
-    created: "2020-06-03T15:43:50.176475775+05:30"
-    description: "Chart for deploying ibmcloud object storage plugin.\nIBM Cloud Object
-      Storage is persistent, highly available storage \nthat you can mount to apps
-      that run in a Kubernetes cluster by using \nthe IBM Cloud Object Storage plug-in.
-      The plug-in is a Kubernetes Flex-Volume plug-in \nthat connects Cloud Object
-      Storage buckets to pods in your cluster.\n           \nDocumentation\nFor additional
-      details regarding install parameters see here\nibm.biz/BdqPR6\n\nLicense\nBy
-      installing this product you accept the license terms.\nhttps://www.apache.org/licenses/LICENSE-2.0\n"
-    digest: 0ed94517d147859d70cad21b8bd0728970c5287c2e5a741e151d020b2f39fd84
+    appVersion: 2.0.0
+    created: "2020-06-10T16:58:20.57755+05:30"
+    description: |
+      Chart for deploying ibmcloud object storage plugin.
+      IBM Cloud Object Storage is persistent, highly available storage
+      that you can mount to apps that run in a Kubernetes cluster by using
+      the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in
+      that connects Cloud Object Storage buckets to pods in your cluster.
+
+      Documentation
+      For additional details regarding install parameters see here
+      ibm.biz/BdqPR6
+
+      License
+      By installing this product you accept the license terms.
+      https://www.apache.org/licenses/LICENSE-2.0
+    digest: 600064b64bcb65eea66340c1717663e2b51c66d6fefaa7d9600748a178a27278
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
     keywords:
     - IKS
@@ -69,13 +76,12 @@ entries:
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    #- https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.0.tgz
-    - https://raw.githubusercontent.com/Bhagyashreek8/redhat-helm-charts/update_cosrhocp/charts/ibm-object-storage-plugin-2.0.0.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.0.tgz
     version: 2.0.0
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-06-03T15:43:50.185436761+05:30"
+    created: "2020-06-10T16:58:20.591172+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -108,12 +114,12 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-oms-ent-prod-5.0.0.tgz
     version: 5.0.0
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-06-03T15:43:50.194899309+05:30"
+    created: "2020-06-10T16:58:20.602993+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -146,27 +152,27 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-oms-pro-prod-5.0.0.tgz
     version: 5.0.0
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-03T15:43:50.196081351+05:30"
+    created: "2020-06-10T16:58:20.60533+05:30"
     description: A Helm chart for Kubernetes
     digest: e8b7241a60dc005a866b99e969951795228d00ad3a808a1f9aebeb4af33c0ab2
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.2.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/nodejs-ex-k-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-03T15:43:50.195364541+05:30"
+    created: "2020-06-10T16:58:20.604334+05:30"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-06-03T15:43:50.162240415+05:30"
+generated: "2020-06-10T16:58:20.555173+05:30"
