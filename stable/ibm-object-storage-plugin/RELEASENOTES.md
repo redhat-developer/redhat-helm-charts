@@ -1,15 +1,17 @@
 # Breaking Changes
 None
 
-# What’s new in Chart Version 1.1.4
+# What’s new in Chart Version 2.0.0
 
-With ibm-object-storage-plugin chart version 1.1.4, the following new
+With ibm-object-storage-plugin chart version 2.0.0, the following new
 features are available:
-* Enabled support for `auto_cache` option from pvc spec.
+* Cert2.0 Certification
+* Upgrade ubi base image to 8.2-267
+* Restrict COS Access Secret for selected namespaces
+
 
 # Fixes
-* Upgraded s3fs-fuse version to commit d34475d.
-* Resolved security issue CVE-2020-1712.
+* Allowed re-using existing bucket with auto-create-bucket: true
 
 # Prerequisites
 Install [Helm client v3](https://cloud.ibm.com/docs/containers?topic=containers-helm#install_v3) on your local machine.
@@ -23,6 +25,7 @@ For install/upgrade, follow instructions [here](https://cloud.ibm.com/docs/conta
 
 | Chart | Date | Kubernetes Required | Image(s) Supported | Breaking Changes | Details |
 | ----- | ---- | ------------ | ------------------ | ---------------- | ------- |
+| 2.0.0 | Jun 12, 2020| >=1.10.1 | 1.8.17 | None | Cert 2.0 Certification, Restrict COS Access Secret for selected namespaces, Allowed re-using existing bucket with `auto-create-bucket: true`, GoLang: v1.13.5 |
 | 1.1.4 | Mar 10, 2020| >=1.10.1 | 1.8.13 | None | Resolved security issue CVE-2020-1712, Updated s3fs-fuse to use latest commit, Enabled support for 'auto_cache' option from pvc spec, GoLang: v1.13.4 |
 | 1.1.3 | Feb 13, 2020| >=1.10.1 | 1.8.12 | None | Resolved security issues CVE-2019-13734 and CVE-2019-18408, Updated `ibmc` helm plugin to support object-storage plugin installation/upgradation with `helm v2` and `helm v3`, Updated helm chart to auto-recreate plugin pods when upgrading plugin, GoLang: v1.13.4 |
 | 1.1.2 | Dec 09, 2019| >=1.10.1 | 1.8.11 | None | Non-root user access broken for K8S >= 1.15.4, GoLang: v1.13.4 |
