@@ -40,7 +40,7 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-cpq-prod-2.0.0.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-cpq-prod-2.0.0.tgz
     version: 2.0.0
   ibm-object-storage-plugin:
   - apiVersion: v2
@@ -114,7 +114,7 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-oms-ent-prod-5.0.0.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
     version: 5.0.0
   ibm-oms-pro-prod:
   - apiVersion: v2
@@ -152,7 +152,7 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-oms-pro-prod-5.0.0.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
     version: 5.0.0
   nodejs-ex-k:
   - apiVersion: v2
@@ -163,7 +163,7 @@ entries:
     name: nodejs-ex-k
     type: application
     urls:
-    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/nodejs-ex-k-0.2.0.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
@@ -173,6 +173,6 @@ entries:
     name: nodejs-ex-k
     type: application
     urls:
-    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/nodejs-ex-k-0.1.1.tgz
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
 generated: "2020-06-10T16:58:20.555173+05:30"
