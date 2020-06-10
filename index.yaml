@@ -3,7 +3,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.6
-    created: "2020-06-10T17:33:16.137184+05:30"
+    created: "2020-06-10T18:37:59.455563+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.\n
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.\n
@@ -40,12 +40,12 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-cpq-prod-2.0.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-cpq-prod-2.0.0.tgz
     version: 2.0.0
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-06-10T17:33:16.139929+05:30"
+    created: "2020-06-10T18:37:59.458127+05:30"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -60,7 +60,7 @@ entries:
       License
       By installing this product you accept the license terms.
       https://www.apache.org/licenses/LICENSE-2.0
-    digest: 600064b64bcb65eea66340c1717663e2b51c66d6fefaa7d9600748a178a27278
+    digest: 8d3399d302a94076e4c0f0ae7d55fd8c671e6ddd9e111724718723e7ff0dbeeb
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
     keywords:
     - IKS
@@ -70,18 +70,17 @@ entries:
     - Limited
     - Other
     - ROKS
-    kubeVersion: '>=1.10.1'
     maintainers:
     - email: contsto2@in.ibm.com
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-object-storage-plugin-2.0.0.tgz
     version: 2.0.0
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-06-10T17:33:16.154142+05:30"
+    created: "2020-06-10T18:37:59.472778+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -114,12 +113,12 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-oms-ent-prod-5.0.0.tgz
     version: 5.0.0
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-06-10T17:33:16.166395+05:30"
+    created: "2020-06-10T18:37:59.48612+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -152,27 +151,27 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/ibm-oms-pro-prod-5.0.0.tgz
     version: 5.0.0
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-10T17:33:16.168631+05:30"
+    created: "2020-06-10T18:37:59.488679+05:30"
     description: A Helm chart for Kubernetes
     digest: e8b7241a60dc005a866b99e969951795228d00ad3a808a1f9aebeb4af33c0ab2
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.2.0.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/nodejs-ex-k-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-10T17:33:16.1674+05:30"
+    created: "2020-06-10T18:37:59.487661+05:30"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
+    - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-06-10T17:33:16.115782+05:30"
+generated: "2020-06-10T18:37:59.436085+05:30"
