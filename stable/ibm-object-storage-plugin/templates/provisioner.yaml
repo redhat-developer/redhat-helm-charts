@@ -70,7 +70,7 @@ spec:
             allowPrivilegeEscalation: false
             readOnlyRootFilesystem: false
             runAsNonRoot: true
-            runAsUser: 2121
+            #runAsUser: 2121
           livenessProbe:
             exec:
               command:
