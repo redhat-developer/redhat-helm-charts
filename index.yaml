@@ -3,7 +3,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.6
-    created: "2020-06-11T00:27:02.499488+05:30"
+    created: "2020-06-11T11:50:07.279879+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.\n
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.\n
@@ -45,7 +45,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-06-11T00:27:02.501084+05:30"
+    created: "2020-06-11T11:50:07.28149+05:30"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -60,7 +60,7 @@ entries:
       License
       By installing this product you accept the license terms.
       https://www.apache.org/licenses/LICENSE-2.0
-    digest: 1869a30a37a3dc0bf31d427b7cf6bedd8ce33a078ac75e5c7cca01f88c5cfe31
+    digest: aa9f08aa298aeface44c86b01a982dd3d65570eb682619b0ac8be4cddc0dbdb5
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
     keywords:
     - IKS
@@ -80,7 +80,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-06-11T00:27:02.516032+05:30"
+    created: "2020-06-11T11:50:07.295807+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -118,7 +118,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-06-11T00:27:02.530742+05:30"
+    created: "2020-06-11T11:50:07.30737+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -156,7 +156,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-11T00:27:02.534046+05:30"
+    created: "2020-06-11T11:50:07.309479+05:30"
     description: A Helm chart for Kubernetes
     digest: e8b7241a60dc005a866b99e969951795228d00ad3a808a1f9aebeb4af33c0ab2
     name: nodejs-ex-k
@@ -166,7 +166,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-11T00:27:02.532818+05:30"
+    created: "2020-06-11T11:50:07.308425+05:30"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -174,4 +174,4 @@ entries:
     urls:
     - https://github.com/Bhagyashreek8/redhat-helm-charts/tree/update_cosrhocp/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-06-11T00:27:02.474921+05:30"
+generated: "2020-06-11T11:50:07.257493+05:30"
