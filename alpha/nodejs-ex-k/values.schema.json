@@ -225,7 +225,6 @@
                     "examples": [[]],
                     "additionalItems": true,
                     "items": {
-                      "anyOf": [],
                       "$id": "#/properties/ingress/properties/hosts/items/anyOf/0/properties/paths/items"
                     }
                   }
@@ -244,7 +243,6 @@
           "examples": [[]],
           "additionalItems": true,
           "items": {
-            "anyOf": [],
             "$id": "#/properties/ingress/properties/tls/items"
           }
         }
@@ -281,7 +279,6 @@
       "examples": [[]],
       "additionalItems": true,
       "items": {
-        "anyOf": [],
         "$id": "#/properties/tolerations/items"
       }
     },
