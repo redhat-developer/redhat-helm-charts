@@ -1,15 +1,15 @@
 apiVersion: v2
 description: |
   Chart for deploying ibmcloud object storage plugin.
-  IBM Cloud Object Storage is persistent, highly available storage 
-  that you can mount to apps that run in a Kubernetes cluster by using 
-  the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in 
+  IBM Cloud Object Storage is persistent, highly available storage
+  that you can mount to apps that run in a Kubernetes cluster by using
+  the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in
   that connects Cloud Object Storage buckets to pods in your cluster.
-             
+
   Documentation
   For additional details regarding install parameters see here
   ibm.biz/BdqPR6
-  
+
   License
   By installing this product you accept the license terms.
   https://www.apache.org/licenses/LICENSE-2.0
@@ -28,5 +28,5 @@ keywords:
 maintainers:
   - name: IBM
     email: contsto2@in.ibm.com
-kubeVersion: '>=1.10.1'
-appVersion: 1.1.4
+#kubeVersion: '>=1.10.1'
+appVersion: 2.0.0

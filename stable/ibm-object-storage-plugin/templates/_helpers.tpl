@@ -51,6 +51,6 @@ license  parameter must be set to true
 {{- define "ibm-object-storage-plugin.licenseValidate" -}}
   {{ $license := .Values.license }}
   {{- if $license  -}}
-    true
+    {{- true -}}
   {{- end -}}
 {{- end -}}
