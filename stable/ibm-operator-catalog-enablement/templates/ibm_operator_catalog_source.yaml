@@ -1,0 +1,16 @@
+# IBM Operator Catalog
+{{- include "ibm-operator-catalog-enablement.licenseValidate" .  | required "License must be accepted by setting license key to true" }}
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-operator-catalog
+  namespace: openshift-marketplace 
+spec:
+  displayName: "IBM Operator Catalog"
+  publisher: IBM
+  sourceType: grpc
+  image: docker.io/ibmcom/ibm-operator-catalog:latest
+  updateStrategy:
+    registryPoll:
+      interval: 45m 
+
