@@ -45,6 +45,8 @@ spec:
       tolerations:
       - operator: "Exists"
       hostNetwork: true
+      hostPID: false
+      hostIPC: false
       serviceAccountName: ibmcloud-object-storage-driver
       containers:
         - name: {{ template "ibm-object-storage-plugin.drivername" . }}-container
@@ -64,6 +66,11 @@ spec:
           securityContext:
             capabilities:
               drop: ["ALL"]
+            privileged: false
+            allowPrivilegeEscalation: true
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+            runAsUser: 0
           livenessProbe:
             exec:
               command:
@@ -109,11 +116,7 @@ spec:
       volumes:
         - name: kube-driver
           hostPath:
-             {{- if contains "RHOCP" (.Values.provider | quote | upper) }}
-             path: /etc/kubernetes
-             {{- else }}
-             path: /usr/libexec/kubernetes
-             {{- end }}
+             path: {{.Values.kubeDriver}}
         - name: sysd-run
           hostPath:
              path: /run/systemd

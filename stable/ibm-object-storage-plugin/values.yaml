@@ -2,7 +2,7 @@ replicaCount: 1
 maxUnavailableNodeCount: 1
 
 # Change license to true to indicate have read and agreed to license agreement
-# https://www.apache.org/licenses/LICENSE-2.0  
+# https://www.apache.org/licenses/LICENSE-2.0
 license: false
 
 
@@ -14,8 +14,8 @@ image:
   driverImage:
     ibmContainerRegistry: icr.io/ibm/ibmcloud-object-storage-driver
     publicRegistry: ibmcom/ibmcloud-object-storage-driver
-  pluginBuild: 1.8.16
-  driverBuild: 1.8.16
+  pluginBuild: 1.8.17
+  driverBuild: 1.8.17
   pullPolicy: Always
 
 # IAM endpoint url
@@ -45,3 +45,5 @@ workerOS: redhat
 resource:
   memory: 128Mi
   cpu: 200m
+
+kubeDriver: /etc/kubernetes
