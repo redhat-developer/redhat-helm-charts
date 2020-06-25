@@ -1,0 +1,6 @@
+# Default values for ibm-operator-catalog-enablement.
+# This is a YAML-formatted file.
+
+# Change license to true to indicate have read and agreed to license agreement
+# https://www.apache.org/licenses/LICENSE-2.0
+license: false
