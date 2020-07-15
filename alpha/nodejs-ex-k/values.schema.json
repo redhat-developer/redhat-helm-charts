@@ -1,140 +1,166 @@
 {
-    type: 'object',
-    required: ['replicaCount', 'image', 'service', 'ingress'],
-    additionalProperties: true,
-    properties: {
-      replicaCount: {
-        default: 1,
-        description: 'Define number of nodejs pods running',
-        title: 'Replica Count',
-        type: 'integer',
-      },
-      image: {
-        type: 'object',
-        title: 'Image',
-        description: 'Define where to pull latest image from',
-        required: ['repository', 'pullPolicy'],
-        additionalProperties: true,
-        properties: {
-          repository: {
-            type: 'string',
-            title: 'Repository',
-            description: 'Define repository address',
-            examples: ['nginx'],
-          },
-          pullPolicy: {
-            type: 'string',
-            title: 'Pull Policy',
-            description: 'Define pull policy',
-            examples: ['Always', 'IfNotPresent', 'Never'],
-          },
-        },
-      },
-      nameOverride: {
-        type: 'string',
-        title: 'Name Override',
-        description: 'Override pod name',
-      },
-      fullnameOverride: {
-        type: 'string',
-        title: 'Full Name Override',
-        description: 'Override pod name',
-      },
-      service: {
-        type: 'object',
-        required: ['type', 'port'],
-        additionalProperties: true,
-        properties: {
-          type: {
-            type: 'string',
-            title: 'Type',
-            description: 'Select Service type',
-            default: '',
-            examples: ['ClusterIP'],
-          },
-          port: {
-            type: 'integer',
-            title: 'Port',
-            description: 'Define port address',
-            default: 8080,
-          },
-        },
-      },
-      ingress: {
-        type: 'object',
-        title: 'Ingress',
-        description: 'Define ingress if necessery',
-        required: ['enabled', 'hosts', 'tls'],
-        additionalProperties: true,
-        properties: {
-          enabled: {
-            type: 'boolean',
-            title: 'Enabled',
-            description: 'Check if you want to enable ingress server',
-            default: false,
-          },
-          annotations: {
-            type: 'object',
-            title: 'Annotations',
-            description: 'Define ingress annotations',
-            required: [],
-            additionalProperties: {
-              type: 'string',
-            },
-          },
-          hosts: {
-            type: 'array',
-            title: 'Hosts',
-            description: 'Define ingress host host information',
-            items: {
-              type: 'object',
-              required: ['host', 'paths'],
-              additionalProperties: true,
-              properties: {
-                host: {
-                  type: 'string',
-                },
-                paths: {
-                  type: 'array',
-                  items: {
-                    type: 'string',
-                  },
-                },
-              },
-            },
-          },
-          tls: {
-            type: 'array',
-            title: 'TLS',
-            description: 'Setup TLS configuration if required',
-            items: {
-              type: 'string',
-            },
-          },
-        },
-      },
-      resources: {
-        type: 'object',
-        title: 'Resources',
-        description: 'Define cpu and memory resources',
-        additionalProperties: true,
-      },
-      nodeSelector: {
-        type: 'object',
-        title: 'Node Selector',
-        description: 'An explanation about the purpose of this instance.',
-        additionalProperties: true,
-      },
-      tolerations: {
-        type: 'array',
-        title: 'Tolerations',
-        description: 'Define tolerations criteria',
-      },
-      affinity: {
-        type: 'object',
-        title: 'Affinity',
-        description: 'Define affinity limits',
-        additionalProperties: true,
-      },
+  "type": "object",
+  "required": [
+    "replicaCount",
+    "image",
+    "service",
+    "ingress"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "replicaCount": {
+      "default": 1,
+      "description": "Define number of nodejs pods running",
+      "title": "Replica Count",
+      "type": "integer"
     },
+    "image": {
+      "type": "object",
+      "title": "Image",
+      "description": "Define where to pull latest image from",
+      "required": [
+        "repository",
+        "pullPolicy"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "repository": {
+          "type": "string",
+          "title": "Repository",
+          "description": "Define repository address",
+          "examples": [
+            "nginx"
+          ]
+        },
+        "pullPolicy": {
+          "type": "string",
+          "title": "Pull Policy",
+          "description": "Define pull policy",
+          "examples": [
+            "Always",
+            "IfNotPresent",
+            "Never"
+          ]
+        }
+      }
+    },
+    "nameOverride": {
+      "type": "string",
+      "title": "Name Override",
+      "description": "Override pod name"
+    },
+    "fullnameOverride": {
+      "type": "string",
+      "title": "Full Name Override",
+      "description": "Override pod name"
+    },
+    "service": {
+      "type": "object",
+      "required": [
+        "type",
+        "port"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "Select Service type",
+          "default": "",
+          "examples": [
+            "ClusterIP"
+          ]
+        },
+        "port": {
+          "type": "integer",
+          "title": "Port",
+          "description": "Define port address",
+          "default": 8080
+        }
+      }
+    },
+    "ingress": {
+      "type": "object",
+      "title": "Ingress",
+      "description": "Define ingress if necessery",
+      "required": [
+        "enabled",
+        "hosts",
+        "tls"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "title": "Enabled",
+          "description": "Check if you want to enable ingress server",
+          "default": false
+        },
+        "annotations": {
+          "type": "object",
+          "title": "Annotations",
+          "description": "Define ingress annotations",
+          "required": [],
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "hosts": {
+          "type": "array",
+          "title": "Hosts",
+          "description": "Define ingress host host information",
+          "items": {
+            "type": "object",
+            "required": [
+              "host",
+              "paths"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "host": {
+                "type": "string"
+              },
+              "paths": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tls": {
+          "type": "array",
+          "title": "TLS",
+          "description": "Setup TLS configuration if required",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "title": "Resources",
+      "description": "Define cpu and memory resources",
+      "additionalProperties": true
+    },
+    "nodeSelector": {
+      "type": "object",
+      "title": "Node Selector",
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true
+    },
+    "tolerations": {
+      "type": "array",
+      "title": "Tolerations",
+      "description": "Define tolerations criteria"
+    },
+    "affinity": {
+      "type": "object",
+      "title": "Affinity",
+      "description": "Define affinity limits",
+      "additionalProperties": true
+    }
   }
+}
