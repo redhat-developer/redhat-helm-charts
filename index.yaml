@@ -2,8 +2,49 @@ apiVersion: v1
 entries:
   ibm-cpq-prod:
   - apiVersion: v2
+    appVersion: 10.0.0.10
+    created: "2020-07-28T23:52:30.096032899-07:00"
+    description: |-
+      IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
+      To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
+      IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services.
+      This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.
+
+      Documentation
+      Additional information about installation can be found at https://ibm.biz/BdqqUS.
+
+      License
+      Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
+    digest: d367df8e64ed130753d0d417ccbf700b65a6ddf00d316bf24ff5f9668d5f2a0e
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
+    keywords:
+    - cpq
+    - ifs
+    - sterling
+    - yantra
+    - order
+    - fulfillment
+    - om
+    - amd64
+    - framework
+    - Commercial
+    - RHOCP
+    - All items
+    - Languages
+    - Databases
+    - Middleware
+    - CI/CD
+    - Other
+    kubeVersion: '>=1.11.0'
+    maintainers:
+    - name: IBM
+    name: ibm-cpq-prod
+    urls:
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-cpq-prod-3.1.0.tgz
+    version: 3.1.0
+  - apiVersion: v2
     appVersion: 10.0.0.6
-    created: "2020-07-15T16:32:34.607411698+05:30"
+    created: "2020-07-28T23:52:30.078305682-07:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.\n
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.\n
@@ -45,7 +86,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-07-15T16:32:34.612556197+05:30"
+    created: "2020-07-28T23:52:30.097600094-07:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -80,7 +121,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-07-15T16:32:34.663118186+05:30"
+    created: "2020-07-28T23:52:30.110973124-07:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -118,7 +159,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-07-15T16:32:34.695882333+05:30"
+    created: "2020-07-28T23:52:30.123479246-07:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -156,7 +197,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-07-15T16:32:34.697730479+05:30"
+    created: "2020-07-28T23:52:30.124561974-07:00"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -189,7 +230,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-15T16:32:34.700484147+05:30"
+    created: "2020-07-28T23:52:30.125388167-07:00"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -199,7 +240,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-15T16:32:34.698385506+05:30"
+    created: "2020-07-28T23:52:30.124938966-07:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -207,4 +248,4 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-07-15T16:32:34.538582491+05:30"
+generated: "2020-07-28T23:52:30.061234446-07:00"
