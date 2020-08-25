@@ -3,7 +3,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2020-07-28T23:52:30.096032899-07:00"
+    created: "2020-08-25T16:04:15.467896-04:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -44,7 +44,7 @@ entries:
     version: 3.1.0
   - apiVersion: v2
     appVersion: 10.0.0.6
-    created: "2020-07-28T23:52:30.078305682-07:00"
+    created: "2020-08-25T16:04:15.450327-04:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.\n
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.\n
@@ -86,7 +86,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-07-28T23:52:30.097600094-07:00"
+    created: "2020-08-25T16:04:15.47038-04:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -121,7 +121,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-07-28T23:52:30.110973124-07:00"
+    created: "2020-08-25T16:04:15.49484-04:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -156,10 +156,48 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
     version: 5.0.0
+  - apiVersion: v2
+    appVersion: 10.0.0
+    created: "2020-08-25T16:04:15.483774-04:00"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: 1.2.15
+    description: |-
+      IBM Order management Software Enterprise Edition v10 provides cross-channel order orchestration capabilities to enable intelligent brokering of orders across many disparate systems. It also provides a global view of inventory across the supply chain and enables business users to make changes to order process.
+      Documentation
+      For additional details regarding install parameters check http://ibm.biz/oms-helm-readme.
+      License
+      By installing this product you accept the license terms http://ibm.biz/oms-license and http://ibm.biz/oms-apps-license."
+    digest: 6ac28ebcd7bcca479c29bf6013484f206072eaaf207c306841106da9746b1e14
+    home: http://ibm.biz/oms-home
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
+    keywords:
+    - oms
+    - sterling
+    - yantra
+    - order
+    - fulfillment
+    - om
+    - amd64
+    - ppc64le
+    - framework
+    - Commercial
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.11.0'
+    maintainers:
+    - name: IBM
+    name: ibm-oms-ent-prod
+    type: application
+    urls:
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0-alpha.tgz
+    version: 5.0.0-alpha
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-07-28T23:52:30.123479246-07:00"
+    created: "2020-08-25T16:04:15.519882-04:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -194,10 +232,48 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
     version: 5.0.0
+  - apiVersion: v2
+    appVersion: 10.0.0
+    created: "2020-08-25T16:04:15.508414-04:00"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: 1.2.15
+    description: |-
+      IBM Order management Software Professional Edition v10 provides cross-channel order orchestration capabilities to enable intelligent brokering of orders across many disparate systems. It also provides a global view of inventory across the supply chain and enables business users to make changes to order process.
+      Documentation
+      For additional details regarding install parameters check http://ibm.biz/oms-helm-readme.
+      License
+      By installing this product you accept the license terms http://ibm.biz/oms-license and http://ibm.biz/oms-apps-license.
+    digest: 81060635b0b55e226671d89799a59479efcf3010c043e2745e9694aba3abc826
+    home: https://github.ibm.com/Order-Management-Fulfillment/ibm-oms
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
+    keywords:
+    - oms
+    - sterling
+    - yantra
+    - order
+    - fulfillment
+    - om
+    - amd64
+    - ppc64le
+    - framework
+    - Commercial
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.11.0+0'
+    maintainers:
+    - name: IBM
+    name: ibm-oms-pro-prod
+    type: application
+    urls:
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0-alpha.tgz
+    version: 5.0.0-alpha
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-07-28T23:52:30.124561974-07:00"
+    created: "2020-08-25T16:04:15.521775-04:00"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -230,7 +306,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-28T23:52:30.125388167-07:00"
+    created: "2020-08-25T16:04:15.52283-04:00"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -240,7 +316,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-28T23:52:30.124938966-07:00"
+    created: "2020-08-25T16:04:15.522288-04:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -248,4 +324,4 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-07-28T23:52:30.061234446-07:00"
+generated: "2020-08-25T16:04:15.431261-04:00"

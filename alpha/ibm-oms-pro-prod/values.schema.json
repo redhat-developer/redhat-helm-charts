@@ -1,0 +1,712 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "appserver": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "corethreads": {
+              "default": 20,
+              "type": "integer",
+              "title": "Core Threads",
+              "description": "Core threads for Liberty"
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "maxPoolSize": {
+                  "default": 50,
+                  "type": "integer",
+                  "title": "Database Max Pool Size"
+                },
+                "minPoolSize": {
+                  "default": 10,
+                  "type": "integer",
+                  "title": "Database Min Pool Size"
+                }
+              }
+            },
+            "jvm": {
+              "type": "object",
+              "title": "JVM",
+              "description": "JVM parameters",
+              "properties": {
+                "params": {
+                  "type": "array"
+                },
+                "xms": {
+                  "default": "1024m",
+                  "type": "string"
+                },
+                "xmx": {
+                  "default": "2048m",
+                  "type": "string"
+                }
+              }
+            },
+            "libertyServerXml": {
+              "default": "",
+              "type": "string",
+              "title": "Liberty Server XML",
+              "description": "Custom server.xml for Liberty"
+            },
+            "libertyStartupWrapper": {
+              "default": "/opt/ibm/helpers/runtime/docker-server.sh",
+              "type": "string"
+            },
+            "maxthreads": {
+              "default": 100,
+              "type": "integer",
+              "title": "Max Threads",
+              "description": "Maximum threads for Liberty"
+            },
+            "serverName": {
+              "default": "DefaultAppServer",
+              "type": "string",
+              "title": "Server Name",
+              "description": "App server name"
+            },
+            "vendor": {
+              "default": "websphere",
+              "type": "string",
+              "title": "Vendor",
+              "description": "OMS vendor"
+            },
+            "vendorFile": {
+              "default": "servers.properties",
+              "type": "string",
+              "title": "Vendor File",
+              "description": "OMS vendor file"
+            }
+          }
+        },
+        "exposeRestService": {
+          "default": false,
+          "type": "boolean",
+          "title": "Expose Rest Service",
+          "description": "This flag is applicable only when route API (route.openshift.io/v1) exists. When enabled a new deployment of om-app image is created exposing /smcfs with a new route having the prefix xapirest"
+        },
+        "image": {
+          "type": "object",
+          "title": "Appserver Image",
+          "description": "Docker image details of appserver",
+          "properties": {
+            "names": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "default": "om-app",
+                    "type": "string"
+                  },
+                  "probePath": {
+                    "default": "/smcfs/heartbeat/heartbeat.jsp",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "pullPolicy": {
+              "type": "string"
+            },
+            "tag": {
+              "type": "string"
+            }
+          }
+        },
+        "ingress": {
+          "type": "object",
+          "properties": {
+            "annotations": {
+              "default": {},
+              "type": "object",
+              "title": "Annotations",
+              "description": "Annotations for the ingress resource"
+            },
+            "contextRoots": {
+              "default": ["smcfs", "sbc", "sma", "isccs", "wsc", "adminCenter"],
+              "type": "array",
+              "title": "Context Roots",
+              "description": "Context roots which are allowed to be accessed through ingress",
+              "items": {
+                "type": "string"
+              }
+            },
+            "controller": {
+              "default": "nginx",
+              "type": "string",
+              "title": "Ingress Controller",
+              "description": "Controller class for ingress controller"
+            },
+            "host": {
+              "default": "",
+              "type": "string",
+              "title": "Ingress Host"
+            },
+            "ssl": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "default": true,
+                  "type": "boolean",
+                  "title": "Enable SSL",
+                  "description": "Whether SSL enabled for ingress"
+                },
+                "secretname": {
+                  "default": "",
+                  "type": "string",
+                  "title": "Secret Name"
+                }
+              }
+            }
+          }
+        },
+        "livenessCheckBeginAfterSeconds": {
+          "default": 900,
+          "type": "integer",
+          "title": "Liveness Check Begin After Seconds",
+          "description": "Approx wait time(secs) to begin the liveness check"
+        },
+        "livenessFailRestartAfterMinutes": {
+          "default": 10,
+          "type": "integer",
+          "title": "Liveness Fail Restart After Minutes",
+          "description": "Approx time period (mins) after which server is restarted if liveness check keeps failing for this period"
+        },
+        "nodeAffinity": {
+          "type": "object",
+          "properties": {
+            "preferredDuringSchedulingIgnoredDuringExecution": {
+              "default": [],
+              "type": "array",
+              "title": "Preferred During Scheduling Ignored During Execution",
+              "description": "k8s PodSpec.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution"
+            },
+            "requiredDuringSchedulingIgnoredDuringExecution": {
+              "default": {},
+              "type": "object",
+              "title": "Required During Scheduling Ignored During Execution",
+              "description": "k8s PodSpec.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution"
+            }
+          }
+        },
+        "podAffinity": {
+          "type": "object",
+          "properties": {
+            "preferredDuringSchedulingIgnoredDuringExecution": {
+              "default": [],
+              "type": "array",
+              "title": "Preferred During Scheduling Ignored During Execution",
+              "description": "k8s PodSpec.podAffinity.preferredDuringSchedulingIgnoredDuringExecution"
+            },
+            "requiredDuringSchedulingIgnoredDuringExecution": {
+              "default": [],
+              "type": "array",
+              "title": "Required During Scheduling Ignored During Execution",
+              "description": "k8s PodSpec.podAffinity.requiredDuringSchedulingIgnoredDuringExecution"
+            }
+          }
+        },
+        "podAntiAffinity": {
+          "type": "object",
+          "properties": {
+            "preferredDuringSchedulingIgnoredDuringExecution": {
+              "default": [],
+              "type": "array",
+              "title": "Preferred During Scheduling Ignored During Execution",
+              "description": "k8s PodSpec.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution"
+            },
+            "replicaNotOnSameNode": {
+              "type": "object",
+              "properties": {
+                "mode": {
+                  "default": "prefer",
+                  "type": "string"
+                },
+                "weightForPreference": {
+                  "default": 100,
+                  "type": "integer",
+                  "title": "Weight For Preference",
+                  "description": "Preference weighting 1-100. Used if 'prefer' is specified for appserver.podAntiAffinity.replicaNotOnSameNode."
+                }
+              }
+            },
+            "requiredDuringSchedulingIgnoredDuringExecution": {
+              "default": [],
+              "type": "array",
+              "title": "Required During Scheduling Ignored During Execution",
+              "description": "k8s PodSpec.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution"
+            }
+          }
+        },
+        "podLabels": {
+          "default": {},
+          "type": "object",
+          "title": "Pod Labels",
+          "description": "Custom labels for the appserver pod"
+        },
+        "replicaCount": {
+          "default": 1,
+          "type": "integer",
+          "title": "Replica Count",
+          "description": "Number of appserver instances"
+        },
+        "resources": {
+          "type": "object",
+          "title": "Resources",
+          "description": "CPU/Memory resource requests/limits",
+          "properties": {
+            "limits": {
+              "type": "object",
+              "properties": {
+                "cpu": {
+                  "default": 2,
+                  "type": "integer"
+                },
+                "memory": {
+                  "default": "3840Mi",
+                  "type": "string"
+                }
+              }
+            },
+            "requests": {
+              "type": "object",
+              "properties": {
+                "cpu": {
+                  "default": 1,
+                  "type": "integer"
+                },
+                "memory": {
+                  "default": "2560Mi",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "service": {
+          "type": "object",
+          "properties": {
+            "http": {
+              "type": "object",
+              "properties": {
+                "port": {
+                  "default": 9080,
+                  "type": "integer",
+                  "title": "HTTP Port",
+                  "description": "HTTP container port"
+                }
+              }
+            },
+            "https": {
+              "type": "object",
+              "properties": {
+                "port": {
+                  "default": 9443,
+                  "type": "integer",
+                  "title": "HTTPS Port",
+                  "description": "HTTPS container port"
+                }
+              }
+            }
+          }
+        },
+        "tolerations": {
+          "default": [],
+          "type": "array",
+          "title": "Tolerations",
+          "description": "Tolerations for appserver pod. Specify in accordance with k8s PodSpec.tolerations. Refer section 'Affinity and Tolerations'."
+        }
+      }
+    },
+    "datasetup": {
+      "type": "object",
+      "properties": {
+        "loadFactoryData": {
+          "default": "",
+          "type": "string",
+          "title": "Load Factory Data"
+        },
+        "mode": {
+          "default": "create",
+          "type": "string",
+          "title": "Run Factory Data Load in"
+        }
+      }
+    },
+    "global": {
+      "type": "object",
+      "properties": {
+        "appSecret": {
+          "default": "",
+          "type": "string",
+          "title": "App Secret",
+          "description": "Order management secret name"
+        },
+        "arch": {
+          "type": "object",
+          "description": "Architecture affinity while scheduling pods",
+          "properties": {
+            "amd64": {
+              "default": "2 - No preference",
+              "type": "string"
+            },
+            "ppc64le": {
+              "default": "2 - No preference",
+              "type": "string"
+            }
+          }
+        },
+        "customerOverrides": {
+          "default": [],
+          "type": "array",
+          "title": "Customer Overrides",
+          "description": "Array of customer overrides properties as key=value"
+        },
+        "database": {
+          "type": "object",
+          "properties": {
+            "datasourceName": {
+              "default": "jdbc/OMDS",
+              "type": "string",
+              "title": "Datasource Name",
+              "description": "External datasource name"
+            },
+            "dbname": {
+              "default": "",
+              "type": "string",
+              "title": "DB Name or Catalog Name"
+            },
+            "dbvendor": {
+              "default": "DB2",
+              "type": "string",
+              "title": "Database Vendor DB2/Oracle"
+            },
+            "port": {
+              "type": "string",
+              "title": "DB Server Port"
+            },
+            "schema": {
+              "default": "",
+              "type": "string",
+              "title": "Schema",
+              "description": "Database schema name.For Db2 it is defaulted as global.database.dbname and for Oracle it is defaulted as global.database.user"
+            },
+            "serverName": {
+              "default": "",
+              "type": "string",
+              "title": "DB Server IP/Host"
+            },
+            "systemPool": {
+              "default": true,
+              "type": "boolean",
+              "title": "System Pool",
+              "description": "Is DB system pool"
+            },
+            "user": {
+              "default": "",
+              "type": "string",
+              "title": "DB User"
+            }
+          }
+        },
+        "envs": {
+          "default": [],
+          "type": "array",
+          "title": "Envs",
+          "description": "Environment variables as array of kubernetes EnvVars objects"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "default": "",
+              "type": "string",
+              "title": "Image Repository",
+              "description": "Repository for Order management images"
+            }
+          }
+        },
+        "license": {
+          "default": false,
+          "type": "boolean"
+        },
+        "license_store_call_center": {
+          "default": false,
+          "type": "boolean"
+        },
+        "log": {
+          "type": "object",
+          "properties": {
+            "format": {
+              "default": "json",
+              "type": "string",
+              "title": "Log Format"
+            }
+          }
+        },
+        "mq": {
+          "type": "object",
+          "properties": {
+            "bindingConfigName": {
+              "default": "",
+              "type": "string",
+              "title": "MQ Binding Config",
+              "description": "Name of the mq binding file config map"
+            },
+            "bindingMountPath": {
+              "default": "/opt/ssfs/.bindings",
+              "type": "string",
+              "title": "MQ Binding Mount Path",
+              "description": "Path where the binding file will be mounted"
+            }
+          }
+        },
+        "persistence": {
+          "type": "object",
+          "properties": {
+            "claims": {
+              "type": "object",
+              "properties": {
+                "accessMode": {
+                  "default": "ReadWriteMany",
+                  "type": "string",
+                  "title": "Access Mode"
+                },
+                "capacity": {
+                  "default": 10,
+                  "type": "integer",
+                  "title": "Capacity"
+                },
+                "capacityUnit": {
+                  "default": "Gi",
+                  "type": "string",
+                  "title": "Capacity Unit"
+                },
+                "name": {
+                  "default": "oms-common",
+                  "type": "string",
+                  "title": "Persistent Volume Name"
+                }
+              }
+            },
+            "securityContext": {
+              "type": "object",
+              "properties": {
+                "fsGroup": {
+                  "default": 0,
+                  "type": "integer",
+                  "title": "FS Group",
+                  "description": "File system group id to access the persistent volume"
+                },
+                "supplementalGroup": {
+                  "default": 0,
+                  "type": "integer",
+                  "title": "Supplemental Group",
+                  "description": "Supplemental group id to access the persistent volume"
+                }
+              }
+            }
+          }
+        },
+        "serviceAccountName": {
+          "default": "default",
+          "type": "string",
+          "title": "Service Account Name"
+        }
+      }
+    },
+    "omserver": {
+      "type": "object",
+      "properties": {
+        "common": {
+          "type": "object",
+          "properties": {
+            "jvmArgs": {
+              "default": "-Xms512m -Xmx1024m",
+              "type": "string",
+              "title": "JVM Args",
+              "description": "Default JVM args that will be passed to the list of agent servers"
+            },
+            "nodeAffinity": {
+              "type": "object",
+              "properties": {
+                "preferredDuringSchedulingIgnoredDuringExecution": {
+                  "default": [],
+                  "type": "array",
+                  "title": "Preferred During Scheduling Ignored During Execution",
+                  "description": "k8s PodSpec.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution"
+                },
+                "requiredDuringSchedulingIgnoredDuringExecution": {
+                  "default": {},
+                  "type": "object",
+                  "title": "Required During Scheduling Ignored During Execution",
+                  "description": "k8s PodSpec.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution"
+                }
+              }
+            },
+            "podAffinity": {
+              "type": "object",
+              "properties": {
+                "preferredDuringSchedulingIgnoredDuringExecution": {
+                  "default": [],
+                  "type": "array",
+                  "title": "Preferred During Scheduling Ignored During Execution",
+                  "description": "k8s PodSpec.podAffinity.preferredDuringSchedulingIgnoredDuringExecution"
+                },
+                "requiredDuringSchedulingIgnoredDuringExecution": {
+                  "default": [],
+                  "type": "array",
+                  "title": "Required During Scheduling Ignored During Execution",
+                  "description": "k8s PodSpec.podAffinity.requiredDuringSchedulingIgnoredDuringExecution"
+                }
+              }
+            },
+            "podAntiAffinity": {
+              "type": "object",
+              "properties": {
+                "preferredDuringSchedulingIgnoredDuringExecution": {
+                  "default": [],
+                  "type": "array",
+                  "title": "Preferred During Scheduling Ignored During Execution",
+                  "description": "k8s PodSpec.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution"
+                },
+                "replicaNotOnSameNode": {
+                  "type": "object",
+                  "title": "Replica Not On Same Node",
+                  "description": "Directive to prevent scheduling of replica pod on the same node. valid values: prefer, require, blank",
+                  "properties": {
+                    "mode": {
+                      "default": "prefer",
+                      "type": "string"
+                    },
+                    "weightForPreference": {
+                      "default": 100,
+                      "type": "integer",
+                      "title": "Weight For Preference",
+                      "description": "Preference weighting 1-100. Used if 'prefer' is specified for appserver.podAntiAffinity.replicaNotOnSameNode."
+                    }
+                  }
+                },
+                "requiredDuringSchedulingIgnoredDuringExecution": {
+                  "default": [],
+                  "type": "array",
+                  "title": "Required During Scheduling Ignored During Execution",
+                  "description": "k8s PodSpec.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution"
+                }
+              }
+            },
+            "podLabels": {
+              "default": {},
+              "type": "object",
+              "title": "Pod Labels",
+              "description": "Custom labels for the agent pod"
+            },
+            "readinessFailRestartAfterMinutes": {
+              "default": 10,
+              "type": "integer",
+              "title": "Readiness Fail Restart After Minutes",
+              "description": "Approx time period (mins) after which agent is restarted if readiness check keeps failing for this period"
+            },
+            "replicaCount": {
+              "default": 1,
+              "type": "integer",
+              "title": "Replica Count",
+              "description": "Default number of instances of agent servers that will be deployed"
+            },
+            "resources": {
+              "type": "object",
+              "title": "Resources",
+              "description": "CPU/Memory resource requests/limits",
+              "properties": {
+                "limits": {
+                  "type": "object",
+                  "properties": {
+                    "cpu": {
+                      "default": 1,
+                      "type": "integer"
+                    },
+                    "memory": {
+                      "default": "2048Mi",
+                      "type": "string"
+                    }
+                  }
+                },
+                "requests": {
+                  "type": "object",
+                  "properties": {
+                    "cpu": {
+                      "default": 0.5,
+                      "type": "number"
+                    },
+                    "memory": {
+                      "default": "1024Mi",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "tolerations": {
+              "default": [],
+              "type": "array",
+              "title": "Tolerations",
+              "description": "Tolerations for agent pod. Specify in accordance with k8s PodSpec.tolerations."
+            }
+          }
+        },
+        "deployHealthMonitor": {
+          "default": true,
+          "type": "boolean",
+          "title": "Deploy Health Monitor Agent"
+        },
+        "image": {
+          "type": "object",
+          "title": "OM Server Image",
+          "description": "Docker image details of agent server",
+          "properties": {
+            "name": {
+              "default": "om-agent",
+              "type": "string"
+            },
+            "pullPolicy": {
+              "default": "IfNotPresent",
+              "type": "string"
+            },
+            "tag": {
+              "default": "10.0.0.12",
+              "type": "string"
+            }
+          }
+        },
+        "servers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "group": {
+                "default": "Default Server",
+                "type": "string",
+                "title": "Group",
+                "description": "Agent server group name"
+              },
+              "name": {
+                "default": [],
+                "type": "array",
+                "title": "Name",
+                "description": "List of agent server names",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
