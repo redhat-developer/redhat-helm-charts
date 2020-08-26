@@ -1,20 +1,14 @@
----
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: PR
 
 on: pull_request
 
 jobs:
-  example_comment_pr:
+  initial_pr_scan:
     runs-on: ubuntu-latest
-    name: An example job to comment a PR
+    name: Initial PR scan
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@master
         with:
-          message: 'Example of message !'
+          message: "Thanks for submitting PR. In case of an emergency merge request, please send an email to `helm-catalog-support at redhat.com`. Otherwise please allow 24 hours for the feedback"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
