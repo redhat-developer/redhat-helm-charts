@@ -3,7 +3,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2020-07-28T23:52:30.096032899-07:00"
+    created: "2020-09-16T11:32:13.759429733-04:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -44,7 +44,7 @@ entries:
     version: 3.1.0
   - apiVersion: v2
     appVersion: 10.0.0.6
-    created: "2020-07-28T23:52:30.078305682-07:00"
+    created: "2020-09-16T11:32:13.746868559-04:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.\n
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.\n
@@ -86,7 +86,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-07-28T23:52:30.097600094-07:00"
+    created: "2020-09-16T11:32:13.760469985-04:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -121,7 +121,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-07-28T23:52:30.110973124-07:00"
+    created: "2020-09-16T11:32:13.76856104-04:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -159,7 +159,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-07-28T23:52:30.123479246-07:00"
+    created: "2020-09-16T11:32:13.777482698-04:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -197,7 +197,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-07-28T23:52:30.124561974-07:00"
+    created: "2020-09-16T11:32:13.778224186-04:00"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -230,7 +230,17 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-28T23:52:30.125388167-07:00"
+    created: "2020-09-16T11:32:13.77909544-04:00"
+    description: A Helm chart for Kubernetes
+    digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
+    name: nodejs-ex-k
+    type: application
+    urls:
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-09-16T11:32:13.778795568-04:00"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -240,7 +250,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-28T23:52:30.124938966-07:00"
+    created: "2020-09-16T11:32:13.778522997-04:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -248,4 +258,4 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-07-28T23:52:30.061234446-07:00"
+generated: "2020-09-16T11:32:13.733971867-04:00"
