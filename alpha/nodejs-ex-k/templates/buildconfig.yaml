@@ -15,9 +15,8 @@ spec:
     type: Source
     sourceStrategy:
       from:
-        kind: ImageStreamTag
-        namespace: "openshift"
-        name: nodejs:10
+        kind: DockerImage
+        name: registry.redhat.io/ubi8/nodejs-10:latest
       env:
       - name: NPM_MIRROR
         value: 
