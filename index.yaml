@@ -3,7 +3,7 @@ entries:
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2020-09-21T18:10:21.880804331+05:30"
+    created: "2020-09-21T18:55:39.829468034+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -15,7 +15,7 @@ entries:
       For additional details regarding install parameters check https://www.ibm.com/support/knowledgecenter/en/SS3JSW_6.1.0/installing/installing/integrator/InstallingCertifiedContainer.html.
       License
       By installing this product you accept the license terms http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-MILI-BQXF4G&title=IBM%20Sterling%20B2B%20Integrator%20Certified%20Container%20V6.1."
-    digest: 5f59250452cb4fff5034e9ea28b3f137cfb65288d0303d63666ec1df5dc97549
+    digest: dc72d6e97e54267d72776d3ab8bd1474531b64e7988b07df7a5d8bd5a4600673
     home: https://www.ibm.com/support/knowledgecenter/SS3JSW_6.1.0/kc_welcome_b2bi.html
     icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-b2bi-icon.png
     keywords:
@@ -39,7 +39,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2020-09-21T18:10:21.922493328+05:30"
+    created: "2020-09-21T18:55:39.869536302+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -80,7 +80,7 @@ entries:
     version: 3.1.0
   - apiVersion: v2
     appVersion: 10.0.0.6
-    created: "2020-09-21T18:10:21.900917981+05:30"
+    created: "2020-09-21T18:55:39.849033217+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.\n
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.\n
@@ -122,7 +122,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-09-21T18:10:21.924420001+05:30"
+    created: "2020-09-21T18:55:39.871250773+05:30"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -157,7 +157,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-09-21T18:10:21.940556946+05:30"
+    created: "2020-09-21T18:55:39.886046043+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -195,7 +195,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-09-21T18:10:21.956194168+05:30"
+    created: "2020-09-21T18:55:39.900111607+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -233,7 +233,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-21T18:10:21.957668395+05:30"
+    created: "2020-09-21T18:55:39.901269867+05:30"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -266,7 +266,7 @@ entries:
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2020-09-21T18:10:21.988177845+05:30"
+    created: "2020-09-21T18:55:39.929880631+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -278,7 +278,7 @@ entries:
       For additional details regarding install parameters check https://www.ibm.com/support/knowledgecenter/en/SS3JSW_6.1.0/installing/installing/integrator/InstallingCertifiedContainer.html.
       License
       By installing this product you accept the license terms http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-MILI-BQXDEL&title=IBM%20Sterling%20File%20Gateway%20Certified%20Container%20V6.1."
-    digest: 08323607fb0bcc41ebbd4d8ad122a425373a94b57d1a649b2fc520bf49470c8e
+    digest: 7b5e9c0dd47516c6ef63df7581b720b5f25a5b3166ccf666a6ae930d91d02021
     home: https://www.ibm.com/support/knowledgecenter/SS3JSW_6.1.0/kc_welcome_b2bi.html
     icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-sfg-icon.png
     keywords:
@@ -302,7 +302,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-09-21T18:10:21.989565027+05:30"
+    created: "2020-09-21T18:55:39.931596651+05:30"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
@@ -312,7 +312,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-09-21T18:10:21.989113963+05:30"
+    created: "2020-09-21T18:55:39.931130413+05:30"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -322,7 +322,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-09-21T18:10:21.988677078+05:30"
+    created: "2020-09-21T18:55:39.930631994+05:30"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -330,4 +330,4 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-09-21T18:10:21.848283086+05:30"
+generated: "2020-09-21T18:55:39.800019825+05:30"
