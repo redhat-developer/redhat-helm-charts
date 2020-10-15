@@ -1,9 +1,86 @@
 apiVersion: v1
 entries:
+  ibm-b2bi-prod:
+  - apiVersion: v2
+    appVersion: 6.1.0.0
+    created: "2020-10-15T01:45:16.525901894-07:00"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: 1.2.16
+    description: |-
+      IBM Sterling B2B Integrator helps companies integrate complex B2B EDI processes with their partner communities. Organizations get a single, flexible B2B platform that supports most communication protocols, helps secure your B2B network and data, and achieves high-availability operations. The offering enables companies to reduce costs by consolidating EDI and non-EDI any-to-any transmissions on a single B2B platform and helps automate B2B processes across enterprises, while providing governance and visibility over those processes.
+      Documentation
+      For additional details regarding install parameters check https://www.ibm.com/support/knowledgecenter/en/SS3JSW_6.1.0/installing/installing/integrator/InstallingCertifiedContainer.html.
+      License
+      By installing this product you accept the license terms http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-MILI-BQXF4G&title=IBM%20Sterling%20B2B%20Integrator%20Certified%20Container%20V6.1."
+    digest: dc72d6e97e54267d72776d3ab8bd1474531b64e7988b07df7a5d8bd5a4600673
+    home: https://www.ibm.com/support/knowledgecenter/SS3JSW_6.1.0/kc_welcome_b2bi.html
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-b2bi-icon.png
+    keywords:
+    - b2bi
+    - b2b
+    - mft
+    - sterling
+    - Commercial
+    - amd64
+    - Automation
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.14.6'
+    maintainers:
+    - name: IBM
+    name: ibm-b2bi-prod
+    type: application
+    urls:
+    - https://github.com/nvaibhav/redhat-helm-charts/charts/ibm-b2bi-prod-2.0.0.tgz
+    version: 2.0.0
   ibm-cpq-prod:
   - apiVersion: v2
+    appVersion: 10.0.0.12
+    created: "2020-10-15T01:45:16.571326714-07:00"
+    description: |-
+      IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
+      To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
+      IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services.
+      This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.
+
+      Documentation
+      Additional information about installation can be found at https://ibm.biz/BdqqUS.
+
+      License
+      Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
+    digest: 6748925c898f1fbfde2175f8ee4ae383716dc9f3d5815eb21e167006b0614779
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
+    keywords:
+    - cpq
+    - ifs
+    - sterling
+    - yantra
+    - order
+    - fulfillment
+    - om
+    - amd64
+    - framework
+    - Commercial
+    - RHOCP
+    - All items
+    - Languages
+    - Databases
+    - Middleware
+    - CI/CD
+    - Other
+    kubeVersion: '>=1.11.0'
+    maintainers:
+    - name: IBM
+    name: ibm-cpq-prod
+    urls:
+    - https://github.com/nvaibhav/redhat-helm-charts/charts/ibm-cpq-prod-4.0.0.tgz
+    version: 4.0.0
+  - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2020-09-23T01:53:26.657475035-07:00"
+    created: "2020-10-15T01:45:16.545363204-07:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -45,7 +122,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-09-23T01:53:26.667186435-07:00"
+    created: "2020-10-15T01:45:16.574375604-07:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -80,7 +157,45 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-09-23T01:53:26.690302275-07:00"
+    created: "2020-10-15T01:45:16.608509903-07:00"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: 1.2.15
+    description: |-
+      IBM Order management Software Enterprise Edition v10 provides cross-channel order orchestration capabilities to enable intelligent brokering of orders across many disparate systems. It also provides a global view of inventory across the supply chain and enables business users to make changes to order process.
+      Documentation
+      For additional details regarding install parameters check http://ibm.biz/oms-helm-readme.
+      License
+      By installing this product you accept the license terms http://ibm.biz/oms-license and http://ibm.biz/oms-apps-license.
+    digest: 47f7bae2c23ceec955c497ddd3f1d2adeea08238363a849c3ffc0ebefb9125ff
+    home: http://ibm.biz/oms-home
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
+    keywords:
+    - oms
+    - sterling
+    - yantra
+    - order
+    - fulfillment
+    - om
+    - amd64
+    - ppc64le
+    - framework
+    - Commercial
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: IBM
+    name: ibm-oms-ent-prod
+    type: application
+    urls:
+    - https://github.com/nvaibhav/redhat-helm-charts/charts/ibm-oms-ent-prod-5.1.0.tgz
+    version: 5.1.0
+  - apiVersion: v2
+    appVersion: 10.0.0
+    created: "2020-10-15T01:45:16.589945874-07:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -118,7 +233,45 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-09-23T01:53:26.707782555-07:00"
+    created: "2020-10-15T01:45:16.639155964-07:00"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: 1.2.15
+    description: |-
+      IBM Order management Software Professional Edition v10 provides cross-channel order orchestration capabilities to enable intelligent brokering of orders across many disparate systems. It also provides a global view of inventory across the supply chain and enables business users to make changes to order process.
+      Documentation
+      For additional details regarding install parameters check http://ibm.biz/oms-helm-readme.
+      License
+      By installing this product you accept the license terms http://ibm.biz/oms-license and http://ibm.biz/oms-apps-license.
+    digest: 694d6722365aee92f2a864d4ed67af20a91ff59a2d2156d976edd067637f13f7
+    home: http://ibm.biz/oms-home
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
+    keywords:
+    - oms
+    - sterling
+    - yantra
+    - order
+    - fulfillment
+    - om
+    - amd64
+    - ppc64le
+    - framework
+    - Commercial
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: IBM
+    name: ibm-oms-pro-prod
+    type: application
+    urls:
+    - https://github.com/nvaibhav/redhat-helm-charts/charts/ibm-oms-pro-prod-5.1.0.tgz
+    version: 5.1.0
+  - apiVersion: v2
+    appVersion: 10.0.0
+    created: "2020-10-15T01:45:16.624264703-07:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -156,7 +309,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-23T01:53:26.710004465-07:00"
+    created: "2020-10-15T01:45:16.640484703-07:00"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -186,10 +339,46 @@ entries:
     urls:
     - https://github.com/nvaibhav/redhat-helm-charts/charts/ibm-operator-catalog-enablement-1.0.0.tgz
     version: 1.0.0
+  ibm-sfg-prod:
+  - apiVersion: v2
+    appVersion: 6.1.0.0
+    created: "2020-10-15T01:45:16.670860223-07:00"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: 1.2.16
+    description: |-
+      Sterling File Gateway lets organizations transfer files between partners by using different protocols, conventions for naming files, and file formats. A scalable and security-enabled gateway, Sterling File Gateway enables companies to consolidate all their internet-based file transfers on a single edge gateway, which helps secure your B2B collaboration network and the data flowing through it.
+      Documentation
+      For additional details regarding install parameters check https://www.ibm.com/support/knowledgecenter/en/SS3JSW_6.1.0/installing/installing/integrator/InstallingCertifiedContainer.html.
+      License
+      By installing this product you accept the license terms http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-MILI-BQXDEL&title=IBM%20Sterling%20File%20Gateway%20Certified%20Container%20V6.1."
+    digest: 7b5e9c0dd47516c6ef63df7581b720b5f25a5b3166ccf666a6ae930d91d02021
+    home: https://www.ibm.com/support/knowledgecenter/SS3JSW_6.1.0/kc_welcome_b2bi.html
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-sfg-icon.png
+    keywords:
+    - sfg
+    - b2b
+    - mft
+    - sterling
+    - Commercial
+    - amd64
+    - Automation
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.14.6'
+    maintainers:
+    - name: IBM
+    name: ibm-sfg-prod
+    type: application
+    urls:
+    - https://github.com/nvaibhav/redhat-helm-charts/charts/ibm-sfg-prod-2.0.0.tgz
+    version: 2.0.0
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-09-23T01:53:26.714265886-07:00"
+    created: "2020-10-15T01:45:16.672872463-07:00"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
@@ -199,7 +388,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-09-23T01:53:26.713759475-07:00"
+    created: "2020-10-15T01:45:16.672281934-07:00"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -209,7 +398,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-09-23T01:53:26.711324665-07:00"
+    created: "2020-10-15T01:45:16.671585954-07:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -217,4 +406,4 @@ entries:
     urls:
     - https://github.com/nvaibhav/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-09-23T01:53:26.624931006-07:00"
+generated: "2020-10-15T01:45:16.493234964-07:00"
