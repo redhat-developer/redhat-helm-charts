@@ -1,2 +1,4 @@
 exclude: 
   - ".github"
+  - "alpha"
+  - "stable"
