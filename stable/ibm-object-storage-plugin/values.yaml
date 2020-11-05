@@ -8,14 +8,18 @@ license: false
 
 installDocumentation: https://cloud.ibm.com/kubernetes/helm/ibm-charts/ibm-object-storage-plugin#configuration
 image:
+  providerImage:
+    # This image is required only for IBM Cloud clusters
+    ibmContainerRegistry: icr.io/ibm/ibmcloud-provider-storage
+  providerBuild: 1.0.0
   pluginImage:
     ibmContainerRegistry: icr.io/ibm/ibmcloud-object-storage-plugin
     publicRegistry: ibmcom/ibmcloud-object-storage-plugin
   driverImage:
     ibmContainerRegistry: icr.io/ibm/ibmcloud-object-storage-driver
     publicRegistry: ibmcom/ibmcloud-object-storage-driver
-  pluginBuild: 1.8.17
-  driverBuild: 1.8.17
+  pluginBuild: 1.8.21
+  driverBuild: 1.8.21
   pullPolicy: Always
 
 # IAM endpoint url
@@ -47,3 +51,5 @@ resource:
   cpu: 200m
 
 kubeDriver: /etc/kubernetes
+
+bucketAccessPolicy: false

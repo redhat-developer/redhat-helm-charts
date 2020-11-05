@@ -3,7 +3,7 @@ entries:
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2020-10-15T02:19:47.784460522-07:00"
+    created: "2020-11-03T14:58:13.722044+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -39,7 +39,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.12
-    created: "2020-10-15T02:19:47.826353853-07:00"
+    created: "2020-11-03T14:58:13.765991+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -80,7 +80,7 @@ entries:
     version: 4.0.0
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2020-10-15T02:19:47.802287663-07:00"
+    created: "2020-11-03T14:58:13.73975+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -121,8 +121,42 @@ entries:
     version: 3.1.0
   ibm-object-storage-plugin:
   - apiVersion: v2
+    appVersion: 2.0.4
+    created: "2020-11-03T14:58:13.771243+05:30"
+    description: |
+      Chart for deploying ibmcloud object storage plugin.
+      IBM Cloud Object Storage is persistent, highly available storage
+      that you can mount to apps that run in a Kubernetes cluster by using
+      the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in
+      that connects Cloud Object Storage buckets to pods in your cluster.
+
+      Documentation
+      For additional details regarding install parameters see here
+      ibm.biz/BdqPR6
+
+      License
+      By installing this product you accept the license terms.
+      https://www.apache.org/licenses/LICENSE-2.0
+    digest: 3cdf1f01f73e8282aa17132405c694c64f7f0a128cdace0a922a9fc42fdba78d
+    icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
+    keywords:
+    - IKS
+    - amd64
+    - Storage
+    - Commercial
+    - Limited
+    - Other
+    - ROKS
+    maintainers:
+    - email: contsto2@in.ibm.com
+      name: IBM
+    name: ibm-object-storage-plugin
+    urls:
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.4.tgz
+    version: 2.0.4
+  - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-10-15T02:19:47.829054173-07:00"
+    created: "2020-11-03T14:58:13.769101+05:30"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -157,7 +191,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-10-15T02:19:47.860823863-07:00"
+    created: "2020-11-03T14:58:13.7979+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -195,7 +229,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-10-15T02:19:47.844722202-07:00"
+    created: "2020-11-03T14:58:13.785066+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -233,7 +267,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-10-15T02:19:47.896454573-07:00"
+    created: "2020-11-03T14:58:13.828934+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -271,7 +305,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-10-15T02:19:47.880671522-07:00"
+    created: "2020-11-03T14:58:13.816847+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -309,7 +343,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-10-15T02:19:47.897847663-07:00"
+    created: "2020-11-03T14:58:13.830413+05:30"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -342,7 +376,7 @@ entries:
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2020-10-15T02:19:47.927544133-07:00"
+    created: "2020-11-03T14:58:13.860928+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -378,7 +412,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-10-15T02:19:47.929089783-07:00"
+    created: "2020-11-03T14:58:13.865402+05:30"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
@@ -388,7 +422,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-10-15T02:19:47.928605063-07:00"
+    created: "2020-11-03T14:58:13.864319+05:30"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -398,7 +432,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-10-15T02:19:47.928154813-07:00"
+    created: "2020-11-03T14:58:13.862784+05:30"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -406,4 +440,4 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-10-15T02:19:47.754187832-07:00"
+generated: "2020-11-03T14:58:13.677397+05:30"
