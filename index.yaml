@@ -3,7 +3,7 @@ entries:
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2020-11-03T14:58:13.722044+05:30"
+    created: "2020-11-17T22:48:35.290534+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -39,7 +39,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.12
-    created: "2020-11-03T14:58:13.765991+05:30"
+    created: "2020-11-17T22:48:35.330106+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -80,7 +80,7 @@ entries:
     version: 4.0.0
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2020-11-03T14:58:13.73975+05:30"
+    created: "2020-11-17T22:48:35.311914+05:30"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -122,7 +122,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.4
-    created: "2020-11-03T14:58:13.771243+05:30"
+    created: "2020-11-17T22:48:35.336929+05:30"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -137,7 +137,7 @@ entries:
       License
       By installing this product you accept the license terms.
       https://www.apache.org/licenses/LICENSE-2.0
-    digest: 3cdf1f01f73e8282aa17132405c694c64f7f0a128cdace0a922a9fc42fdba78d
+    digest: 068ba5a6258fd7313310168003933a77632a5cddc6c5967c51749b4627192e97
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
     keywords:
     - IKS
@@ -156,7 +156,7 @@ entries:
     version: 2.0.4
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2020-11-03T14:58:13.769101+05:30"
+    created: "2020-11-17T22:48:35.332114+05:30"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -191,7 +191,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-11-03T14:58:13.7979+05:30"
+    created: "2020-11-17T22:48:35.362933+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -229,7 +229,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-11-03T14:58:13.785066+05:30"
+    created: "2020-11-17T22:48:35.349408+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -267,7 +267,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-11-03T14:58:13.828934+05:30"
+    created: "2020-11-17T22:48:35.387579+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -305,7 +305,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2020-11-03T14:58:13.816847+05:30"
+    created: "2020-11-17T22:48:35.37471+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -343,7 +343,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-11-03T14:58:13.830413+05:30"
+    created: "2020-11-17T22:48:35.38921+05:30"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -376,7 +376,7 @@ entries:
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2020-11-03T14:58:13.860928+05:30"
+    created: "2020-11-17T22:48:35.417033+05:30"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -412,7 +412,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-03T14:58:13.865402+05:30"
+    created: "2020-11-17T22:48:35.423903+05:30"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
@@ -422,7 +422,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-03T14:58:13.864319+05:30"
+    created: "2020-11-17T22:48:35.422857+05:30"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -432,7 +432,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-03T14:58:13.862784+05:30"
+    created: "2020-11-17T22:48:35.421136+05:30"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -440,4 +440,4 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
-generated: "2020-11-03T14:58:13.677397+05:30"
+generated: "2020-11-17T22:48:35.254686+05:30"
