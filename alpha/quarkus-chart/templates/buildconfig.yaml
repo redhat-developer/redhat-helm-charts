@@ -21,6 +21,7 @@ spec:
 {{- if and .Values.build.native.useDefaultDockerfile (eq .Values.build.mode "native") }}
     dockerfile: |-
       FROM registry.redhat.io/quarkus/mandrel-20-rhel8 AS builder
+      USER root
       WORKDIR /build/
       COPY . /build/
       RUN ./mvnw clean package -Pnative
