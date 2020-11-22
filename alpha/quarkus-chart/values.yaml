@@ -46,6 +46,15 @@ build:
   #  - name: VAR_NAME
   #    value: var-value
 
+  ## Freeform resources for the OCP build. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+  resources:
+  # limits:
+  #   cpu: "4"
+  #   memory: 6Gi
+  #  requests:
+  #    cpu: "2"
+  #    memory: 4Gi
+
 ## Application/Deployment-specific values (For configuring Deployment, Service, Route, ConfigMap, etc)
 deploy:
   ## Number of pod replicas to deploy

@@ -69,6 +69,10 @@ spec:
         {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
   {{- end }}
 {{- end }}
+{{- if .Values.build.resources }}
+  resources:
+    {{- toYaml .Values.build.resources | nindent 4 }}
+{{- end }}
   triggers:
     - type: ConfigChange
 {{- end }}
