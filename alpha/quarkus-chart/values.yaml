@@ -37,6 +37,8 @@ build:
     ## Should Helm generate a default Dockerfile to build a native binary?
     ## Set this to "false" if you would like to provide your own Dockerfile in git
     useDefaultDockerfile: true
+    ## Path to Dockerfile
+    dockerfilePath: Dockerfile
 
   ## Image pull secret. More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html
   pullSecret:

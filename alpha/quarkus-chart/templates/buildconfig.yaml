@@ -59,7 +59,7 @@ spec:
 {{- else if eq .Values.build.mode "native" }}
     type: Docker
     dockerStrategy:
-      dockerfilePath: Dockerfile
+      dockerfilePath: {{ .Values.build.native.dockerfilePath }}
   {{- if .Values.build.pullSecret }}
       pullSecret:
         name: {{ .Values.build.pullSecret }}
