@@ -15,16 +15,6 @@ build:
 and apply by passing `--values $VALUES_FILE`.
 
 ## Values
-This section describes the Values used to configure this chart.
-
-### Required Values 
-Below shows the required values to install this chart.
-
-| Value | Description | Default | Additional Information |
-| ----- | ----------- | ------- | ---------------------- |
-| `build.uri` | Git URI that references your git repo | - | **REQUIRED** |
-
-### All Values
 Below is a table of each value used to configure this chart.
 
 | Value | Description | Default | Additional Information |
@@ -32,8 +22,8 @@ Below is a table of each value used to configure this chart.
 | `image.name` | Name of the image you want to build/deploy | Defaults to the Helm release name. | The chart will create/reference an [ImageStream](https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html) based on this value. |
 | `image.tag` | Tag that you want to build/deploy | `latest` | The chart will create/reference an [ImageStreamTag](https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html#images-using-imagestream-tags_image-streams-managing) based on the name provided |
 | `build.enabled` | Determines if build-related resources should be created. | `true` | Set this to `false` if you want to deploy a previously built image. Leave this set to `true` if you want to build and deploy a new image. |
-| `build.uri` | Git URI that references your git repo | - | **REQUIRED** |
-| `build.ref` | Git ref containing the application you want to build | master | - |
+| `build.uri` | Git URI that references your git repo | https://github.com/deweya/quarkus-getting-started | This value defaults to a sample application. Be sure to override this if you want to build and deploy your own application. |
+| `build.ref` | Git ref containing the application you want to build | main | - |
 | `build.contextDir` | The sub-directory where the application source code exists | - | - |
 | `build.mode` | Determines whether the Quarkus mode should be set to `jvm` or `native` | `jvm` | Options: `jvm` or `native` |
 | `build.jvm.imageStreamTag.name` | The ImageStreamTag name of the desired builder image | `java:11` | Only has an effect if `build.mode` is set to `jvm` |

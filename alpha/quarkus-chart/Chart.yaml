@@ -1,6 +1,6 @@
 apiVersion: v2
 name: quarkus
-version: 0.0.1
+version: 0.0.2
 description: A Helm chart to build and deploy Quarkus applications
 keywords:
   - runtimes
