@@ -12,7 +12,7 @@ build:
   enabled: true
 
   ## Git URI, Ref, and ContextDir
-  uri: https://github.com/deweya/quarkus-getting-started
+  uri: https://github.com/redhat-developer-helm-quickstarts/quarkus-getting-started
   ref: main
   contextDir:
 
