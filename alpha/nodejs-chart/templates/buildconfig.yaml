@@ -21,19 +21,21 @@ spec:
 {{- if and .Values.build.native.useDefaultDockerfile (eq .Values.build.mode "native") }}
     dockerfile: |-
       FROM registry.redhat.io/ubi8/nodejs-12:latest
+      USER root
+      RUN groupadd -r node && useradd -r -g node node
       WORKDIR "/app"
       COPY package*.json ./
       RUN npm install
       COPY . /app
       ENV PORT 8080
       EXPOSE 8080
+      USER node
       CMD ["npm", "start"]
 {{- end }}
   strategy:
 {{- $valid := list "jvm" "native" }}
 {{- if not (has .Values.build.mode $valid) }}
 {{- fail "value 'build.mode' must be either 'jvm' or 'native'" }}
-{{- end }}
 {{- else if eq .Values.build.mode "native" }}
     type: Docker
     dockerStrategy:
