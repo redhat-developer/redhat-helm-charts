@@ -13,7 +13,7 @@ spec:
   source:
     type: Git
     git:
-      uri: {{ required "value 'build.uri' is required" .Values.build.uri }}
+      uri: {{ .Values.build.uri }}
       ref: {{ .Values.build.ref }}
 {{- if .Values.build.contextDir }}
     contextDir: {{ .Values.build.contextDir }}
