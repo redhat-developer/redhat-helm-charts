@@ -6,10 +6,6 @@ metadata:
   labels:
     {{- include "nodejs.labels" . | nindent 4 }}
 spec:
-  output:
-    to:
-      kind: ImageStreamTag
-      name: {{ include "nodejs.imageName" . }}
   source:
     type: Git
     git:
@@ -18,24 +14,13 @@ spec:
 {{- if .Values.build.contextDir }}
     contextDir: {{ .Values.build.contextDir }}
 {{- end }}
-{{- if and .Values.build.native.useDefaultDockerfile (eq .Values.build.mode "native") }}
-    dockerfile: |-
-      FROM registry.redhat.io/ubi8/nodejs-12:latest
-      USER root
-      RUN groupadd -r node && useradd -r -g node node
-      WORKDIR "/app"
-      COPY package*.json ./
-      RUN npm install
-      COPY . /app
-      ENV PORT 8080
-      EXPOSE 8080
-      USER node
-      CMD ["npm", "start"]
-{{- end }}
   strategy:
-    type: Docker
-    dockerStrategy:
-      dockerfilePath: {{ .Values.build.native.dockerfilePath }}
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: nodejs:12
   {{- if .Values.build.pullSecret }}
       pullSecret:
         name: {{ .Values.build.pullSecret }}
@@ -44,6 +29,10 @@ spec:
       env:
         {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
   {{- end }}
+  output:
+    to:
+      kind: ImageStreamTag
+      name: {{ include "nodejs.imageName" . }}
 {{- if .Values.build.resources }}
   resources:
     {{- toYaml .Values.build.resources | nindent 4 }}

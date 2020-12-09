@@ -1,7 +1,7 @@
 image:
   ## Name of the image you want to build/deploy
   ## Defaults to the release name
-  name:
+  name: test-app
   ## Tag that you want to build/deploy
   tag: latest
 
@@ -16,17 +16,6 @@ build:
   ref: master
   contextDir:
 
-  ## Options:
-  mode: native
-
-  ## Used if mode == 'native'
-  ## Creates a Docker build to produce a nodejs docker image
-  native:
-    ## Should Helm generate a default Dockerfile to build a native binary?
-    ## Set this to "false" if you would like to provide your own Dockerfile in git
-    useDefaultDockerfile: true
-    ## Path to Dockerfile
-    dockerfilePath: Dockerfile
 
   ## Image pull secret. More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html
   pullSecret:
