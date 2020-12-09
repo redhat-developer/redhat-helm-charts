@@ -1,5 +1,5 @@
 {{- if .Release.IsInstall }}
-Your Quarkus app is building! To view the build logs, run:
+Your Node.js app is building! To view the build logs, run:
 
 oc logs bc/{{ include "nodejs.name" . }} --follow
 

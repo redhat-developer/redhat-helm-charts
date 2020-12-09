@@ -33,10 +33,6 @@ spec:
       CMD ["npm", "start"]
 {{- end }}
   strategy:
-{{- $valid := list "jvm" "native" }}
-{{- if not (has .Values.build.mode $valid) }}
-{{- fail "value 'build.mode' must be either 'jvm' or 'native'" }}
-{{- else if eq .Values.build.mode "native" }}
     type: Docker
     dockerStrategy:
       dockerfilePath: {{ .Values.build.native.dockerfilePath }}
@@ -48,7 +44,6 @@ spec:
       env:
         {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
   {{- end }}
-{{- end }}
 {{- if .Values.build.resources }}
   resources:
     {{- toYaml .Values.build.resources | nindent 4 }}

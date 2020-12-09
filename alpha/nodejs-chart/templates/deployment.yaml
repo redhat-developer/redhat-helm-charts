@@ -59,10 +59,6 @@ spec:
             {{- tpl (toYaml .Values.deploy.envFrom) . | nindent 12 }}
 {{- end }}
           volumeMounts:
-{{- if .Values.deploy.applicationProperties.enabled }}
-            - name: application-properties
-              mountPath: {{ .Values.deploy.applicationProperties.mountPath }}
-{{- end }}
 {{- if .Values.deploy.volumeMounts }}
             {{- tpl (toYaml .Values.deploy.volumeMounts) . | nindent 12 }}
 {{- end }}

@@ -35,7 +35,6 @@ Below is a table of each value used to configure this chart.
 | `build.uri` | Git URI that references your git repo | - | **REQUIRED** |
 | `build.ref` | Git ref containing the application you want to build | master | - |
 | `build.contextDir` | The sub-directory where the application source code exists | - | - |
-| `build.mode` | Determines whether the Quarkus mode should be set to `jvm` or `native` | `jvm` | Options: `jvm` or `native` |
 | `build.pullSecret` | Image pull secret | - | More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html |
 | `build.env` | Freeform `env` stanza | - | More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/ |
 | `build.resources` | Freeform `resources` stanza | - | More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/ |
@@ -56,9 +55,6 @@ Below is a table of each value used to configure this chart.
 | `deploy.readinessProbe` | Freeform `readinessProbe` stanza. | See [values.yaml](./values.yaml) | More information: https://docs.openshift.com/container-platform/4.6/applications/application-health.html#application-health-about_application-health |
 | `deploy.env` | Freeform `env` stanza | - | More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/ |
 | `deploy.envFrom` | Freeform `envFrom` stanza | - | More information: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#configure-all-key-value-pairs-in-a-configmap-as-container-environment-variables |
-| `deploy.applicationProperties.enabled` | Determines if application properties should be externalized in a ConfigMap | `false` | - |
-| `deploy.applicationProperties.mountPath` | Location to mount the application.properties file | `/deployments/config/` | - |
-| `deploy.applicationProperties.properties` | The application.properties file contents | - | - |
 | `deploy.volumeMounts` | Freeform volume mounts | - | More information: https://kubernetes.io/docs/concepts/storage/volumes/ |
 | `deploy.volumes` | Freeform volumes | - | More information: https://kubernetes.io/docs/concepts/storage/volumes/ |
 | `deploy.initContainers` | Freeform init containers | - | More information: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/ |
