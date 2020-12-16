@@ -11,9 +11,9 @@ build:
   ## Set this to false if you just want to deploy a previously built image.
   enabled: true
 
-  ## Git URI (REQUIRED), Ref, and ContextDir
-  uri:
-  ref: master
+  ## Git URI, Ref, and ContextDir
+  uri: https://github.com/redhat-developer-helm-quickstarts/quarkus-getting-started
+  ref: main
   contextDir:
 
   ## Options: jvm or native
