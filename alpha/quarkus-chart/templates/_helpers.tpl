@@ -9,6 +9,7 @@ helm.sh/chart: {{ .Chart.Name }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+app.openshift.io/runtime: quarkus
 {{- end }}
 
 {{- define "quarkus.selectorLabels" -}}
