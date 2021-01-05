@@ -31,6 +31,8 @@ Below is a table of each value used to configure this chart.
 | `build.jvm.imageStreamTag.namespace` | The namespace containing the builder ImageStreamTag | `openshift` | Only has an effect if `build.jvm.imageStreamTag.useReleaseNamespace` is `false` and `build.mode` is `jvm` |
 | `build.native.useDefaultDockerfile` | Determines if Helm should generate a default Dockerfile to build a native binary | `true` | Only has an effect if `build.mode` is `native`. Set this to `false` if you would like to provide your own Dockerfile in git. |
 | `build.native.dockerfilePath` | Path to the Dockerfile | Dockerfile | Path is relative to the context dir |
+| `build.output.kind` | Determines if the image will be pushed to an ImageStreamTag or a DockerImage (external registry) | ImageStreamTag | More information: More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html |
+| `build.output.pushSecret` | Push secret name | - | Used only if build.output.kind == 'DockerImage' |
 | `build.pullSecret` | Image pull secret | - | More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html |
 | `build.env` | Freeform `env` stanza | - | More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/ |
 | `build.resources` | Freeform `resources` stanza | - | More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/ |
