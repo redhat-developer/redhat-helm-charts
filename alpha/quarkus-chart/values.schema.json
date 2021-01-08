@@ -77,6 +77,21 @@
                         }
                     }
                 },
+                "output": {
+                    "type": "object",
+                    "description": "Specifies where the image will be pushed to once built. More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html",
+                    "properties": {
+                        "kind": {
+                            "type": "string",
+                            "description": "Determines how the image will be pushed",
+                            "enum": ["ImageStreamTag", "DockerImage"]
+                        },
+                        "pushSecret": {
+                            "type": ["string", "null"],
+                            "description": "Push secret name, used only if kind == 'DockerImage'"
+                        }
+                    }
+                },
                 "pullSecret": {
                     "type": ["string", "null"],
                     "description": "The image pull secret. More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html"
