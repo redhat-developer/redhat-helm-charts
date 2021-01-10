@@ -19,3 +19,8 @@ version: 0.2.1
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
 appVersion: 1.16.0
+
+maintainers:
+- name: redhat-developer
+  email: developers@redhat.com
+  url: https://developers.redhat.com
