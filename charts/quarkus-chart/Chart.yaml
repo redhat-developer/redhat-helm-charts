@@ -5,3 +5,7 @@ description: A Helm chart to build and deploy Quarkus applications
 keywords:
   - runtimes
   - quarkus
+maintainers:
+- name: redhat-developer
+  email: developers@redhat.com
+  url: https://developers.redhat.com

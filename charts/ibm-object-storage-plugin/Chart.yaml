@@ -28,5 +28,5 @@ keywords:
 maintainers:
   - name: IBM
     email: contsto2@in.ibm.com
-#kubeVersion: '>=1.10.1'
+# kubeVersion: '>=1.10.1'
 appVersion: 2.0.4
