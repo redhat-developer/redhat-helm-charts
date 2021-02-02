@@ -1,7 +1,7 @@
 image:
   ## Name of the image you want to build/deploy
   ## Defaults to the release name
-  name: test-app
+  name:
   ## Tag that you want to build/deploy
   tag: latest
 
@@ -39,7 +39,7 @@ deploy:
   ## Number of pod replicas to deploy
   replicas: 1
 
-  ## Freeform resources for Quarkus. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+  ## Freeform resources for Node. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
   resources:
   #  limits:
   #    cpu: 100m

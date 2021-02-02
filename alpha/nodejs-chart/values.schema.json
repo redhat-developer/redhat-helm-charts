@@ -1,0 +1,109 @@
+{
+    "type": "object",
+    "required": [
+      "deploy",
+      "build",
+      "service",
+      "ingress"
+    ],
+    "additionalProperties": true,
+    "properties": {
+      "deploy": {
+        "type": "object",
+        "title": "Deploy",
+        "description": "Specifiy deployment settings",
+        "required": [
+          "replicaCount",
+          "uri",
+          "ref"
+        ],
+        "replicaCount": {
+          "default": 1,
+          "description": "Define number of nodejs pods running",
+          "title": "Replica Count",
+          "type": "integer"
+        },
+        "serviceType": {
+            "type": "string",
+            "title": "Service Type",
+            "description": "Select Service type",
+            "default": "ClusterIP"
+          },
+        "ports": {
+          "type": "object",
+          "title": "ports",
+          "description": "Specify Deployment Ports for Container",
+          "required": [
+              "name",
+              "port",
+              "targetPort",
+              "protocol"
+          ],
+          "name": {
+              "type": "string",
+              "title": "Name",
+              "default": "http"
+          },
+          "port": {
+            "type": "integer",
+            "title": "Port",
+            "description": "Define Port",
+            "default": 8080
+          },
+          "targetPort": {
+            "type": "integer",
+            "title": "Target Port",
+            "description": "Define Target Port",
+            "default": 8080
+          },
+          "protocol": {
+              "type": "string",
+              "description": "Specify which protocol to use",
+              "title": "Protocol",
+              "default": "TCP"
+          }
+        }
+      },
+      "build": {
+        "type": "object",
+        "title": "Build",
+        "description": "Specify what repo to build from",
+        "required": [
+          "enabled",
+          "uri",
+          "ref"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "enabled": {
+              "type": "boolean",
+              "title": "Enabled",
+              "description": "Uncheck if you want to use an already built image",
+              "default": true
+          },
+          "uri": {
+            "type": "string",
+            "title": "uri",
+            "description": "Define repository uri",
+            "examples": [
+              "https://github.com/nodeshift-starters/nodejs-rest-http"
+            ]
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "description": "Define repo ref",
+            "examples": [
+              "main",
+              "master"
+            ]
+          }
+        },
+        "contextDir": {
+            "type": "string",
+            "title": "contextDir",
+            "description": "What directory in the repo should the image build from"
+        }
+      }
+  }
+}
