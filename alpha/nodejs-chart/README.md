@@ -2,6 +2,9 @@
 A Helm chart for building and deploying a [Node.js](https://nodejs.org/) application on OpenShift.
 
 ## Prerequisites
+Below are prerequisites that may apply to your use case.
+
+### Pull Secret
 You will need to create a pull secret if you pull an S2I builder or Docker base image from an external registry. Use the following command as a reference to create your pull secret:
 ```bash
 oc create secret docker-registry my-pull-secret --docker-server=$SERVER_URL --docker-username=$USERNAME --docker-password=$PASSWORD --docker-email=$EMAIL
@@ -14,6 +17,20 @@ build:
 ```
 and apply by passing `--values $VALUES_FILE`.
 
+### Push Secret
+You will need to create a push secret if you want to push your image to an external registry. Use the following command as a reference to create your push secret:
+```bash
+oc create secret docker-registry my-push-secret --docker-server=$SERVER_URL --docker-username=$USERNAME --docker-password=$PASSWORD --docker-email=$EMAIL
+```
+
+You can use this secret by passing `--set build.output.pushSecret=my-push-secret` and `--set build.output.kind=DockerImage` to `helm install`, or you can configure these in a values file:
+```yaml
+build:
+  output:
+    kind: DockerImage
+    pushSecret: my-push-secret
+```
+
 ## Values
 This section describes the Values used to configure this chart.
 
@@ -25,8 +42,10 @@ Below is a table of each value used to configure this chart.
 | `image.tag` | Tag that you want to build/deploy | `latest` | The chart will create/reference an [ImageStreamTag](https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html#images-using-imagestream-tags_image-streams-managing) based on the name provided |
 | `build.enabled` | Determines if build-related resources should be created. | `true` | Set this to `false` if you want to deploy a previously built image. Leave this set to `true` if you want to build and deploy a new image. |
 | `build.uri` | Git URI that references your git repo | https://github.com/nodeshift-starters/nodejs-rest-http | This value defaults to a sample application. Be sure to override this if you want to build and deploy your own application. |
-| `build.ref` | Git ref containing the application you want to build | master | - |
+| `build.ref` | Git ref containing the application you want to build | main | - |
 | `build.contextDir` | The sub-directory where the application source code exists | - | - |
+| `build.output.kind` | Determines if the image will be pushed to an ImageStreamTag or a DockerImage (external registry) | ImageStreamTag | More information: More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html |
+| `build.output.pushSecret` | Push secret name | - | Used only if build.output.kind == 'DockerImage' |
 | `build.pullSecret` | Image pull secret | - | More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html |
 | `build.env` | Freeform `env` stanza | - | More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/ |
 | `build.resources` | Freeform `resources` stanza | - | More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/ |

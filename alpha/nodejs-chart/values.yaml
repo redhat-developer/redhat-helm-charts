@@ -13,9 +13,18 @@ build:
 
   ## Git URI, Ref, and ContextDir
   uri: https://github.com/nodeshift-starters/nodejs-rest-http
-  ref: master
+  ref: main
   contextDir:
 
+  ## Specifies where the image will be pushed to once built
+  ## More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html
+  output:
+    ## Choices: ImageStreamTag, DockerImage
+    ## ImageStreamTag publishes to the internal registry
+    ## DockerImage publishes to an external registry (referred to by image.name and image.tag)
+    kind: ImageStreamTag
+    ## Push secret name, used only if kind == "DockerImage"
+    pushSecret:
 
   ## Image pull secret. More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html
   pullSecret:

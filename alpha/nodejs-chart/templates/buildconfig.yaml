@@ -31,8 +31,12 @@ spec:
   {{- end }}
   output:
     to:
-      kind: ImageStreamTag
+      kind: {{ .Values.build.output.kind }}
       name: {{ include "nodejs.imageName" . }}
+  {{- if and (eq .Values.build.output.kind "DockerImage") .Values.build.output.pushSecret }}
+    pushSecret:
+      name: {{ .Values.build.output.pushSecret }}
+  {{- end }}
 {{- if .Values.build.resources }}
   resources:
     {{- toYaml .Values.build.resources | nindent 4 }}
