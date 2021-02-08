@@ -34,7 +34,7 @@ build:
 ## Values
 This section describes the Values used to configure this chart.
 
-Below is a table of each value used to configure this chart.
+Below is a table the values used to configure this chart.
 
 | Value | Description | Default | Additional Information |
 | ----- | ----------- | ------- | ---------------------- |

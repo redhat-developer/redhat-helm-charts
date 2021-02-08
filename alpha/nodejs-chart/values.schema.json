@@ -3,11 +3,24 @@
     "required": [
       "deploy",
       "build",
-      "service",
-      "ingress"
+      "image"
     ],
     "additionalProperties": true,
     "properties": {
+      "image": {
+        "type": "object",
+          "description": "Defines the image you want to build/deploy",
+          "properties": {
+            "name": {
+              "type": ["string", "null"],
+              "description": "Name of the image you want to build/deploy. Defaults to the release name."
+            },
+            "tag": {
+              "type": "string",
+              "description": "Tag that you want to build/deploy"
+            }
+          }
+      },
       "deploy": {
         "type": "object",
         "title": "Deploy",
@@ -103,6 +116,21 @@
             "type": "string",
             "title": "contextDir",
             "description": "What directory in the repo should the image build from"
+        },
+        "output": {
+            "type": "object",
+            "description": "Specifies where the image will be pushed to once built. More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html",
+            "properties": {
+                "kind": {
+                    "type": "string",
+                    "description": "Determines how the image will be pushed",
+                    "enum": ["ImageStreamTag", "DockerImage"]
+                },
+        "pushSecret": {
+            "type": ["string", "null"],
+            "description": "Push secret name, used only if kind == 'DockerImage'"
+                }
+            }
         }
       }
   }
