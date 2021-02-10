@@ -3,7 +3,7 @@ entries:
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-01-07T23:28:40.215463988-06:00"
+    created: "2021-02-10T06:04:52.905198541-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -38,8 +38,55 @@ entries:
     version: 2.0.0
   ibm-cpq-prod:
   - apiVersion: v2
+    appVersion: 10.0.0.15
+    created: "2021-02-10T06:04:53.003176127-08:00"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: 1.2.15
+    description: |-
+      IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
+      To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
+      IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services.
+      This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.
+
+      Documentation
+      Additional information about installation can be found at https://ibm.biz/BdqqUS.
+
+      License
+      Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
+    digest: 977f1ddaf28b9a654e58584a3bb913ceaf4e8e3a112c2094ccb12d8cab46c2b9
+    home: http://ibm.biz/cpq-home
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
+    keywords:
+    - cpq
+    - ifs
+    - sterling
+    - yantra
+    - order
+    - fulfillment
+    - om
+    - amd64
+    - framework
+    - Commercial
+    - RHOCP
+    - All items
+    - Languages
+    - Databases
+    - Middleware
+    - CI/CD
+    - Other
+    kubeVersion: '>=1.17.0'
+    maintainers:
+    - name: IBM
+    name: ibm-cpq-prod
+    urls:
+    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-cpq-prod-4.0.1.tgz
+    version: 4.0.1
+  - apiVersion: v2
     appVersion: 10.0.0.12
-    created: "2021-01-07T23:28:40.244264918-06:00"
+    created: "2021-02-10T06:04:52.972531694-08:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -80,7 +127,7 @@ entries:
     version: 4.0.0
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2021-01-07T23:28:40.229681814-06:00"
+    created: "2021-02-10T06:04:52.936482464-08:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -122,7 +169,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.4
-    created: "2021-01-07T23:28:40.246495964-06:00"
+    created: "2021-02-10T06:04:53.008545871-08:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -156,7 +203,7 @@ entries:
     version: 2.0.4
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2021-01-07T23:28:40.245388226-06:00"
+    created: "2021-02-10T06:04:53.00575422-08:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -191,7 +238,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-01-07T23:28:40.275961108-06:00"
+    created: "2021-02-10T06:04:53.079773063-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -229,7 +276,7 @@ entries:
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-01-07T23:28:40.265405504-06:00"
+    created: "2021-02-10T06:04:53.057060212-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -267,7 +314,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-01-07T23:28:40.255826829-06:00"
+    created: "2021-02-10T06:04:53.030326831-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -305,7 +352,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-01-07T23:28:40.307524864-06:00"
+    created: "2021-02-10T06:04:53.14703934-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -343,7 +390,7 @@ entries:
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-01-07T23:28:40.29722714-06:00"
+    created: "2021-02-10T06:04:53.12462057-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -381,7 +428,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-01-07T23:28:40.2867479-06:00"
+    created: "2021-02-10T06:04:53.099919546-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -419,7 +466,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-01-07T23:28:40.30828246-06:00"
+    created: "2021-02-10T06:04:53.14881988-08:00"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -452,7 +499,7 @@ entries:
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-01-07T23:28:40.32667102-06:00"
+    created: "2021-02-10T06:04:53.193509022-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -488,7 +535,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-01-07T23:28:40.327553446-06:00"
+    created: "2021-02-10T06:04:53.195757457-08:00"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
@@ -498,7 +545,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-01-07T23:28:40.327267641-06:00"
+    created: "2021-02-10T06:04:53.19501928-08:00"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -508,7 +555,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-01-07T23:28:40.32695382-06:00"
+    created: "2021-02-10T06:04:53.194258705-08:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -518,7 +565,7 @@ entries:
     version: 0.1.1
   quarkus:
   - apiVersion: v2
-    created: "2021-01-07T23:28:40.329115075-06:00"
+    created: "2021-02-10T06:04:53.199817571-08:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 6d8f1b945c037f1f252e532430c21ef723bc11fab369ef26d316fff69c4ffade
     keywords:
@@ -529,7 +576,7 @@ entries:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
-    created: "2021-01-07T23:28:40.328577688-06:00"
+    created: "2021-02-10T06:04:53.198377825-08:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 28a4c48bb9882edf04e916a643ff5936d72e60cc033e2e359b730b01b605ffac
     keywords:
@@ -540,7 +587,7 @@ entries:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2021-01-07T23:28:40.328052502-06:00"
+    created: "2021-02-10T06:04:53.197043375-08:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: dfa7f44698fc820e84f349929cd81c2ddbafb8d42e723df770e6ae7e72657b82
     keywords:
@@ -550,4 +597,4 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.1.tgz
     version: 0.0.1
-generated: "2021-01-07T23:28:40.195912741-06:00"
+generated: "2021-02-10T06:04:52.851879294-08:00"
