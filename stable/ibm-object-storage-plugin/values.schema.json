@@ -1,0 +1,278 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "required": [
+    "license",
+    "replicaCount",
+    "maxUnavailableNodeCount",
+    "image",
+    "iamEndpoint",
+    "cos",
+    "provider",
+    "platform",
+    "useCustomPSP",
+    "arch",
+    "dcname",
+    "workerOS",
+    "resource",
+    "kubeDriver",
+    "bucketAccessPolicy",
+    "secondaryValueFile",
+    "installDocumentation"
+  ],
+  "properties": {
+    "license": {
+      "$id": "#/properties/license",
+      "type": "boolean",
+      "title": "License",
+      "description": "Whether to accept apache license.",
+      "default": false
+    },
+    "installDocumentation": {
+      "$id": "#/properties/installDocumentation",
+      "type": "string",
+      "title": "Install Documentation",
+      "default": "https://cloud.ibm.com/kubernetes/helm/ibm-charts/ibm-object-storage-plugin#configuration"
+    },
+    "replicaCount": {
+      "$id": "#/properties/replicaCount",
+      "type": "integer",
+      "title": "Replica Count",
+      "description": "Value for Replica Count",
+      "default": 1
+    },
+    "maxUnavailableNodeCount": {
+      "$id": "#/properties/maxUnavailableNodeCount",
+      "type": "integer",
+      "title": "Max Unavailable Node Count",
+      "description": "Value for Max Unavailable Node Count",
+      "default": 1
+    },
+    "iamEndpoint": {
+      "$id": "#/properties/iamEndpoint",
+      "type": "string",
+      "title": "iam Endpoint",
+      "default": "https://iam.bluemix.net"
+    },
+    "provider": {
+      "$id": "#/properties/provider",
+      "type": "string",
+      "title": "Service Provider",
+      "description": "service provider type",
+      "default": "rhocp"
+    },
+    "platform": {
+      "$id": "#/properties/platform",
+      "type": "string",
+      "title": "Container Platform",
+      "description": "container platform type",
+      "default": "OpenShift"
+    },
+    "useCustomPSP": {
+      "$id": "#/properties/useCustomPSP",
+      "type": "boolean",
+      "title": "Custom PSP",
+      "description": "Whether to use Custom PSP",
+      "default": false
+    },
+    "arch": {
+      "$id": "#/properties/arch",
+      "type": "string",
+      "title": "Architecture",
+      "description": "pod architecture",
+      "default": "OpenShift"
+    },
+    "dcname": {
+      "$id": "#/properties/dcname",
+      "type": "string",
+      "title": "DataCenter",
+      "description": "Data Center of workers",
+      "default": ""
+    },
+    "workerOS": {
+      "$id": "#/properties/workerOS",
+      "type": "string",
+      "title": "Worker OS",
+      "description": "Worker OS",
+      "default": "redhat"
+    },
+    "kubeDriver": {
+      "$id": "#/properties/kubeDriver",
+      "type": "string",
+      "title": "kube Driver",
+      "description": "kube Driver path",
+      "default": "/etc/kubernetes"
+    },
+    "secondaryValueFile": {
+      "$id": "#/properties/secondaryValueFile",
+      "type": "string",
+      "title": "secondaryValueFile",
+      "description": "secondary Value File",
+      "default": "ibm/values.yaml"
+    },
+    "bucketAccessPolicy": {
+      "$id": "#/properties/bucketAccessPolicy",
+      "type": "boolean",
+      "title": "Access Policy",
+      "description": "enable bucket access policy",
+      "default": false
+    },
+    "cos": {
+      "$id": "#/properties/cos",
+      "type": "object",
+      "title": "cos parameters",
+      "default": {},
+      "required": [
+        "endpoint",
+        "storageClass"
+      ],
+      "properties": {
+        "endpoint": {
+          "$id": "#/properties/cos/properties/endpoint",
+          "type": "string",
+          "title": "cos endpoint",
+          "default": "https://<Endpoint URL>"
+        },
+        "storageClass": {
+          "$id": "#/properties/cos/properties/storageClass",
+          "type": "string",
+          "title": "Storage Class",
+          "default": "<StorageClass>"
+        }
+      }
+    },
+    "resource": {
+      "$id": "#/properties/resource",
+      "type": "object",
+      "title": "Resources",
+      "default": {},
+      "required": [
+        "memory",
+        "cpu"
+      ],
+      "properties": {
+        "memory": {
+          "$id": "#/properties/resource/properties/memory",
+          "type": "string",
+          "title": "Memory",
+          "default": "128Mi"
+        },
+        "cpu": {
+          "$id": "#/properties/resource/properties/cpu",
+          "type": "string",
+          "title": "CPU",
+          "default": "200m"
+        }
+      }
+    },
+    "image": {
+      "$id": "#/properties/image",
+      "type": "object",
+      "title": "COS Images",
+      "default": {},
+      "required": [
+        "pluginImage",
+        "driverImage",
+        "providerImage",
+        "pluginBuild",
+        "driverBuild",
+        "providerBuild",
+        "pullPolicy"
+      ],
+      "properties": {
+        "pluginImage": {
+          "$id": "#/properties/image/properties/pluginImage",
+          "type": "object",
+          "title": "Plugin Images",
+          "default": {},
+          "required": [
+            "ibmContainerRegistry",
+            "publicRegistry"
+          ],
+          "properties": {
+            "ibmContainerRegistry": {
+              "$id": "#/properties/image/properties/pluginImage/properties/ibmContainerRegistry",
+              "type": "string",
+              "title": "ibmContainerRegistry",
+              "default": "icr.io/ibm/ibmcloud-object-storage-plugin"
+            },
+            "publicRegistry": {
+              "$id": "#/properties/image/properties/pluginImage/properties/publicRegistry",
+              "type": "string",
+              "title": "publicRegistry",
+              "default": "ibmcom/ibmcloud-object-storage-plugin"
+            }
+          }
+        },
+        "driverImage": {
+          "$id": "#/properties/image/properties/driverImage",
+          "type": "object",
+          "title": "Driver Images",
+          "default": {},
+          "required": [
+            "ibmContainerRegistry",
+            "publicRegistry"
+          ],
+          "properties": {
+            "ibmContainerRegistry": {
+              "$id": "#/properties/image/properties/driverImage/properties/ibmContainerRegistry",
+              "type": "string",
+              "title": "ibmContainerRegistry",
+              "default": "icr.io/ibm/ibmcloud-object-storage-driver"
+            },
+            "publicRegistry": {
+              "$id": "#/properties/image/properties/driverImage/properties/publicRegistry",
+              "type": "string",
+              "title": "publicRegistry",
+              "default": "ibmcom/ibmcloud-object-storage-driver"
+            }
+          }
+        },
+        "providerImage": {
+          "$id": "#/properties/image/properties/providerImage",
+          "type": "object",
+          "title": "Provider Images",
+          "default": {},
+          "required": [
+            "ibmContainerRegistry"
+          ],
+          "properties": {
+            "ibmContainerRegistry": {
+              "$id": "#/properties/image/properties/providerImage/properties/ibmContainerRegistry",
+              "type": "string",
+              "title": "ibmContainerRegistry",
+              "default": "icr.io/ibm/ibmcloud-provider-storage"
+            }
+          }
+        },
+        "pluginBuild": {
+          "$id": "#/properties/image/properties/pluginBuild",
+          "type": "string",
+          "title": "Plugin Build",
+          "default": "1.8.21"
+        },
+        "driverBuild": {
+          "$id": "#/properties/image/properties/driverBuild",
+          "type": "string",
+          "title": "Driver Build",
+          "default": "1.8.21"
+        },
+        "providerBuild": {
+          "$id": "#/properties/image/properties/providerBuild",
+          "type": "string",
+          "title": "Provider Build",
+          "default": "1.0.0"
+        },
+        "pullPolicy": {
+          "$id": "#/properties/image/properties/pullPolicy",
+          "type": "string",
+          "title": "Image Pull Policy",
+          "default": "Always"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

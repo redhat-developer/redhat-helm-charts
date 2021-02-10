@@ -1,4 +1,5 @@
 #ibmcloud-object-storage-plugin deployment
+{{- $ns := include "ibm-object-storage-plugin.namespace" . }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -48,6 +49,11 @@ spec:
       hostPID: false
       hostIPC: false
       serviceAccountName: ibmcloud-object-storage-plugin
+      {{- if or (contains "default" $ns) (contains "kube-system" $ns) }}
+      securityContext:
+        runAsUser: 2121
+        fsGroup: 2121
+      {{- end }}
       containers:
         - name: {{ template "ibm-object-storage-plugin.name" . }}-container
           {{- if contains "RHOCP" (.Values.provider | quote | upper) }}
@@ -70,6 +76,9 @@ spec:
             allowPrivilegeEscalation: false
             readOnlyRootFilesystem: false
             runAsNonRoot: true
+            {{- if or (contains "default" $ns) (contains "kube-system" $ns) }}
+            runAsUser: 2121
+            {{- end }}
           livenessProbe:
             exec:
               command:

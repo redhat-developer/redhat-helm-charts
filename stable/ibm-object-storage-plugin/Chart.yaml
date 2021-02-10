@@ -15,7 +15,7 @@ description: |
   https://www.apache.org/licenses/LICENSE-2.0
 
 name: ibm-object-storage-plugin
-version: 2.0.0
+version: 2.0.4
 icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
 keywords:
 - IKS
@@ -29,4 +29,4 @@ maintainers:
   - name: IBM
     email: contsto2@in.ibm.com
 #kubeVersion: '>=1.10.1'
-appVersion: 2.0.0
+appVersion: 2.0.4

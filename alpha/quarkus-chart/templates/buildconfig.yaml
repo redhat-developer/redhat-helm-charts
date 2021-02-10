@@ -1,0 +1,82 @@
+{{- if .Values.build.enabled }}
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: {{ include "quarkus.name" . }}
+  labels:
+    {{- include "quarkus.labels" . | nindent 4 }}
+spec:
+  output:
+    to:
+      kind: {{ .Values.build.output.kind }}
+      name: {{ include "quarkus.imageName" . }}
+{{- if and (eq .Values.build.output.kind "DockerImage") .Values.build.output.pushSecret }}
+    pushSecret:
+      name: {{ .Values.build.output.pushSecret }}
+{{- end }}
+  source:
+    type: Git
+    git:
+      uri: {{ .Values.build.uri }}
+      ref: {{ .Values.build.ref }}
+{{- if .Values.build.contextDir }}
+    contextDir: {{ .Values.build.contextDir }}
+{{- end }}
+{{- if and .Values.build.native.useDefaultDockerfile (eq .Values.build.mode "native") }}
+    dockerfile: |-
+      FROM registry.redhat.io/quarkus/mandrel-20-rhel8 AS builder
+      USER root
+      WORKDIR /build/
+      COPY . /build/
+      RUN ./mvnw clean package -Pnative
+      
+      FROM registry.redhat.io/ubi8/ubi-minimal
+      WORKDIR /deployments/
+      COPY --from=builder /build/target/*-runner /deployments/application
+      RUN chmod 110 /deployments/application
+      CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
+{{- end }}
+  strategy:
+{{- $valid := list "jvm" "native" }}
+{{- if not (has .Values.build.mode $valid) }}
+{{- fail "value 'build.mode' must be either 'jvm' or 'native'" }}
+{{- end }}
+{{- if eq .Values.build.mode "jvm" }}
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: {{ .Values.build.jvm.imageStreamTag.name }}
+  {{- if .Values.build.jvm.imageStreamTag.useReleaseNamespace }}
+        namespace: {{ .Release.Namespace }}
+  {{- else }}
+        namespace: {{ .Values.build.jvm.imageStreamTag.namespace }}
+  {{- end }}
+  {{- if .Values.build.pullSecret }}
+      pullSecret:
+        name: {{ .Values.build.pullSecret }}
+  {{- end }}
+  {{- if .Values.build.env }}
+      env:
+        {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
+  {{- end }}
+{{- else if eq .Values.build.mode "native" }}
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: {{ .Values.build.native.dockerfilePath }}
+  {{- if .Values.build.pullSecret }}
+      pullSecret:
+        name: {{ .Values.build.pullSecret }}
+  {{- end }}
+  {{- if .Values.build.env }}
+      env:
+        {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
+  {{- end }}
+{{- end }}
+{{- if .Values.build.resources }}
+  resources:
+    {{- toYaml .Values.build.resources | nindent 4 }}
+{{- end }}
+  triggers:
+    - type: ConfigChange
+{{- end }}

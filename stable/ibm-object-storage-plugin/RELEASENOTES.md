@@ -1,16 +1,16 @@
 # Breaking Changes
 None
 
-# What’s new in Chart Version 2.0.0
+# What’s new in Chart Version 2.0.4
 
-With ibm-object-storage-plugin chart version 2.0.0, the following new
+With ibm-object-storage-plugin chart version 2.0.4, the following new
 features are available:
-* Cert2.0 Certification
-* Upgrade ubi base image to 8.2-267
-* Restrict COS Access Secret for selected namespaces
+* None
 
 # Fixes
-* Allowed re-using existing bucket with auto-create-bucket: true
+* Updated s3fs-fuse to fix IAM Apikey token refresh issue.
+* Upgraded Golang to v1.15.2 for fixing CVE-2020-24553
+
 
 # Prerequisites
 Install [Helm client v3](https://cloud.ibm.com/docs/containers?topic=containers-helm#install_v3) on your local machine.
@@ -24,6 +24,10 @@ For install/upgrade, follow instructions [here](https://cloud.ibm.com/docs/conta
 
 | Chart | Date | Kubernetes Required | Image(s) Supported | Breaking Changes | Details |
 | ----- | ---- | ------------ | ------------------ | ---------------- | ------- |
+| 2.0.4 | Oct 07, 2020| >=1.10.1-0 | 1.8.21 | None | Updated s3fs-fuse to fix IAM Apikey token refresh issue, Upgraded Golang to v1.15.2 for fixing CVE-2020-24553 |
+| 2.0.3 | Sep 23, 2020| >=1.10.1-0 | 1.8.20 | None | Enabled Bucket AccessPolicy for VPC-Gen2 clusters, Upgraded Golang to v1.13.15 for fixing CVE-2020-16845 and CVE-2020-24553, Upgraded UBI base image to 8.2-349 for fixing CVE-2020-14352 |
+| 2.0.2 | Aug 06, 2020| >=1.10.1-0 | 1.8.19 | None | Upgraded Golang to v1.13.14 for fixing CVE-2020-15586 and CVE-2020-14039, Fix for plugin deployment in custom namespace for IKS cluster |
+| 2.0.1 | July 10, 2020| >=1.10.1 | 1.8.18 | None | Update UBI base Image, Set default values for `auto-create-bucket`, `auto-delete-bucket` and `bucket` annotations in PVC |
 | 2.0.0 | Jun 12, 2020| >=1.10.1 | 1.8.17 | None | Cert 2.0 Certification, Restrict COS Access Secret for selected namespaces, Allowed re-using existing bucket with `auto-create-bucket: true`, GoLang: v1.13.5 |
 | 1.1.4 | Mar 10, 2020| >=1.10.1 | 1.8.13 | None | Resolved security issue CVE-2020-1712, Updated s3fs-fuse to use latest commit, Enabled support for 'auto_cache' option from pvc spec, GoLang: v1.13.4 |
 | 1.1.3 | Feb 13, 2020| >=1.10.1 | 1.8.12 | None | Resolved security issues CVE-2019-13734 and CVE-2019-18408, Updated `ibmc` helm plugin to support object-storage plugin installation/upgradation with `helm v2` and `helm v3`, Updated helm chart to auto-recreate plugin pods when upgrading plugin, GoLang: v1.13.4 |
