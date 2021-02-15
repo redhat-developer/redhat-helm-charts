@@ -1,11 +1,5 @@
 {
-    "type": "object",
-    "required": [
-      "deploy",
-      "build",
-      "image"
-    ],
-    "additionalProperties": true,
+    "$schema": "http://json-schema.org/draft-07/schema",
     "properties": {
       "image": {
         "type": "object",
@@ -26,11 +20,9 @@
         "title": "Deploy",
         "description": "Specifiy deployment settings",
         "required": [
-          "replicaCount",
-          "uri",
-          "ref"
+          "replicas"
         ],
-        "replicaCount": {
+        "replicas": {
           "default": 1,
           "description": "Define number of nodejs pods running",
           "title": "Replica Count",
@@ -110,10 +102,9 @@
               "main",
               "master"
             ]
-          }
-        },
+          },
         "contextDir": {
-            "type": "string",
+            "type": ["string", "null"],
             "title": "contextDir",
             "description": "What directory in the repo should the image build from"
         },
@@ -126,12 +117,35 @@
                     "description": "Determines how the image will be pushed",
                     "enum": ["ImageStreamTag", "DockerImage"]
                 },
-        "pushSecret": {
-            "type": ["string", "null"],
-            "description": "Push secret name, used only if kind == 'DockerImage'"
+                "pushSecret": {
+                    "type": ["string", "null"],
+                    "description": "Push secret name, used only if kind == 'DockerImage'"
                 }
             }
+        },
+        "pullSecret": {
+            "type": ["string", "null"],
+            "description": "The image pull secret. More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html"
+        },
+        "env": {
+            "type": ["array", "null"],
+            "description": "Freeform env field. More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/"
+        },
+        "resources": {
+            "type": ["object", "null"],
+            "description": "Freeform resources field. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
         }
       }
-  }
+      },
+      "global": {
+          "type": "object",
+          "description": "Values that should be global across parent and dependent Helm charts",
+          "properties": {
+              "nameOverride": {
+                  "type": ["string", "null"],
+                  "description": "Overrides the release name. Impacts the image name (if image.name is left blank) and impacts the name of created OCP resources"
+              }
+          }
+      }
+    }
 }

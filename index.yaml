@@ -3,7 +3,11 @@ entries:
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.179645+05:30"
+=======
+    created: "2021-02-15T16:23:43.561263Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -34,7 +38,11 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.15
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.231544+05:30"
+=======
+    created: "2021-02-15T16:23:43.609803Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -71,8 +79,23 @@ entries:
     version: 4.0.1
   - apiVersion: v2
     appVersion: 10.0.0.12
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.214744+05:30"
     description: IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services. To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services. IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services. This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.  Documentation Additional information about installation can be found at https://ibm.biz/BdqqUS.  License Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
+=======
+    created: "2021-02-15T16:23:43.59329Z"
+    description: |-
+      IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
+      To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
+      IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services.
+      This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.
+
+      Documentation
+      Additional information about installation can be found at https://ibm.biz/BdqqUS.
+
+      License
+      Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
+>>>>>>> Update and correct values.schema
     digest: 6748925c898f1fbfde2175f8ee4ae383716dc9f3d5815eb21e167006b0614779
     icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
     keywords:
@@ -102,8 +125,23 @@ entries:
     version: 4.0.0
   - apiVersion: v2
     appVersion: 10.0.0.10
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.196709+05:30"
     description: IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services. To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services. IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services. This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.  Documentation Additional information about installation can be found at https://ibm.biz/BdqqUS.  License Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
+=======
+    created: "2021-02-15T16:23:43.577512Z"
+    description: |-
+      IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
+      To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
+      IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services.
+      This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.
+
+      Documentation
+      Additional information about installation can be found at https://ibm.biz/BdqqUS.
+
+      License
+      Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
+>>>>>>> Update and correct values.schema
     digest: d367df8e64ed130753d0d417ccbf700b65a6ddf00d316bf24ff5f9668d5f2a0e
     icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
     keywords:
@@ -155,8 +193,26 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.4
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.236007+05:30"
     description: 'Chart for deploying ibmcloud object storage plugin. IBM Cloud Object Storage is persistent, highly available storage that you can mount to apps that run in a Kubernetes cluster by using the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud Object Storage buckets to pods in your cluster.  Documentation For additional details regarding install parameters see here ibm.biz/BdqPR6  License By installing this product you accept the license terms. https://www.apache.org/licenses/LICENSE-2.0 '
+=======
+    created: "2021-02-15T16:23:43.613735Z"
+    description: |
+      Chart for deploying ibmcloud object storage plugin.
+      IBM Cloud Object Storage is persistent, highly available storage
+      that you can mount to apps that run in a Kubernetes cluster by using
+      the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in
+      that connects Cloud Object Storage buckets to pods in your cluster.
+
+      Documentation
+      For additional details regarding install parameters see here
+      ibm.biz/BdqPR6
+
+      License
+      By installing this product you accept the license terms.
+      https://www.apache.org/licenses/LICENSE-2.0
+>>>>>>> Update and correct values.schema
     digest: 068ba5a6258fd7313310168003933a77632a5cddc6c5967c51749b4627192e97
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
     keywords:
@@ -176,8 +232,26 @@ entries:
     version: 2.0.4
   - apiVersion: v2
     appVersion: 2.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.23451+05:30"
     description: 'Chart for deploying ibmcloud object storage plugin. IBM Cloud Object Storage is persistent, highly available storage that you can mount to apps that run in a Kubernetes cluster by using the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud Object Storage buckets to pods in your cluster.  Documentation For additional details regarding install parameters see here ibm.biz/BdqPR6  License By installing this product you accept the license terms. https://www.apache.org/licenses/LICENSE-2.0 '
+=======
+    created: "2021-02-15T16:23:43.611976Z"
+    description: |
+      Chart for deploying ibmcloud object storage plugin.
+      IBM Cloud Object Storage is persistent, highly available storage
+      that you can mount to apps that run in a Kubernetes cluster by using
+      the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in
+      that connects Cloud Object Storage buckets to pods in your cluster.
+
+      Documentation
+      For additional details regarding install parameters see here
+      ibm.biz/BdqPR6
+
+      License
+      By installing this product you accept the license terms.
+      https://www.apache.org/licenses/LICENSE-2.0
+>>>>>>> Update and correct values.schema
     digest: 469e5e4093386c9b2a2f50cf55197db1c2489832bd3bc72018a17f0df9553474
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
     keywords:
@@ -198,7 +272,11 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.271041+05:30"
+=======
+    created: "2021-02-15T16:23:43.648582Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -231,7 +309,11 @@ entries:
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.259553+05:30"
+=======
+    created: "2021-02-15T16:23:43.636796Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -264,7 +346,11 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.24838+05:30"
+=======
+    created: "2021-02-15T16:23:43.625196Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -297,7 +383,11 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.310859+05:30"
+=======
+    created: "2021-02-15T16:23:43.680365Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -330,7 +420,11 @@ entries:
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.297355+05:30"
+=======
+    created: "2021-02-15T16:23:43.66969Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -363,7 +457,11 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.284117+05:30"
+=======
+    created: "2021-02-15T16:23:43.659351Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -396,7 +494,21 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.0.0
+<<<<<<< HEAD
     description: 'IBM Operator Catalog enablement deploys custom CatalogSources for operators available to deploy and maintain IBM products.  The operators are publically available, but products they install may require purchase and entitlement keys.  Documentation For additional details regarding installation see https://ibm.biz/operator-catalog-readme  License By installing this catalog you accept the license terms https://www.apache.org/licenses/LICENSE-2.0 '
+=======
+    created: "2021-02-15T16:23:43.681921Z"
+    description: |
+      IBM Operator Catalog enablement deploys custom CatalogSources for operators
+      available to deploy and maintain IBM products.  The operators are publically
+      available, but products they install may require purchase and entitlement keys.
+
+      Documentation
+      For additional details regarding installation see https://ibm.biz/operator-catalog-readme
+
+      License
+      By installing this catalog you accept the license terms https://www.apache.org/licenses/LICENSE-2.0
+>>>>>>> Update and correct values.schema
     digest: 5a765d2f3f36f1b35c403a546df3590e3d6014cbf86bd36775f8febb54baa58c
     name: ibm-operator-catalog-enablement
     type: application
@@ -406,7 +518,11 @@ entries:
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.339621+05:30"
+=======
+    created: "2021-02-15T16:23:43.700429Z"
+>>>>>>> Update and correct values.schema
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -436,9 +552,9 @@ entries:
     version: 2.0.0
   nodejs:
   - apiVersion: v2
-    created: "2021-02-11T14:34:46.229064Z"
+    created: "2021-02-15T16:23:43.70112Z"
     description: A Helm chart to build and deploy Node.js applications
-    digest: ab8c2392189e54ac3ae6e1ee2f183105ba632281316286c7f19a5eb6faea65b7
+    digest: 7756a245367148bca69254b6f610033716cf61d7c9ae82f59019d8810a89bc25
     keywords:
     - runtimes
     - nodejs
@@ -449,7 +565,11 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.342373+05:30"
+=======
+    created: "2021-02-15T16:23:43.703755Z"
+>>>>>>> Update and correct values.schema
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
@@ -459,7 +579,11 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.341513+05:30"
+=======
+    created: "2021-02-15T16:23:43.703001Z"
+>>>>>>> Update and correct values.schema
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -469,7 +593,11 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.340548+05:30"
+=======
+    created: "2021-02-15T16:23:43.70184Z"
+>>>>>>> Update and correct values.schema
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -479,7 +607,11 @@ entries:
     version: 0.1.1
   quarkus:
   - apiVersion: v2
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.34587+05:30"
+=======
+    created: "2021-02-15T16:23:43.707194Z"
+>>>>>>> Update and correct values.schema
     description: A Helm chart to build and deploy Quarkus applications
     digest: 6d8f1b945c037f1f252e532430c21ef723bc11fab369ef26d316fff69c4ffade
     keywords:
@@ -490,7 +622,11 @@ entries:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.345005+05:30"
+=======
+    created: "2021-02-15T16:23:43.706182Z"
+>>>>>>> Update and correct values.schema
     description: A Helm chart to build and deploy Quarkus applications
     digest: 28a4c48bb9882edf04e916a643ff5936d72e60cc033e2e359b730b01b605ffac
     keywords:
@@ -501,7 +637,11 @@ entries:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
+<<<<<<< HEAD
     created: "2021-03-08T21:16:17.343628+05:30"
+=======
+    created: "2021-02-15T16:23:43.70499Z"
+>>>>>>> Update and correct values.schema
     description: A Helm chart to build and deploy Quarkus applications
     digest: dfa7f44698fc820e84f349929cd81c2ddbafb8d42e723df770e6ae7e72657b82
     keywords:
@@ -511,4 +651,8 @@ entries:
     urls:
     - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.1.tgz
     version: 0.0.1
+<<<<<<< HEAD
 generated: "2021-03-08T21:16:17.152641+05:30"
+=======
+generated: "2021-02-15T16:23:43.534708Z"
+>>>>>>> Update and correct values.schema
