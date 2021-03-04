@@ -134,6 +134,22 @@
         "resources": {
             "type": ["object", "null"],
             "description": "Freeform resources field. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+        },
+        "source": {
+          "type": "object",
+          "description": "Specifies details for the source imagestream",
+          "properties": {
+            "namespace": {
+              "type": "string",
+              "description": "Namespace for source imagestream",
+              "default": "openshift"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of source image",
+              "default": "nodejs:12"
+            }
+          }
         }
       }
       },

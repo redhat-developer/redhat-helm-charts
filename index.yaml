@@ -437,9 +437,9 @@ entries:
     version: 2.0.0
   nodejs:
   - apiVersion: v2
-    created: "2021-03-04T15:57:42.472121Z"
+    created: "2021-03-04T16:14:51.365903Z"
     description: A Helm chart to build and deploy Node.js applications
-    digest: 6e1ac5947da08d7697e4578436ec130a639b45e087a0882783234680b12b18ed
+    digest: eeb75da3ec2e4d63fcc69aaa51d5d5a6fe0573414ac8d7341f73faed7c439ac4
     keywords:
     - runtimes
     - nodejs

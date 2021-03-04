@@ -19,8 +19,8 @@ spec:
     sourceStrategy:
       from:
         kind: ImageStreamTag
-        namespace:
-        name:
+        namespace: {{ .Values.build.source.namespace }}
+        name: {{ .Values.build.source.name }}
   {{- if .Values.build.pullSecret }}
       pullSecret:
         name: {{ .Values.build.pullSecret }}
