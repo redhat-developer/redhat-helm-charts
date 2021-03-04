@@ -19,8 +19,8 @@ spec:
     sourceStrategy:
       from:
         kind: ImageStreamTag
-        namespace: openshift
-        name: nodejs:12
+        namespace:
+        name:
   {{- if .Values.build.pullSecret }}
       pullSecret:
         name: {{ .Values.build.pullSecret }}

@@ -4,19 +4,6 @@ A Helm chart for building and deploying a [Node.js](https://nodejs.org/) applica
 ## Prerequisites
 Below are prerequisites that may apply to your use case.
 
-### Pull Secret
-You will need to create a pull secret if you pull an S2I builder or Docker base image from an external registry. Use the following command as a reference to create your pull secret:
-```bash
-oc create secret docker-registry my-pull-secret --docker-server=$SERVER_URL --docker-username=$USERNAME --docker-password=$PASSWORD --docker-email=$EMAIL
-```
-
-You can use this secret by passing `--set build.pullSecret=my-pull-secret` to `helm install`, or you can configure this in a values file:
-```yaml
-build:
-  pullSecret: my-pull-secret
-```
-and apply by passing `--values $VALUES_FILE`.
-
 ### Push Secret
 You will need to create a push secret if you want to push your image to an external registry. Use the following command as a reference to create your push secret:
 ```bash
