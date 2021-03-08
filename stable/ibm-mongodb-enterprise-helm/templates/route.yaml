@@ -1,0 +1,20 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ include "ibm-mongodb-enterprise-helm.fullname" . }}-route
+  labels:
+    {{- include "ibm-mongodb-enterprise-helm.labels" . | nindent 4 }}
+spec:
+  host: {{ .Values.ingress.host }}
+  path: {{ .Values.ingress.path | quote }}
+  port: 
+    targetPort: {{ .Values.service.port }}
+  to:
+    kind: Service
+    name: {{ include "ibm-mongodb-enterprise-helm.fullname" . }}-service
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  wildcardPolicy: None
+status:
+  ingress: []
