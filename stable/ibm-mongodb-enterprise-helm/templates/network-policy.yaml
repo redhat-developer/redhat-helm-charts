@@ -1,0 +1,12 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: {{ include "ibm-mongodb-enterprise-helm.fullname" . }}-network-policy
+  labels:
+{{- include "ibm-mongodb-enterprise-helm.labels" . | nindent 4 }}
+spec:
+  podSelector: {}
+  ingress:
+  - from: []
+  policyTypes:
+  - Ingress
