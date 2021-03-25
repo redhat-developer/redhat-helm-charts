@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "nodejs.name" . }}
+  labels:
+    {{- include "nodejs.labels" . | nindent 4 }}
+{{- if and .Values.build.enabled (eq .Values.build.output.kind "ImageStreamTag") }}
+  annotations:
+    image.openshift.io/triggers: |-
+      [
+        {
+          "from":{
+            "kind":"ImageStreamTag",
+            "name":"{{ include "nodejs.imageName" . }}"
+          },
+          "fieldPath":"spec.template.spec.containers[0].image"
+        }
+      ]
+{{- end }}
+spec:
+  replicas: {{ .Values.deploy.replicas }}
+  selector:
+    matchLabels:
+      {{- include "nodejs.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "nodejs.labels" . | nindent 8 }}
+    spec:
+{{- if .Values.deploy.initContainers }}
+      initContainers:
+        {{- tpl (toYaml .Values.deploy.initContainers) . | nindent 8 }}
+{{- end }}
+      containers:
+        - name: web
+          image: {{ include "nodejs.imageName" . }}
+          ports:
+{{- range .Values.deploy.ports }}
+            - name: {{ .name }}
+              containerPort: {{ .targetPort }}
+              protocol: {{ .protocol }}
+{{- end }}
+{{- if .Values.deploy.resources }}
+          resources:
+            {{- toYaml .Values.deploy.resources | nindent 12 }}
+{{- end }}
+{{- if .Values.deploy.livenessProbe }}
+          livenessProbe:
+            {{- tpl (toYaml .Values.deploy.livenessProbe) . | nindent 12 }}
+{{- end }}
+{{- if .Values.deploy.readinessProbe }}
+          readinessProbe:
+            {{- tpl (toYaml .Values.deploy.readinessProbe) . | nindent 12 }}
+{{- end }}
+{{- if .Values.deploy.env }}
+          env:
+            {{- tpl (toYaml .Values.deploy.env) . | nindent 12 }}
+{{- end }}
+{{- if .Values.deploy.envFrom }}
+          envFrom:
+            {{- tpl (toYaml .Values.deploy.envFrom) . | nindent 12 }}
+{{- end }}
+          volumeMounts:
+{{- if .Values.deploy.volumeMounts }}
+            {{- tpl (toYaml .Values.deploy.volumeMounts) . | nindent 12 }}
+{{- end }}
+{{- if .Values.deploy.extraContainers }}
+        {{- tpl (toYaml .Values.deploy.extraContainers) . | nindent 8 }}
+{{- end }}
+      volumes:
+{{- if .Values.deploy.applicationProperties.enabled }}
+        - name: application-properties
+          configMap:
+            name: {{ include "nodejs.name" . }}
+{{- end }}
+{{- if .Values.deploy.volumes }}
+        {{- tpl (toYaml .Values.deploy.volumes) . | nindent 8 }}
+{{- end }}

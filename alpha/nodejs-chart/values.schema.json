@@ -1,0 +1,167 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+      "image": {
+        "type": "object",
+          "description": "Defines the image you want to build/deploy",
+          "properties": {
+            "name": {
+              "type": ["string", "null"],
+              "description": "Name of the image you want to build/deploy. Defaults to the release name."
+            },
+            "tag": {
+              "type": "string",
+              "description": "Tag that you want to build/deploy"
+            }
+          }
+      },
+      "deploy": {
+        "type": "object",
+        "title": "Deploy",
+        "description": "Specifiy deployment settings",
+        "required": [
+          "replicas"
+        ],
+        "replicas": {
+          "default": 1,
+          "description": "Define number of nodejs pods running",
+          "title": "Replica Count",
+          "type": "integer"
+        },
+        "serviceType": {
+            "type": "string",
+            "title": "Service Type",
+            "description": "Select Service type",
+            "default": "ClusterIP"
+          },
+        "ports": {
+          "type": "object",
+          "title": "ports",
+          "description": "Specify Deployment Ports for Container",
+          "required": [
+              "name",
+              "port",
+              "targetPort",
+              "protocol"
+          ],
+          "name": {
+              "type": "string",
+              "title": "Name",
+              "default": "http"
+          },
+          "port": {
+            "type": "integer",
+            "title": "Port",
+            "description": "Define Port",
+            "default": 8080
+          },
+          "targetPort": {
+            "type": "integer",
+            "title": "Target Port",
+            "description": "Define Target Port",
+            "default": 8080
+          },
+          "protocol": {
+              "type": "string",
+              "description": "Specify which protocol to use",
+              "title": "Protocol",
+              "default": "TCP"
+          }
+        }
+      },
+      "build": {
+        "type": "object",
+        "title": "Build",
+        "description": "Specify what repo to build from",
+        "required": [
+          "enabled",
+          "uri",
+          "ref"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "enabled": {
+              "type": "boolean",
+              "title": "Enabled",
+              "description": "Uncheck if you want to use an already built image",
+              "default": true
+          },
+          "uri": {
+            "type": "string",
+            "title": "uri",
+            "description": "Define repository uri",
+            "examples": [
+              "https://github.com/nodeshift-starters/nodejs-rest-http"
+            ]
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "description": "Define repo ref",
+            "examples": [
+              "main",
+              "master"
+            ]
+          },
+        "contextDir": {
+            "type": ["string", "null"],
+            "title": "contextDir",
+            "description": "What directory in the repo should the image build from"
+        },
+        "output": {
+            "type": "object",
+            "description": "Specifies where the image will be pushed to once built. More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html",
+            "properties": {
+                "kind": {
+                    "type": "string",
+                    "description": "Determines how the image will be pushed",
+                    "enum": ["ImageStreamTag", "DockerImage"]
+                },
+                "pushSecret": {
+                    "type": ["string", "null"],
+                    "description": "Push secret name, used only if kind == 'DockerImage'"
+                }
+            }
+        },
+        "pullSecret": {
+            "type": ["string", "null"],
+            "description": "The image pull secret. More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html"
+        },
+        "env": {
+            "type": ["array", "null"],
+            "description": "Freeform env field. More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/"
+        },
+        "resources": {
+            "type": ["object", "null"],
+            "description": "Freeform resources field. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+        },
+        "source": {
+          "type": "object",
+          "description": "Specifies details for the source imagestream",
+          "properties": {
+            "namespace": {
+              "type": "string",
+              "description": "Namespace for source imagestream",
+              "default": "openshift"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of source image",
+              "default": "nodejs:12"
+            }
+          }
+        }
+      }
+      },
+      "global": {
+          "type": "object",
+          "description": "Values that should be global across parent and dependent Helm charts",
+          "properties": {
+              "nameOverride": {
+                  "type": ["string", "null"],
+                  "description": "Overrides the release name. Impacts the image name (if image.name is left blank) and impacts the name of created OCP resources"
+              }
+          }
+      }
+    }
+}

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: nodejs
+version: 0.0.1
+description: A Helm chart to build and deploy Node.js applications
+keywords:
+  - runtimes
+  - nodejs

@@ -1,0 +1,46 @@
+{{- if .Values.build.enabled }}
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: {{ include "nodejs.name" . }}
+  labels:
+    {{- include "nodejs.labels" . | nindent 4 }}
+spec:
+  source:
+    type: Git
+    git:
+      uri: {{ .Values.build.uri }}
+      ref: {{ .Values.build.ref }}
+{{- if .Values.build.contextDir }}
+    contextDir: {{ .Values.build.contextDir }}
+{{- end }}
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: {{ .Values.build.source.namespace }}
+        name: {{ .Values.build.source.name }}
+  {{- if .Values.build.pullSecret }}
+      pullSecret:
+        name: {{ .Values.build.pullSecret }}
+  {{- end }}
+  {{- if .Values.build.env }}
+      env:
+        {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
+  {{- end }}
+  output:
+    to:
+      kind: {{ .Values.build.output.kind }}
+      name: {{ include "nodejs.imageName" . }}
+  {{- if and (eq .Values.build.output.kind "DockerImage") .Values.build.output.pushSecret }}
+    pushSecret:
+      name: {{ .Values.build.output.pushSecret }}
+  {{- end }}
+{{- if .Values.build.resources }}
+  resources:
+    {{- toYaml .Values.build.resources | nindent 4 }}
+{{- end }}
+  triggers:
+    - type: ConfigChange
+{{- end }}
