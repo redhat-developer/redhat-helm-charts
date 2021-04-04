@@ -13,3 +13,9 @@ Steps to verify the IBM Catalogs are available :
 2. Verify the state returned is 'READY'
 3. oc -n openshift-marketplace get catalogsource opencloud-operators -o jsonpath="{.status.connectionState.lastObservedState}"
 4. Verify the state returned is 'READY'
+
+If deploying a `ImageContentSourcePolicy` by setting the 'mirrorConfig' to true,  the nodes will be either rebooting or drain the nodes to fully apply the change.
+Steps to verify the deployment is complete:
+1. oc get imagecontentsourcepolicy ibm-cpopen-mirror-config
+2. oc get nodes
+3. Verify all nodes are in 'Ready' status
