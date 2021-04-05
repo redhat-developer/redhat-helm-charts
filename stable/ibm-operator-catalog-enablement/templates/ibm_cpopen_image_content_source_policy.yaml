@@ -1,0 +1,12 @@
+# ImageContentSourcePolicy to direct to icr.cp
+{{ if contains "true" (.Values.mirrorConfig | quote | lower) }}
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: ibm-cpopen-mirror-config
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - icr.io/cpopen
+    source: docker.io/ibmcom
+{{ end }}

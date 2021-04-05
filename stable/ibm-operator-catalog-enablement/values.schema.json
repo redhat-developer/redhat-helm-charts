@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "examples": [{
+        "license": true,
+        "mirrorConfg": true
+    }],
+    "required": [
+        "license"
+    ],
+    "properties": {
+        "license": {
+            "$id": "#/properties/license",
+            "type": "boolean",
+            "title": "License Accept",
+            "description": "I accept the products license after reading it at https://www.apache.org/licenses/LICENSE-2.0.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "mirrorConfig": {
+            "$id": "#/properties/mirrorConfig",
+            "type": "boolean",
+            "title": "Deploy Mirror Config",
+            "description": "Deployment of `ImageContentSourcePolicy` to redirect images pulls to icr.io/cpopen. This deployment will take additional time as the cluster nodes recycle",
+            "default": false,
+            "examples": [
+                true
+            ]
+        }
+    },
+    "additionalProperties": true
+}
