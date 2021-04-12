@@ -11,15 +11,15 @@ image:
   providerImage:
     # This image is required only for IBM Cloud clusters
     ibmContainerRegistry: icr.io/ibm/ibmcloud-provider-storage
-  providerBuild: 1.0.0
+  providerBuild: 1.0.3
   pluginImage:
     ibmContainerRegistry: icr.io/ibm/ibmcloud-object-storage-plugin
     publicRegistry: ibmcom/ibmcloud-object-storage-plugin
   driverImage:
     ibmContainerRegistry: icr.io/ibm/ibmcloud-object-storage-driver
     publicRegistry: ibmcom/ibmcloud-object-storage-driver
-  pluginBuild: 1.8.21
-  driverBuild: 1.8.21
+  pluginBuild: 1.8.24
+  driverBuild: 1.8.24
   pullPolicy: Always
 
 # IAM endpoint url

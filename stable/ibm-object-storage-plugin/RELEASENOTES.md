@@ -1,15 +1,15 @@
 # Breaking Changes
 None
 
-# What’s new in Chart Version 2.0.4
+# What’s new in Chart Version 2.0.7
 
-With ibm-object-storage-plugin chart version 2.0.4, the following new
+With ibm-object-storage-plugin chart version 2.0.7, the following new
 features are available:
 * None
 
 # Fixes
-* Updated s3fs-fuse to fix IAM Apikey token refresh issue.
-* Upgraded Golang to v1.15.2 for fixing CVE-2020-24553
+* GoLang update to 1.15.8.
+* UBI base image update
 
 
 # Prerequisites
@@ -24,6 +24,9 @@ For install/upgrade, follow instructions [here](https://cloud.ibm.com/docs/conta
 
 | Chart | Date | Kubernetes Required | Image(s) Supported | Breaking Changes | Details |
 | ----- | ---- | ------------ | ------------------ | ---------------- | ------- |
+| 2.0.7 | Mar 26, 2021| >=1.10.1-0 | 1.8.24 | None | Fixed GoLang vulnerabilities and UBI Base image. GoLang update to 1.15.8, CVE-2021-3114, CVE-2021-3115, CVE-2020-28852, CVE-2020-28851 |
+| 2.0.6 | Dec 19, 2020| >=1.10.1-0 | 1.8.23 | None | Enabled optional default parameters like secret name, bucket name and other for storage class, GoLang update to 1.15.5, Enabled image signing and updated images labels and Fixed CVE-2020-28362 CVE-2020-28367 CVE-2020-28366 |
+| 2.0.5 | Nov 25, 2020| >=1.10.1-0 | 1.8.22 | None | Fixed NilPointer error and CVEs CVE-2018-20843 CVE-2019-13050 CVE-2019-13627 CVE-2019-14889 CVE-2019-1551 CVE-2019-15903 CVE-2019-16168 CVE-2019-16935 CVE-2019-19221 CVE-2019-19906 CVE-2019-19956 CVE-2019-20218 CVE-2019-20386 CVE-2019-20387 CVE-2019-20388 CVE-2019-20454 CVE-2019-20907 CVE-2019-5018 CVE-2020-10029 CVE-2020-13630 CVE-2020-13631 CVE-2020-13632 CVE-2020-14422 CVE-2020-1730 CVE-2020-1751 CVE-2020-1752 CVE-2020-6405 CVE-2020-7595 CVE-2020-8177 |
 | 2.0.4 | Oct 07, 2020| >=1.10.1-0 | 1.8.21 | None | Updated s3fs-fuse to fix IAM Apikey token refresh issue, Upgraded Golang to v1.15.2 for fixing CVE-2020-24553 |
 | 2.0.3 | Sep 23, 2020| >=1.10.1-0 | 1.8.20 | None | Enabled Bucket AccessPolicy for VPC-Gen2 clusters, Upgraded Golang to v1.13.15 for fixing CVE-2020-16845 and CVE-2020-24553, Upgraded UBI base image to 8.2-349 for fixing CVE-2020-14352 |
 | 2.0.2 | Aug 06, 2020| >=1.10.1-0 | 1.8.19 | None | Upgraded Golang to v1.13.14 for fixing CVE-2020-15586 and CVE-2020-14039, Fix for plugin deployment in custom namespace for IKS cluster |
