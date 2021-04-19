@@ -7,12 +7,12 @@ The repository has been configured to serve the static helm index and chart file
 
 ```
 
-$ helm repo add redhat-charts https://redhat-developer.github.com/redhat-helm-charts
+$ helm repo add redhat-charts https://redhat-developer.github.io/redhat-helm-charts
 "redhat-charts" has been added to your repositories
 
 $ helm repo list 
 NAME           	URL                               
-redhat-charts	https://redhat-developer.github.com/redhat-helm-charts  
+redhat-charts	https://redhat-developer.github.io/redhat-helm-charts  
 
 ```
 
