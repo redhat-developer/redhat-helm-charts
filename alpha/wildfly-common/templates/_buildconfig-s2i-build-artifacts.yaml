@@ -1,0 +1,66 @@
+{{- define "wildfly-common.buildconfig-s2i-build-artifacts.tpl" -}}
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: {{ include "wildfly-common.appBuilderImageName" . }}
+  labels: {}
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: {{ include "wildfly-common.appBuilderImage" . }}
+  runPolicy: Serial
+  source:
+    git:
+      ref: {{ quote .Values.build.ref }}
+      uri: {{ required "Git source repository URL is required" .Values.build.uri }}
+    {{- if .Values.build.contextDir }}    
+    contextDir: {{ .Values.build.contextDir }}
+    {{- end }}
+    {{- if .Values.build.images }}
+    images:
+      {{- tpl (toYaml .Values.build.images) . | nindent 6 }}
+    {{- end}}
+    type: Git
+  strategy:
+    type: Source
+    sourceStrategy:
+      {{- include "wildfly-common.buildconfig.pullSecret" . | nindent 6 -}}
+      from: {}
+      env:
+      - name: GALLEON_PROVISION_DEFAULT_FAT_SERVER
+        value: "true"
+      - name: CUSTOM_INSTALL_DIRECTORIES
+        value: extensions/*
+      {{- if .Values.build.s2i }}
+      {{- if .Values.build.s2i.galleonLayers }}
+      - name: GALLEON_PROVISION_LAYERS
+        value: {{ join "," .Values.build.s2i.galleonLayers | quote }}
+      {{- end }}
+      {{- if .Values.build.s2i.featurePacks }}
+      - name: GALLEON_PROVISION_FEATURE_PACKS
+        value: {{ join "," .Values.build.s2i.featurePacks | quote }}
+      {{- end }}
+      {{- if .Values.build.s2i.galleonDir }}
+      - name: GALLEON_DIR
+        value: {{ quote .Values.build.s2i.galleonDir }}
+      {{- end }}
+      {{- end }}
+      {{- if .Values.build.env }}
+      {{- tpl (toYaml .Values.build.env) . | nindent 6 }}
+      {{- end }}
+      incremental: true
+      forcePull: true
+  {{- if .Values.build.resources }}
+  resources:
+    {{- toYaml .Values.build.resources | nindent 4 }}
+  {{- end }}
+  triggers:
+  - type: ConfigChange
+  {{- include "wildfly-common.buildconfig.triggers.github" . | nindent 2 -}}
+  {{- include "wildfly-common.buildconfig.triggers.generic" . | nindent 2 -}}
+{{ end }}
+
+{{- define "wildfly-common.buildconfig-s2i-build-artifacts" -}}
+{{- include "wildfly-common.util.merge" (append . "wildfly-common.buildconfig-s2i-build-artifacts.tpl") -}}
+{{- end -}}

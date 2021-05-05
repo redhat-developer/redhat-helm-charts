@@ -1,0 +1,24 @@
+{{- define "wildfly-common.route.tpl" -}}
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: {{ include "wildfly-common.appName" . }}
+  labels: {}
+  annotations:
+    openshift.io/host.generated: 'true'
+spec:
+  to:
+    kind: Service
+    name: {{ include "wildfly-common.appName" . }}
+    weight: 100
+  {{- if .Values.deploy.route.tls.enabled }}
+  tls:
+    termination: {{ .Values.deploy.route.tls.termination }}
+    insecureEdgeTerminationPolicy: {{ .Values.deploy.route.tls.insecureEdgeTerminationPolicy }}
+  {{- end }}
+{{- end }}
+
+
+{{- define "wildfly-common.route" -}}
+{{- include "wildfly-common.util.merge" (append . "wildfly-common.route.tpl") -}}
+{{- end -}}

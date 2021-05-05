@@ -1,0 +1,38 @@
+{{- define "wildfly-common.buildconfig-s2i.tpl" -}}
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: {{ include "wildfly-common.appName" . }}
+  labels: {}
+spec:
+  output:
+    {{- include "wildfly-common.buildconfig.pushSecret" . | nindent 4 -}}
+    to:
+      kind: {{ .Values.build.output.kind }}
+      name: {{ include "wildfly-common.appImage" . }}
+  source:
+    type: Docker
+    images:
+    - from:
+        kind: ImageStreamTag
+        name: {{ include "wildfly-common.appBuilderImage" . }}
+      paths:
+      - destinationDir: .
+        sourcePath: /s2i-output/server/
+  strategy:
+    dockerStrategy:
+      {{- include "wildfly-common.buildconfig.pullSecret" . | nindent 6 -}}
+      from: {}
+    type: Docker
+  triggers:
+  - imageChange:
+      from:
+        kind: ImageStreamTag
+        name: {{ include "wildfly-common.appBuilderImage" . }}
+    type: ImageChange
+  - type: ConfigChange
+{{ end }}
+
+{{- define "wildfly-common.buildconfig-s2i" -}}
+{{- include "wildfly-common.util.merge" (append . "wildfly-common.buildconfig-s2i.tpl") -}}
+{{- end -}}

@@ -1,0 +1,21 @@
+{{- if and .Values.build.enabled (eq .Values.build.mode "s2i") }}
+{{- include "wildfly-common.buildconfig-s2i" (list . "wildfly.buildconfig-s2i") -}}
+{{- end -}}
+
+{{- define "wildfly.buildconfig-s2i" -}}
+{{- include "wildfly.metadata.labels" . }}
+spec:
+  source:
+    dockerfile: |-
+      FROM {{ include "wildfly.runtimeImage" . }}
+      COPY /server $JBOSS_HOME
+      USER root
+      RUN chown -R jboss:root $JBOSS_HOME && chmod -R ug+rwX $JBOSS_HOME
+      USER jboss
+      CMD $JBOSS_HOME/bin/openshift-launch.sh
+  strategy:
+    dockerStrategy:
+      from:
+        kind: DockerImage
+        name: {{ include "wildfly.runtimeImage" .}}
+{{- end -}}

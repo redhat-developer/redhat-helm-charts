@@ -1,0 +1,18 @@
+{{- if .Release.IsInstall }}
+
+{{- if .Values.build.enabled }}
+Your WildFly appplication is building! To follow the build, run:
+
+$ oc get build -w
+
+Note that your Deployment will report "ErrImagePull" and "ImagePullBackOff" until the build is complete. Once the build is complete, your image will be automatically rolled out.
+{{- end }}
+
+{{- if .Values.deploy.enabled }}
+
+To follow the deployment of your application, run:
+
+$ oc get deployment {{ include "wildfly-common.appName" . }} -w
+{{- end }}
+
+{{- end }}

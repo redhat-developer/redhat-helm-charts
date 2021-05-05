@@ -1,0 +1,11 @@
+{{- define "wildfly-common.imagestream.tpl" -}}
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: {{ include "wildfly-common.appName" . }}
+  labels: {}
+{{- end -}}
+
+{{- define "wildfly-common.imagestream" -}}
+{{- include "wildfly-common.util.merge" (append . "wildfly-common.imagestream.tpl") -}}
+{{- end -}}
