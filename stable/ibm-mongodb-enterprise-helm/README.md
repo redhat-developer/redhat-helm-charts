@@ -54,7 +54,7 @@ cd redhat-helm-charts/stable/ibm-mongodb-enterprise-helm/
 Create a new project/namespace 
 
 ```
-oc new-project ibm -description="IBM ISDL" --display-name="ibm"
+oc new-project ibm --description="IBM ISDL" --display-name="ibm"
 oc project ibm
 ```
 
@@ -68,7 +68,7 @@ Add an hostname/IP for the incoming http traffic by updating `values.ingress.hos
 
 Update the `values.global.persistance.claims.storageClassName` variable, which specfies the StorageClassName, Same as the one used by persistent volume                             
 
-Also update `global.persistence.claims.name` in valuse.yaml file -
+Also update `global.persistence.claims.name` in values.yaml file -
 
 Update SCC in your Namespace, this would be required to allow mongodb container to be executed -
 

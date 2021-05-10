@@ -1,4 +1,4 @@
-# Default values for harsha.
+# Default values for IBM's helm charts for Enterprise MongoDB.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -13,7 +13,7 @@ image:
 database:
   # Allows Customers to specify Password & Associated Admin User
   adminuser: "adminuser"
-  adminpassword: "harsha123" 
+  adminpassword: "admin123" 
   name_database: "testdb"
 
 imagePullSecrets: []
