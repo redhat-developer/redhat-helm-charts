@@ -3,7 +3,7 @@ entries:
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-05-10T06:49:14.098811887-04:00"
+    created: "2021-05-14T09:59:57.774043+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -29,12 +29,12 @@ entries:
     name: ibm-b2bi-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-b2bi-prod-2.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-b2bi-prod-2.0.0.tgz
     version: 2.0.0
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.15
-    created: "2021-05-10T06:49:14.182214841-04:00"
+    created: "2021-05-14T09:59:57.819472+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -67,11 +67,11 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-cpq-prod-4.0.1.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-cpq-prod-4.0.1.tgz
     version: 4.0.1
   - apiVersion: v2
     appVersion: 10.0.0.12
-    created: "2021-05-10T06:49:14.153147379-04:00"
+    created: "2021-05-14T09:59:57.804426+02:00"
     description: IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services. To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services. IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services. This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.  Documentation Additional information about installation can be found at https://ibm.biz/BdqqUS.  License Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
     digest: 6748925c898f1fbfde2175f8ee4ae383716dc9f3d5815eb21e167006b0614779
     icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
@@ -98,11 +98,11 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-cpq-prod-4.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-cpq-prod-4.0.0.tgz
     version: 4.0.0
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2021-05-10T06:49:14.125392273-04:00"
+    created: "2021-05-14T09:59:57.788236+02:00"
     description: IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services. To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services. IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services. This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.  Documentation Additional information about installation can be found at https://ibm.biz/BdqqUS.  License Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
     digest: d367df8e64ed130753d0d417ccbf700b65a6ddf00d316bf24ff5f9668d5f2a0e
     icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
@@ -129,12 +129,12 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-cpq-prod-3.1.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-cpq-prod-3.1.0.tgz
     version: 3.1.0
   ibm-mongodb-enterprise-helm:
   - apiVersion: v2
     appVersion: 4.4.0
-    created: "2021-05-10T06:49:14.183767669-04:00"
+    created: "2021-05-14T09:59:57.82024+02:00"
     description: 'IBM Helm Chart to deploy MongoDB Enterprise on OpenShift Container Platform hosted on IBM Power systems.  Documentation For additional details regarding install parameters see here https://docs.mongodb.com/manual/administration/install-enterprise/  License By installing this product you accept the license terms. https://www.mongodb.com/community/licensing '
     digest: 6727fe960ea49f9fa1e6c5c36f1d4190b1ca12ce82b11c290b6150f34a48560b
     keywords:
@@ -149,12 +149,12 @@ entries:
     - name: IBM
     name: ibm-mongodb-enterprise-helm
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-mongodb-enterprise-helm-0.2.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-mongodb-enterprise-helm-0.2.0.tgz
     version: 0.2.0
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.7
-    created: "2021-05-10T06:49:14.19167662-04:00"
+    created: "2021-05-14T09:59:57.82399+02:00"
     description: 'Chart for deploying ibmcloud object storage plugin. IBM Cloud Object Storage is persistent, highly available storage that you can mount to apps that run in a Kubernetes cluster by using the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud Object Storage buckets to pods in your cluster.  Documentation For additional details regarding install parameters see here ibm.biz/BdqPR6  License By installing this product you accept the license terms. https://www.apache.org/licenses/LICENSE-2.0 '
     digest: 71d57e8660abb5cb9ab3f97d49c5f5f0807dcf315e1b1beffc0cc047a85556ff
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
@@ -171,11 +171,11 @@ entries:
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.7.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.7.tgz
     version: 2.0.7
   - apiVersion: v2
     appVersion: 2.0.4
-    created: "2021-05-10T06:49:14.188998094-04:00"
+    created: "2021-05-14T09:59:57.82274+02:00"
     description: 'Chart for deploying ibmcloud object storage plugin. IBM Cloud Object Storage is persistent, highly available storage that you can mount to apps that run in a Kubernetes cluster by using the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud Object Storage buckets to pods in your cluster.  Documentation For additional details regarding install parameters see here ibm.biz/BdqPR6  License By installing this product you accept the license terms. https://www.apache.org/licenses/LICENSE-2.0 '
     digest: 068ba5a6258fd7313310168003933a77632a5cddc6c5967c51749b4627192e97
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
@@ -192,11 +192,11 @@ entries:
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.4.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.4.tgz
     version: 2.0.4
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2021-05-10T06:49:14.186321042-04:00"
+    created: "2021-05-14T09:59:57.821435+02:00"
     description: 'Chart for deploying ibmcloud object storage plugin. IBM Cloud Object Storage is persistent, highly available storage that you can mount to apps that run in a Kubernetes cluster by using the IBM Cloud Object Storage plug-in. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud Object Storage buckets to pods in your cluster.  Documentation For additional details regarding install parameters see here ibm.biz/BdqPR6  License By installing this product you accept the license terms. https://www.apache.org/licenses/LICENSE-2.0 '
     digest: 469e5e4093386c9b2a2f50cf55197db1c2489832bd3bc72018a17f0df9553474
     icon: https://cache.globalcatalog.cloud.ibm.com/static/cache/2461-acb0d10a1725d783/images/uploaded/icons/object-storage.png
@@ -213,12 +213,12 @@ entries:
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.0.tgz
     version: 2.0.0
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-10T06:49:14.278865528-04:00"
+    created: "2021-05-14T09:59:57.864172+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -247,11 +247,11 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-6.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-ent-prod-6.0.0.tgz
     version: 6.0.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-10T06:49:14.255433238-04:00"
+    created: "2021-05-14T09:59:57.85394+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -280,11 +280,11 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.1.1.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-ent-prod-5.1.1.tgz
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-10T06:49:14.232538772-04:00"
+    created: "2021-05-14T09:59:57.843991+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -313,11 +313,11 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.1.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-ent-prod-5.1.0.tgz
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-10T06:49:14.211963788-04:00"
+    created: "2021-05-14T09:59:57.834116+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -345,12 +345,12 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
     version: 5.0.0
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-10T06:49:14.361111884-04:00"
+    created: "2021-05-14T09:59:57.904237+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -379,11 +379,11 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-6.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-pro-prod-6.0.0.tgz
     version: 6.0.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-10T06:49:14.339688445-04:00"
+    created: "2021-05-14T09:59:57.893822+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -412,11 +412,11 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.1.1.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-pro-prod-5.1.1.tgz
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-10T06:49:14.318916362-04:00"
+    created: "2021-05-14T09:59:57.883511+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -445,11 +445,11 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.1.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-pro-prod-5.1.0.tgz
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-10T06:49:14.298083191-04:00"
+    created: "2021-05-14T09:59:57.873399+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -477,12 +477,12 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
     version: 5.0.0
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2021-05-10T06:49:14.365450966-04:00"
+    created: "2021-05-14T09:59:57.914229+02:00"
     description: 'IBM Operator Catalog enablement deploys custom CatalogSources and ImageContentSourcePolicy  resources to enable consistent Catalog experience to deploy and maintain IBM products.  The operators are publically available, but products they install may require purchase and entitlement keys.   Documentation For additional details regarding installation see https://ibm.biz/operator-catalog-readme  License By installing this catalog you accept the license terms https://www.apache.org/licenses/LICENSE-2.0 '
     digest: 28cfa7807ee75582071276b741ed3d0d56dfc3aa757c2b42fd1e8925da11a2cb
     home: http://ibm.biz/oprcatalog
@@ -502,11 +502,11 @@ entries:
     name: ibm-operator-catalog-enablement
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-operator-catalog-enablement-1.1.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-operator-catalog-enablement-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-05-10T06:49:14.363241049-04:00"
+    created: "2021-05-14T09:59:57.912681+02:00"
     description: 'IBM Operator Catalog enablement deploys custom CatalogSources for operators available to deploy and maintain IBM products.  The operators are publically available, but products they install may require purchase and entitlement keys.  Documentation For additional details regarding installation see https://ibm.biz/operator-catalog-readme  License By installing this catalog you accept the license terms https://www.apache.org/licenses/LICENSE-2.0 '
     digest: 5a765d2f3f36f1b35c403a546df3590e3d6014cbf86bd36775f8febb54baa58c
     home: http://ibm.biz/oprcatalog
@@ -525,12 +525,12 @@ entries:
     name: ibm-operator-catalog-enablement
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-operator-catalog-enablement-1.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-operator-catalog-enablement-1.0.0.tgz
     version: 1.0.0
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-05-10T06:49:14.402068741-04:00"
+    created: "2021-05-14T09:59:57.936027+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -556,11 +556,11 @@ entries:
     name: ibm-sfg-prod
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/ibm-sfg-prod-2.0.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-sfg-prod-2.0.0.tgz
     version: 2.0.0
   nodejs:
   - apiVersion: v2
-    created: "2021-05-10T06:49:14.403090184-04:00"
+    created: "2021-05-14T09:59:57.936602+02:00"
     description: A Helm chart to build and deploy Node.js applications
     digest: eeb75da3ec2e4d63fcc69aaa51d5d5a6fe0573414ac8d7341f73faed7c439ac4
     keywords:
@@ -568,42 +568,42 @@ entries:
     - nodejs
     name: nodejs
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-0.0.1.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/nodejs-0.0.1.tgz
     version: 0.0.1
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-10T06:49:14.404897814-04:00"
+    created: "2021-05-14T09:59:57.937646+02:00"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.2.1.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/nodejs-ex-k-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-10T06:49:14.404264209-04:00"
+    created: "2021-05-14T09:59:57.937294+02:00"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.2.0.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/nodejs-ex-k-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-10T06:49:14.4036452-04:00"
+    created: "2021-05-14T09:59:57.936945+02:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
   quarkus:
   - apiVersion: v2
-    created: "2021-05-10T06:49:14.409205802-04:00"
+    created: "2021-05-14T09:59:57.939451+02:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 6d8f1b945c037f1f252e532430c21ef723bc11fab369ef26d316fff69c4ffade
     keywords:
@@ -611,10 +611,10 @@ entries:
     - quarkus
     name: quarkus
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.3.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
-    created: "2021-05-10T06:49:14.407997511-04:00"
+    created: "2021-05-14T09:59:57.938819+02:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 28a4c48bb9882edf04e916a643ff5936d72e60cc033e2e359b730b01b605ffac
     keywords:
@@ -622,10 +622,10 @@ entries:
     - quarkus
     name: quarkus
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.2.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2021-05-10T06:49:14.406859443-04:00"
+    created: "2021-05-14T09:59:57.938207+02:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: dfa7f44698fc820e84f349929cd81c2ddbafb8d42e723df770e6ae7e72657b82
     keywords:
@@ -633,6 +633,6 @@ entries:
     - quarkus
     name: quarkus
     urls:
-    - https://redhat-developer.github.com/redhat-helm-charts/charts/quarkus-0.0.1.tgz
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.1.tgz
     version: 0.0.1
-generated: "2021-05-10T06:49:14.059767661-04:00"
+generated: "2021-05-14T09:59:57.75312+02:00"
