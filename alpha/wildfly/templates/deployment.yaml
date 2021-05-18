@@ -1,0 +1,10 @@
+{{- if .Values.deploy.enabled }}
+{{- include "wildfly-common.deployment" (list . "wildfly.deployment") -}}
+{{- end -}}
+
+{{ define "wildfly.deployment" }}
+{{- include "wildfly.metadata.labels" . }}
+spec:
+  template:
+    {{- include "wildfly.metadata.labels" . | nindent 4 }}
+{{- end -}}

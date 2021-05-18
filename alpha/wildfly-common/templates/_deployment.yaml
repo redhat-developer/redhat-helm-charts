@@ -1,0 +1,100 @@
+{{- define "wildfly-common.deployment.tpl" -}}
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ include "wildfly-common.appName" . }}
+  labels: {}
+  {{- if and .Values.build.enabled (eq .Values.build.output.kind "ImageStreamTag") }}
+  annotations:
+    image.openshift.io/triggers: |-
+      [
+        {
+          "from":{
+            "kind":"ImageStreamTag",
+            "name":"{{ include "wildfly-common.appImage" . }}"
+          },
+          "fieldPath":"spec.template.spec.containers[0].image"
+        }
+      ]
+  {{- end }}
+spec:
+  strategy:
+    type: Recreate
+  replicas: {{ .Values.deploy.replicas }}
+  selector:
+    matchLabels:
+      {{- include "wildfly-common.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      name: {{ include "wildfly-common.appName" . }}
+      labels: {}
+    spec:
+      {{- if .Values.deploy.initContainers }}
+      initContainers:
+        {{- tpl (toYaml .Values.deploy.initContainers) . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ include "wildfly-common.appName" . }}
+          image: {{ include "wildfly-common.appImage" . }}
+          imagePullPolicy: Always
+          ports:
+          - name: jolokia
+            containerPort: 8778
+            protocol: TCP
+          - name: http
+            containerPort: 8080
+            protocol: TCP
+          - name: ping
+            containerPort: 8888
+            protocol: TCP
+          - name: admin
+            containerPort: 9990
+            protocol: TCP
+          {{- if .Values.deploy.resources }}
+          resources:
+            {{- toYaml .Values.deploy.resources | nindent 12 }}
+          {{- end }}
+          {{- if .Values.deploy.livenessProbe }}
+          livenessProbe:
+            {{- tpl (toYaml .Values.deploy.livenessProbe) . | nindent 12 }}
+          {{- end }}
+          {{- if .Values.deploy.readinessProbe }}
+          readinessProbe:
+            {{- tpl (toYaml .Values.deploy.readinessProbe) . | nindent 12 }}
+          {{- end }}
+          {{- if .Values.deploy.volumeMounts }}
+          volumeMounts:
+            {{- tpl (toYaml .Values.deploy.volumeMounts) . | nindent 12 }}
+          {{- end }}
+          env:
+          - name: JGROUPS_PING_PROTOCOL
+            value: dns.DNS_PING
+          - name: OPENSHIFT_DNS_PING_SERVICE_PORT
+            value: '8888'
+          - name: AUTO_DEPLOY_EXPLODED
+            value: 'false'
+          - name: ENABLE_GENERATE_DEFAULT_DATASOURCE
+            value: 'false'
+          - name: OPENSHIFT_DNS_PING_SERVICE_NAME
+            value: {{ include "wildfly-common.appName" . }}-ping
+          - name: ENV_FILES
+            value: /etc/extensions/*
+          {{- if .Values.deploy.env }}
+          {{- tpl (toYaml .Values.deploy.env) . | nindent 10 }}
+          {{- end }}
+          {{- if .Values.deploy.envFrom }}
+          envFrom:
+          {{- tpl (toYaml .Values.deploy.envFrom) . | nindent 10 }}
+          {{- end }}
+        {{- if .Values.deploy.extraContainers }}
+        {{- tpl (toYaml .Values.deploy.extraContainers) . | nindent 8 }}
+        {{- end }}
+      {{- if .Values.deploy.volumes }}
+      volumes:
+        {{- tpl (toYaml .Values.deploy.volumes) . | nindent 8 }}
+      {{- end }}
+{{ end }}
+
+{{- define "wildfly-common.deployment" -}}
+{{- include "wildfly-common.util.merge" (append . "wildfly-common.deployment.tpl") -}}
+{{- end -}}

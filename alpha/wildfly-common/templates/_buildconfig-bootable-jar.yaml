@@ -1,0 +1,51 @@
+{{- define "wildfly-common.buildconfig-bootable-jar.tpl" -}}
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: {{ include "wildfly-common.appName" . }}
+  labels: {}
+spec:
+  output:
+    {{- include "wildfly-common.buildconfig.pushSecret" . | nindent 4 -}}
+    to:
+      kind: {{ .Values.build.output.kind }}
+      name: {{ include "wildfly-common.appImage" . }}
+  source:
+    type: Git
+    git:
+      ref: {{ .Values.build.ref }}
+      uri: {{ required "Git source repository URL is required" .Values.build.uri }}
+    {{- if .Values.build.contextDir }}
+    contextDir: {{ .Values.build.contextDir }}
+    {{- end }}
+    {{- if .Values.build.images }}
+    images:
+      {{- tpl (toYaml .Values.build.images) . | nindent 6 }}
+    {{- end}}
+  strategy:
+    type: Source
+    sourceStrategy:
+      {{- include "wildfly-common.buildconfig.pullSecret" . | nindent 6 -}}
+      from:
+        kind: DockerImage
+        name: {{ quote .Values.build.bootableJar.builderImage }}
+      {{- if .Values.build.env }}
+      env:
+        {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
+      {{- end }}
+      incremental: true
+      forcePull: true
+{{- if .Values.build.resources }}
+  resources:
+    {{- toYaml .Values.build.resources | nindent 4 }}
+{{- end }}
+  triggers:
+  - type: ConfigChange
+  {{- include "wildfly-common.buildconfig.triggers.github" . | nindent 2 -}}
+  {{- include "wildfly-common.buildconfig.triggers.generic" . | nindent 2 -}}
+  runPolicy: Serial
+{{- end }}
+
+{{- define "wildfly-common.buildconfig-bootable-jar" -}}
+{{- include "wildfly-common.util.merge" (append . "wildfly-common.buildconfig-bootable-jar.tpl") -}}
+{{- end -}}

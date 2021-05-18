@@ -1,0 +1,45 @@
+{{- define "wildfly-common.service.http.tpl" -}}
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "wildfly-common.appName" . }}
+  labels: {}
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+  {{- include "wildfly-common.selectorLabels" . | nindent 4 }}
+  type: ClusterIP
+  sessionAffinity: None
+{{- end -}}
+
+{{- define "wildfly-common.service.ping.tpl" -}}
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "wildfly-common.appName" . }}-ping
+  labels: {}
+  annotations:
+    description: The JGroups ping port for clustering.
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: 'true'
+spec:
+  ports:
+    - name: ping
+      protocol: TCP
+      port: 8888
+  selector:
+  {{- include "wildfly-common.selectorLabels" . | nindent 4 }}
+  type: ClusterIP
+  sessionAffinity: None
+  publishNotReadyAddresses: true
+{{- end }}
+
+
+{{- define "wildfly-common.service.http" -}}
+{{- include "wildfly-common.util.merge" (append . "wildfly-common.service.http.tpl") -}}
+{{- end -}}
+
+{{- define "wildfly-common.service.ping" -}}
+{{- include "wildfly-common.util.merge" (append . "wildfly-common.service.ping.tpl") -}}
+{{- end -}}

@@ -1,0 +1,3 @@
+{{- if and .Values.build.enabled (eq .Values.build.mode "bootable-jar") }}
+{{- include "wildfly-common.buildconfig-bootable-jar" (list . "wildfly.metadata.labels") -}}
+{{- end }}

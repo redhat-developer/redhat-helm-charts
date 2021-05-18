@@ -1,0 +1,557 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "image": {
+            "type": ["object", "null"],
+            "properties": {
+                "name": {
+                    "description": "Name of the application image. If not specified, the name of the Helm release will be used.",
+                    "type": ["string", "null"]
+                },
+                "tag": {
+                    "description": "Tag of the application image",
+                    "type": ["string", "null"],
+                    "default": "latest"
+                }
+            }
+        },
+        "build": {
+            "description": "Configuration to build the application image",
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "description": "Enable/Disable building the application image",
+                    "type": "boolean",
+                    "default": true
+                },
+                "mode": {
+                    "description": "Which mode to use to build the application",
+                    "type": "string",
+                    "enum": ["s2i", "bootable-jar"],
+                    "default": "s2i"
+                },
+                "uri": {
+                    "description": "URI of GitHub repository",
+                    "type": "string"
+                },
+                "ref": {
+                    "description": "Git reference",
+                    "type": ["string", "null"]
+                },
+                "contextDir": {
+                    "description": "Context directory within your Git repo to use as the root for the build",
+                    "type": ["string", "null"]
+                },
+                "pullSecret": {
+                  "description": "Name of the Pull Secret",
+                  "type": ["string", "null"]
+                },
+                "output": {
+                  "description": "Configuration for the built application image",
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "description": "Determines where the application images will be pushed",
+                      "type": "string",
+                      "enum": ["ImageStreamTag", "DockerImage"],
+                      "default": "ImageStreamTag"
+                    },
+                    "pushSecret": {
+                      "description": "Name of the Push Secret",
+                      "type": ["string", "null"]
+                    }
+                  }
+                },
+                "env": {
+                    "description": "List of environment variables to set in the container. Cannot be updated.",
+                    "items": {
+                      "description": "EnvVar represents an environment variable present in a Container.",
+                      "properties": {
+                        "name": {
+                          "description": "Name of the environment variable. Must be a C_IDENTIFIER.",
+                          "type": "string"
+                        },
+                        "value": {
+                          "description": "Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to \"\".",
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "valueFrom": {
+                          "description": "EnvVarSource represents a source for the value of an EnvVar.",
+                          "properties": {
+                            "configMapKeyRef": {
+                              "description": "Selects a key from a ConfigMap.",
+                              "properties": {
+                                "key": {
+                                  "description": "The key to select.",
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "optional": {
+                                  "description": "Specify whether the ConfigMap or its key must be defined",
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "key"
+                              ],
+                              "type": "object"
+                            },
+                            "fieldRef": {
+                              "description": "ObjectFieldSelector selects an APIVersioned field of an object.",
+                              "properties": {
+                                "apiVersion": {
+                                  "description": "Version of the schema the FieldPath is written in terms of, defaults to \"v1\".",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "fieldPath": {
+                                  "description": "Path of the field to select in the specified API version.",
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "fieldPath"
+                              ],
+                              "type": "object"
+                            },
+                            "resourceFieldRef": {
+                              "description": "ResourceFieldSelector represents container resources (cpu, memory) and their output format",
+                              "properties": {
+                                "containerName": {
+                                  "description": "Container name: required for volumes, optional for env vars",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "divisor": {
+                                  "oneOf": [
+                                    {
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
+                                    },
+                                    {
+                                      "type": "integer"
+                                    }
+                                  ]
+                                },
+                                "resource": {
+                                  "description": "Required: resource to select",
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "resource"
+                              ],
+                              "type": "object"
+                            },
+                            "secretKeyRef": {
+                              "description": "SecretKeySelector selects a key of a Secret.",
+                              "properties": {
+                                "key": {
+                                  "description": "The key of the secret to select from.  Must be a valid secret key.",
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "optional": {
+                                  "description": "Specify whether the Secret or its key must be defined",
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "key"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                },
+                "resources": {
+                    "description": "Freeform resources field. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+                },
+                "images": {
+                    "description": "Freeform images injected in the source during build."
+                },
+                "triggers": {
+                    "description": "Webhooks to trigger building the application image",
+                    "type": ["object", "null"],
+                    "properties": {
+                      "githubSecret": {
+                        "description": "Name of the secret containing the WebHookSecretKey for the GitHub Webhook",
+                        "type": "string"
+                      },
+                      "genericSecret": {
+                        "description": "Name of the secret containing the WebHookSecretKey for the Generic Webhook",
+                        "type": "string"
+                      }
+                    }
+                },
+                "s2i": {
+                    "description": "Configuration specific to S2I Build (applicable only if build mode is set to s2i)",
+                    "type": ["object", "null"],
+                    "properties": {
+                        "version": {
+                            "description": "WildFly version. If not specified, the Helm's appVersion will be used instead.",
+                            "type": ["string", "null"]
+                        },
+                        "builderImage": {
+                            "description": "Name of WildFly Builder image",
+                            "type": ["string", "null"]
+                        },
+                        "runtimeImage": {
+                            "description": "Name of WildFly Runtime image",
+                            "type": ["string", "null"]
+                        },
+                        "featurePacks": {
+                          "description": "List of additional Galleon feature-packs identified by Maven coordinates (`<groupId>:<artifactId>:<version>`)",
+                          "type": ["string", "array", "null"],
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "galleonDir": {
+                          "description": "Directory relative to the root directory for the build that contains custom content for Galleon.",
+                          "type": ["string", "null"]
+                        },
+                        "galleonLayers": {
+                            "description": "List of Galleon Layers to provision",
+                            "type": ["string", "array", "null"],
+                            "items": {
+                              "type": "string"
+                            }
+                        }
+                    }
+                },
+                "bootableJar": {
+                  "description": "Configuration specific to Bootable Jar Build (applicable only if build mode is set to bootable-jar)",
+                  "type": ["object", "null"],
+                  "properties": {
+                      "builderImage": {
+                          "description": "The JDK Builder image",
+                          "type": ["string", "null"]
+                      }
+                  }
+                }
+            }
+        },
+        "deploy": {
+            "description": "Configuration to deploy the application",
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "description": "Enable/Disable deploying the application image",
+                    "type": "boolean",
+                    "default": true
+                },
+                "replicas": {
+                    "type": "integer",
+                    "description": "Number of pod replicas to deploy"
+                },
+                "resources": {
+                    "description": "Freeform resources requirements to deploy the application image"
+                },
+                "env": {
+                    "description": "List of environment variables to set in the container. Cannot be updated.",
+                    "items": {
+                      "description": "EnvVar represents an environment variable present in a Container.",
+                      "properties": {
+                        "name": {
+                          "description": "Name of the environment variable. Must be a C_IDENTIFIER.",
+                          "type": "string"
+                        },
+                        "value": {
+                          "description": "Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to \"\".",
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "valueFrom": {
+                          "description": "EnvVarSource represents a source for the value of an EnvVar.",
+                          "properties": {
+                            "configMapKeyRef": {
+                              "description": "Selects a key from a ConfigMap.",
+                              "properties": {
+                                "key": {
+                                  "description": "The key to select.",
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "optional": {
+                                  "description": "Specify whether the ConfigMap or its key must be defined",
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "key"
+                              ],
+                              "type": "object"
+                            },
+                            "fieldRef": {
+                              "description": "ObjectFieldSelector selects an APIVersioned field of an object.",
+                              "properties": {
+                                "apiVersion": {
+                                  "description": "Version of the schema the FieldPath is written in terms of, defaults to \"v1\".",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "fieldPath": {
+                                  "description": "Path of the field to select in the specified API version.",
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "fieldPath"
+                              ],
+                              "type": "object"
+                            },
+                            "resourceFieldRef": {
+                              "description": "ResourceFieldSelector represents container resources (cpu, memory) and their output format",
+                              "properties": {
+                                "containerName": {
+                                  "description": "Container name: required for volumes, optional for env vars",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "divisor": {
+                                  "oneOf": [
+                                    {
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
+                                    },
+                                    {
+                                      "type": "integer"
+                                    }
+                                  ]
+                                },
+                                "resource": {
+                                  "description": "Required: resource to select",
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "resource"
+                              ],
+                              "type": "object"
+                            },
+                            "secretKeyRef": {
+                              "description": "SecretKeySelector selects a key of a Secret.",
+                              "properties": {
+                                "key": {
+                                  "description": "The key of the secret to select from.  Must be a valid secret key.",
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "optional": {
+                                  "description": "Specify whether the Secret or its key must be defined",
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "key"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                },
+                "envFrom": {
+                    "description": "List of sources to populate environment variables in the container. The keys defined within a source must be a C_IDENTIFIER. All invalid keys will be reported as an event when the container is starting. When a key exists in multiple sources, the value associated with the last source will take precedence. Values defined by an Env with a duplicate key will take precedence. Cannot be updated.",
+                    "items": {
+                      "description": "EnvFromSource represents the source of a set of ConfigMaps",
+                      "properties": {
+                        "configMapRef": {
+                          "description": "ConfigMapEnvSource selects a ConfigMap to populate the environment variables with.\n\nThe contents of the target ConfigMap's Data field will represent the key-value pairs as environment variables.",
+                          "properties": {
+                            "name": {
+                              "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "optional": {
+                              "description": "Specify whether the ConfigMap must be defined",
+                              "type": "boolean"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "prefix": {
+                          "description": "An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.",
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "secretRef": {
+                          "description": "SecretEnvSource selects a Secret to populate the environment variables with.\n\nThe contents of the target Secret's Data field will represent the key-value pairs as environment variables.",
+                          "properties": {
+                            "name": {
+                              "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "optional": {
+                              "description": "Specify whether the Secret must be defined",
+                              "type": "boolean"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                },
+                "route": {
+                    "description": "Route configuration",
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "description": "Enable/Disable creating a Route for the application",
+                            "default": true,
+                            "type": "boolean"
+                        },
+                        "tls": {
+                          "description": "TLS Configuration for the Route",
+                          "type": "object",
+                          "properties": {
+                            "enabled" : {
+                              "description": "Determines if the Route should be TLS-encrypted",
+                              "default": true,
+                              "type": "boolean"
+                            },
+                            "termination": {
+                              "description": "Determines the type of TLS termination to use",
+                              "type": "string",
+                              "enum": ["edge", "reencrypt", "passthrough"],
+                              "default": "edge"
+                            },
+                            "insecureEdgeTerminationPolicy": {
+                              "description": "Determines if insecure traffic should be redirected",
+                              "type": "string",
+                              "enum": ["Allow", "Disable", "Redirect"],
+                              "default": "Redirect"
+                            }
+                          }
+                        }
+                    }
+                },
+                "livenessProbe": {
+                    "description": "Freeform livenessProbe configuration"
+                },
+                "readinessProbe": {
+                    "description": "Freeform livenessProbe configuration"
+                },
+                "volumeMounts": {
+                  "description": "Freeform array of volumeMounts",
+                  "type": ["array", "null"],
+                  "items": {
+                    "description": "VolumeMount describes a mounting of a Volume within a container.",
+                    "required": ["name", "mountPath"],
+                    "properties": {
+                      "mountPath": {
+                        "description": "Path within the container at which the volume should be mounted.  Must not contain ':'.",
+                        "type": "string"
+                      },
+                      "mountPropagation": {
+                        "description": "mountPropagation determines how mounts are propagated from the host to container and the other way around. When not set, MountPropagationHostToContainer is used. This field is alpha in 1.8 and can be reworked or removed in a future release.",
+                        "type": ["string", "null"]
+                      },
+                      "name": {
+                        "description": "This must match the Name of a Volume.",
+                        "type": "string"
+                      },
+                      "readOnly": {
+                        "description": "Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.",
+                        "type": "boolean"
+                      },
+                      "subPath": {
+                        "description": "Path within the volume from which the container's volume should be mounted. Defaults to \"\" (volume's root).",
+                        "type": ["string","null"]
+                      }
+                    }
+                  }
+                },
+                "volumes": {
+                  "description": "Freeform array of volumes",
+                    "type": [ "array", "null"]
+                },
+                "initContainers": {
+                  "description": "Freeform array of initContainers",
+                  "type": [ "array", "null"]
+                },
+                "extraContainers": {
+                  "description": "Freeform array of extra containers",
+                  "type": [ "array", "null"]
+                }
+            }
+        }
+    }
+}

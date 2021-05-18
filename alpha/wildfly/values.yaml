@@ -1,0 +1,30 @@
+image:
+  tag: latest
+build:
+  enabled: true
+  mode: s2i
+  bootableJar:
+    builderImage: registry.access.redhat.com/ubi8/openjdk-11:latest
+  s2i:
+    builderImage: quay.io/wildfly/wildfly-centos7
+    runtimeImage: quay.io/wildfly/wildfly-runtime-centos7
+  output:
+    kind: "ImageStreamTag"
+  triggers: {}
+deploy:
+  enabled: true
+  replicas: 1
+  route:
+    enabled: true
+    tls:
+      enabled: true
+      termination: edge
+      insecureEdgeTerminationPolicy: Redirect
+  livenessProbe:
+    httpGet:
+      path: /health/live
+      port: admin
+  readinessProbe:
+    httpGet:
+      path: /health/ready
+      port: admin
