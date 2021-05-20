@@ -3,7 +3,7 @@ entries:
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-05-18T10:39:03.010895+02:00"
+    created: "2021-05-18T16:18:54.749895+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -39,7 +39,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.15
-    created: "2021-05-18T10:39:03.05064+02:00"
+    created: "2021-05-18T16:18:54.787167+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -86,7 +86,7 @@ entries:
     version: 4.0.1
   - apiVersion: v2
     appVersion: 10.0.0.12
-    created: "2021-05-18T10:39:03.038547+02:00"
+    created: "2021-05-18T16:18:54.773801+02:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -127,7 +127,7 @@ entries:
     version: 4.0.0
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2021-05-18T10:39:03.024762+02:00"
+    created: "2021-05-18T16:18:54.762201+02:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -169,7 +169,7 @@ entries:
   ibm-mongodb-enterprise-helm:
   - apiVersion: v2
     appVersion: 4.4.0
-    created: "2021-05-18T10:39:03.051256+02:00"
+    created: "2021-05-18T16:18:54.788708+02:00"
     description: 'IBM Helm Chart to deploy MongoDB Enterprise on OpenShift Container Platform hosted on IBM Power systems.  Documentation For additional details regarding install parameters see here https://docs.mongodb.com/manual/administration/install-enterprise/  License By installing this product you accept the license terms. https://www.mongodb.com/community/licensing '
     digest: 6727fe960ea49f9fa1e6c5c36f1d4190b1ca12ce82b11c290b6150f34a48560b
     keywords:
@@ -189,7 +189,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.7
-    created: "2021-05-18T10:39:03.056528+02:00"
+    created: "2021-05-18T16:18:54.793202+02:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -223,7 +223,7 @@ entries:
     version: 2.0.7
   - apiVersion: v2
     appVersion: 2.0.4
-    created: "2021-05-18T10:39:03.054859+02:00"
+    created: "2021-05-18T16:18:54.791674+02:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -257,7 +257,7 @@ entries:
     version: 2.0.4
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2021-05-18T10:39:03.053358+02:00"
+    created: "2021-05-18T16:18:54.790207+02:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -292,7 +292,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-18T10:39:03.091812+02:00"
+    created: "2021-05-18T16:18:54.832105+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -325,7 +325,7 @@ entries:
     version: 6.0.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-18T10:39:03.082111+02:00"
+    created: "2021-05-18T16:18:54.821504+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -363,7 +363,7 @@ entries:
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-18T10:39:03.073068+02:00"
+    created: "2021-05-18T16:18:54.811821+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -401,7 +401,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-18T10:39:03.064757+02:00"
+    created: "2021-05-18T16:18:54.80201+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -439,7 +439,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-18T10:39:03.130206+02:00"
+    created: "2021-05-18T16:18:54.869198+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -472,7 +472,7 @@ entries:
     version: 6.0.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-18T10:39:03.120425+02:00"
+    created: "2021-05-18T16:18:54.859392+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -510,7 +510,7 @@ entries:
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-18T10:39:03.110534+02:00"
+    created: "2021-05-18T16:18:54.850009+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -548,7 +548,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-18T10:39:03.100405+02:00"
+    created: "2021-05-18T16:18:54.841051+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -586,7 +586,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2021-05-18T10:39:03.133556+02:00"
+    created: "2021-05-18T16:18:54.872329+02:00"
     description: 'IBM Operator Catalog enablement deploys custom CatalogSources and ImageContentSourcePolicy  resources to enable consistent Catalog experience to deploy and maintain IBM products.  The operators are publically available, but products they install may require purchase and entitlement keys.   Documentation For additional details regarding installation see https://ibm.biz/operator-catalog-readme  License By installing this catalog you accept the license terms https://www.apache.org/licenses/LICENSE-2.0 '
     digest: 28cfa7807ee75582071276b741ed3d0d56dfc3aa757c2b42fd1e8925da11a2cb
     home: http://ibm.biz/oprcatalog
@@ -610,7 +610,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-05-18T10:39:03.132076+02:00"
+    created: "2021-05-18T16:18:54.871202+02:00"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -643,7 +643,7 @@ entries:
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-05-18T10:39:03.151239+02:00"
+    created: "2021-05-18T16:18:54.890806+02:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -678,7 +678,7 @@ entries:
     version: 2.0.0
   nodejs:
   - apiVersion: v2
-    created: "2021-05-18T10:39:03.15372+02:00"
+    created: "2021-05-18T16:18:54.891798+02:00"
     description: A Helm chart to build and deploy Node.js applications
     digest: eeb75da3ec2e4d63fcc69aaa51d5d5a6fe0573414ac8d7341f73faed7c439ac4
     keywords:
@@ -691,7 +691,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-18T10:39:03.156559+02:00"
+    created: "2021-05-18T16:18:54.893141+02:00"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
@@ -701,7 +701,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-18T10:39:03.155458+02:00"
+    created: "2021-05-18T16:18:54.892606+02:00"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -711,7 +711,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-18T10:39:03.154592+02:00"
+    created: "2021-05-18T16:18:54.892204+02:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -721,7 +721,7 @@ entries:
     version: 0.1.1
   quarkus:
   - apiVersion: v2
-    created: "2021-05-18T10:39:03.160352+02:00"
+    created: "2021-05-18T16:18:54.895387+02:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 6d8f1b945c037f1f252e532430c21ef723bc11fab369ef26d316fff69c4ffade
     keywords:
@@ -732,7 +732,7 @@ entries:
     - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
-    created: "2021-05-18T10:39:03.159217+02:00"
+    created: "2021-05-18T16:18:54.894698+02:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 28a4c48bb9882edf04e916a643ff5936d72e60cc033e2e359b730b01b605ffac
     keywords:
@@ -743,7 +743,7 @@ entries:
     - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2021-05-18T10:39:03.158006+02:00"
+    created: "2021-05-18T16:18:54.894037+02:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: dfa7f44698fc820e84f349929cd81c2ddbafb8d42e723df770e6ae7e72657b82
     keywords:
@@ -756,13 +756,13 @@ entries:
   wildfly:
   - apiVersion: v2
     appVersion: "23.0"
-    created: "2021-05-18T10:39:03.161195+02:00"
+    created: "2021-05-18T16:18:54.896136+02:00"
     dependencies:
     - name: wildfly-common
       repository: file://../wildfly-common
       version: 1.3.0
     description: Build and Deploy WildFly applications on OpenShift
-    digest: cccfd33eb8c20c9534925e5df9d5382ec87ee29fe3bc6d1e29852aeeccb4de7b
+    digest: c9d05d87d566da2fe8ee041dbf6e0b4cb6614e138edbecac09b510cb68ccf4e2
     icon: https://design.jboss.org/wildfly/logo/final/wildfly_logomark_256px.png
     maintainers:
     - email: wildfly-dev@lists.jboss.org
@@ -773,15 +773,4 @@ entries:
     urls:
     - https://redhat-developer.github.io/redhat-helm-charts/charts/wildfly-1.3.0.tgz
     version: 1.3.0
-  wildfly-common:
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2021-05-18T10:39:03.16151+02:00"
-    description: A library chart for WildFly-based applications
-    digest: d130ed1d67d627d7c47b712869425f7fe625065ce605424ac7ff36ee8fec8815
-    name: wildfly-common
-    type: library
-    urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/wildfly-common-1.3.0.tgz
-    version: 1.3.0
-generated: "2021-05-18T10:39:02.99223+02:00"
+generated: "2021-05-18T16:18:54.729134+02:00"
