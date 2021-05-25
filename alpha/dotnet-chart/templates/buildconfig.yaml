@@ -1,0 +1,52 @@
+{{- if .Values.build.enabled }}
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: {{ include "dotnet.name" . }}
+  labels:
+    {{- include "dotnet.labels" . | nindent 4 }}
+spec:
+  output:
+    to:
+      kind: {{ .Values.build.output.kind }}
+      name: {{ include "dotnet.imageName" . }}
+{{- if and (eq .Values.build.output.kind "DockerImage") .Values.build.output.pushSecret }}
+    pushSecret:
+      name: {{ .Values.build.output.pushSecret }}
+{{- end }}
+  source:
+    type: Git
+    git:
+      uri: {{ .Values.build.uri }}
+      ref: {{ .Values.build.ref }}
+{{- if .Values.build.contextDir }}
+    contextDir: {{ .Values.build.contextDir }}
+{{- end }}
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: {{ .Values.build.imageStreamTag.name }}
+  {{- if .Values.build.imageStreamTag.useReleaseNamespace }}
+        namespace: {{ .Release.Namespace }}
+  {{- else }}
+        namespace: {{ .Values.build.imageStreamTag.namespace }}
+  {{- end }}
+  {{- if .Values.build.pullSecret }}
+      pullSecret:
+        name: {{ .Values.build.pullSecret }}
+  {{- end }}
+      env:
+  {{- if .Values.build.env }}
+        {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
+  {{- end }}
+        - name: "DOTNET_STARTUP_PROJECT"
+          value: {{ .Values.build.startupProject | quote }}
+{{- if .Values.build.resources }}
+  resources:
+    {{- toYaml .Values.build.resources | nindent 4 }}
+{{- end }}
+  triggers:
+    - type: ConfigChange
+{{- end }}
