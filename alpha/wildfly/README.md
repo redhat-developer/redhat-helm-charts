@@ -2,11 +2,39 @@
 
 A Helm chart for building and deploying a [Wildly](https://www.wildfly.org) application on OpenShift.
 
+# Overview
+
 The build and deploy steps are configured in separate `build` and `deploy` values.
 
 The input of the `build` step is a Git repository that contains the application code and the output is an `ImageStreamTag` resource that contains the built application image.
 
 The input of the `deploy` step is an `ImageStreamTag` resource that contains the built application image and the output is a `DeploymentConfig` and related resources to access the application from inside and outside OpenShift.
+
+To be able to install a Helm release with that chart, you must be able to provide a valid application image.
+
+## Build an Application Image from Source
+
+If the application image must be built from source, the minimal configuration is:
+
+```yaml
+build:
+  uri: <git repository URL of your application>
+```
+
+The `build` step will use OpenShift `BuildConfig` to build an application image from this Git repository.
+
+## Pull an existing Application Image
+
+If your application image already exists, you can skip the `build` step and directly deploy your application image.
+In that case, the minimal configuration is:
+
+```yaml
+image:
+  name: <name of the application image. e.g. "quay.io/example.org/my-app">
+  tag: <tag of the applicication image. e.g. "1.3" (defaults to "latest")>
+build:
+  enabled: false
+```
 
 ## Prerequisites
 Below are prerequisites that may apply to your use case.
