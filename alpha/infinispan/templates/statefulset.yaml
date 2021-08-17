@@ -1,0 +1,155 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "infinispan-helm-charts.name" . }}
+  labels:
+  {{- include "infinispan-helm-charts.labels" . | nindent 4 }}
+  annotations:
+    "openshift.io/display-name": "Infinispan Cluster"
+    "openshift.io/documentation-url": "http://infinispan.org/documentation/"
+spec:
+  serviceName: ""
+  replicas: {{ .Values.deploy.replicas }}
+  selector:
+    matchLabels:
+      app: infinispan-pod
+      clusterName: {{ include "infinispan-helm-charts.name" . }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- if not (.Values.deploy.security.secretName) }}
+        checksum/identities: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+      {{- end }}
+      labels:
+        app: infinispan-pod
+        clusterName: {{ include "infinispan-helm-charts.name" . }}
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    clusterName: {{ include "infinispan-helm-charts.name" . }}
+                    app: infinispan-pod
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+      {{if .Values.deploy.makeDataDirWritable }}
+      initContainers:
+        - name: data-chmod-pv
+          command:
+            - sh
+            - -c
+            - chmod -R g+w /opt/infinispan/server/data
+          image: {{ .Values.images.initContainer }}
+          volumeMounts:
+            - mountPath: /opt/infinispan/server/data
+              name: data-volume
+      {{- end }}
+      containers:
+        - env:
+            - name: JAVA_OPTIONS
+              value: {{ .Values.deploy.container.extraJvmOpts }}
+          image: {{ .Values.images.server }}
+          imagePullPolicy: Always
+          command:
+            - /bin/sh
+          args:
+            - -c
+            - >-
+              /opt/infinispan/bin/cli.sh --file /etc/security/identities-batch &&
+              /opt/infinispan/bin/server.sh
+              --cluster-name={{ include "infinispan-helm-charts.name" . }}
+              --server-config=/etc/config/infinispan.xml
+              --logging-config=/etc/config/log4j2.xml
+              --bind-address=$HOSTNAME
+              -Djgroups.dns.query={{ printf "%s-ping.%s.svc.cluster.local" (include "infinispan-helm-charts.name" .) .Release.Namespace }}
+          ports:
+            - containerPort: 8888
+              name: ping
+              protocol: TCP
+            - containerPort: 11222
+              name: infinispan
+              protocol: TCP
+            - containerPort: 11223
+              name: infinispan-met
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: rest/v2/cache-managers/default/health/status
+              port: 11222
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 80
+          name: infinispan
+          readinessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: rest/v2/cache-managers/default/health/status
+              port: 11222
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 80
+          startupProbe:
+            failureThreshold: 60
+            httpGet:
+              path: rest/v2/cache-managers/default/health/status
+              port: 11222
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 80
+          resources:
+            {{- if .Values.deploy.container.resources.limits }}
+            limits:
+              cpu: {{ .Values.deploy.container.resources.limits.cpu }}
+              memory: {{ .Values.deploy.container.resources.limits.memory }}
+            {{- end }}
+            {{- if .Values.deploy.container.resources.requests }}
+            requests:
+              cpu: {{ .Values.deploy.container.resources.requests.cpu }}
+              memory: {{ .Values.deploy.container.resources.requests.memory }}
+          {{- end }}
+          volumeMounts:
+            - mountPath: /etc/config
+              name: config-volume
+            - mountPath: /opt/infinispan/server/data
+              name: data-volume
+            - mountPath: /etc/security
+              name: identities-volume
+      volumes:
+        - configMap:
+            name: {{ printf "%s-configuration" (include "infinispan-helm-charts.name" .) }}
+          name: config-volume
+        - name: identities-volume
+          secret:
+            secretName: {{ include "infinispan-helm-charts.secret" . }}
+        {{- if .Values.deploy.container.storage.ephemeral }}
+        - name: data-volume
+          emptyDir: { }
+  {{- end }}
+  updateStrategy:
+    type: RollingUpdate
+  {{- if not .Values.deploy.container.storage.ephemeral }}
+  volumeClaimTemplates:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: data-volume
+      spec:
+        {{- if .Values.deploy.container.storage.storageClassName }}
+        storageClassName: {{ .Values.deploy.container.storage.storageClassName }}
+        {{- end }}
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ .Values.deploy.container.storage.size }}
+  {{- end }}

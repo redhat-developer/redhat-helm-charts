@@ -1,0 +1,49 @@
+# Default values for infinispan-helm-charts.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+images:
+  server: quay.io/infinispan/server:12.1
+  initContainer: registry.access.redhat.com/ubi8-micro
+
+deploy:
+  replicas: 1
+
+  container:
+    extraJvmOpts: ""
+    storage:
+      size: 1Gi
+      storageClassName: ""
+      ephemeral: false
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 500m
+        memory: 512Mi
+
+  security:
+    authentication: true
+    secretName: ""
+    batch: ""
+
+  expose:
+    type: Route
+    nodePort: 0
+    host: ""
+    annotations: []
+
+  logging:
+    categories:
+      - category: com.arjuna
+        level: warn
+      # No need to warn about not being able to TLS/SSL handshake
+      - category: io.netty.handler.ssl.ApplicationProtocolNegotiationHandler
+        level: error
+
+  makeDataDirWritable: false
+
+  nameOverride: ""
+
+  resourceLabels: []

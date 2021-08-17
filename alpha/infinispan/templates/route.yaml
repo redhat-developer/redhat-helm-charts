@@ -1,0 +1,60 @@
+{{- if eq (.Values.deploy.expose.type) "Route" }}
+  {{- if .Capabilities.APIVersions.Has "route.openshift.io/v1/Route" }}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ include "infinispan-helm-charts.name" . }}
+  labels:
+    app: infinispan-route
+  {{- include "infinispan-helm-charts.labels" . | nindent 4 }}
+  {{- if .Values.deploy.expose.annotations }}
+  annotations:
+    {{- range .Values.deploy.expose.annotations }}
+    {{ .key | quote }}: {{ .value | quote }}
+  {{- end }}
+  {{- end }}
+spec:
+  {{- if .Values.deploy.expose.host }}
+  host: {{ .Values.deploy.expose.host | quote }} }
+  {{- end }}
+  port:
+    targetPort: 11222
+  to:
+    kind: Service
+    name: {{ include "infinispan-helm-charts.name" . }}
+  {{- else if .Capabilities.APIVersions.Has "networking.k8s.io/v1beta1/Ingress" }}
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ include "infinispan-helm-charts.name" . }}
+  labels:
+    app: infinispan-ingress
+  {{- include "infinispan-helm-charts.labels" . | nindent 4 }}
+  {{- if .Values.deploy.expose.annotations }}
+  annotations:
+    {{- range .Values.deploy.expose.annotations }}
+    {{ .key | quote }}: {{ .value | quote }}
+  {{- end }}
+  {{- end }}
+spec:
+  rules:
+    {{- if .Values.deploy.expose.host }}
+    - host: {{ .Values.deploy.expose.host | quote }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: {{ include "infinispan-helm-charts.name" . }}
+              servicePort: 11222
+    {{- else }}
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: {{ include "infinispan-helm-charts.name" . }}
+              servicePort: 11222
+  {{- end }}
+  {{- end }}
+  {{- end }}

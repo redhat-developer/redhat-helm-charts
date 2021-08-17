@@ -1,0 +1,20 @@
+apiVersion: v2
+name: infinispan-helm-charts
+description: A Helm chart that lets you build and deploy Infinispan clusters.
+type: application
+# Chart version
+version: 0.1.0
+# Infinispan version. Use the floating x.y tag of the image.
+appVersion: "12.1"
+icon: https://design.jboss.org/infinispan/logo/final/PNG/infinispan_icon_rgb_lightbluewhite_256px.png
+
+home: https://infinispan.org/
+sources:
+  - https://github.com/infinispan/infinispan
+  - https://github.com/infinispan/infinispan-helm-charts
+
+maintainers:
+  - name: Infinispan
+    url: https://infinispan.org/
+
+community: true

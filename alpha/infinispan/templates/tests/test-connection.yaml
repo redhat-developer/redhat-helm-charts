@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "infinispan-helm-charts.name" . }}-test-connection"
+  labels:
+  {{- include "infinispan-helm-charts.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+    "helm.sh/hook-delete-policy": before-hook-creation
+spec:
+  containers:
+    - name: wget
+      image: quay.io/repository/quay/busybox
+      command: ['wget']
+      args: ['{{ include "infinispan-helm-charts.name" . }}:11222/console']
+  restartPolicy: Never

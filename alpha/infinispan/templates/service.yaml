@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "infinispan-helm-charts.name" . }}
+  labels:
+    app: infinispan-service
+    clusterName: {{ include "infinispan-helm-charts.name" . }}
+  {{- include "infinispan-helm-charts.labels" . | nindent 4 }}
+spec:
+  {{- if or (eq (.Values.deploy.expose.type) "LoadBalancer") (eq (.Values.deploy.expose.type) "NodePort") }}
+  type: {{ .Values.deploy.expose.type }}
+  {{- else }}
+  type: ClusterIP
+  {{- end }}
+  ports:
+    - port: 11222
+      protocol: TCP
+      name: infinispan
+      {{- if and (eq (.Values.deploy.expose.type) "NodePort") (.Values.deploy.expose.nodePort) }}
+      nodePort: {{ .Values.deploy.expose.nodePort }}
+      {{- end}}
+    - port: 11223
+      protocol: TCP
+      name: infinispan-met
+  selector:
+  {{- include "infinispan-helm-charts.selectorLabels" . | nindent 4 }}

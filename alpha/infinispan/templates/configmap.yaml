@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ printf "%s-configuration" (include "infinispan-helm-charts.name" .) }}
+  labels:
+    app: infinispan-configmap-configuration
+  {{- include "infinispan-helm-charts.labels" . | nindent 4 }}
+data:
+  infinispan.xml: |-
+    {{ include "infinispan.xml" . | nindent 4}}
+  log4j2.xml: |-
+    {{ include "log4j2.xml" . | nindent 4}}
