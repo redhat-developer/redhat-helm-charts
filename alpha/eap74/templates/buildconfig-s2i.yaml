@@ -1,0 +1,21 @@
+{{- if and .Values.build.enabled (eq .Values.build.mode "s2i") }}
+{{- include "wildfly-common.buildconfig-s2i" (list . "eap74.buildconfig-s2i") -}}
+{{- end -}}
+
+{{- define "eap74.buildconfig-s2i" -}}
+{{ include "eap74.metadata.labels" . }}
+spec:
+  source:
+    dockerfile: |-
+      FROM {{ include "eap74.eapRuntimeImage" . }}
+      COPY /server $JBOSS_HOME
+      USER root
+      RUN chown -R jboss:root $JBOSS_HOME && chmod -R ug+rwX $JBOSS_HOME
+      USER jboss
+      CMD $JBOSS_HOME/bin/openshift-launch.sh
+  strategy:
+    dockerStrategy:
+      from:
+        kind: DockerImage
+        name: {{ include "eap74.eapRuntimeImage" .}}
+{{- end -}}

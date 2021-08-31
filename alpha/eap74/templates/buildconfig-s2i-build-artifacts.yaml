@@ -1,0 +1,13 @@
+{{- if and .Values.build.enabled (eq .Values.build.mode "s2i") }}
+{{- include "wildfly-common.buildconfig-s2i-build-artifacts" (list . "eap74.buildconfig-s2i-build-artifacts") -}}
+{{- end -}}
+
+{{- define "eap74.buildconfig-s2i-build-artifacts" -}}
+{{ include "eap74.metadata.labels" . }}
+spec:
+  strategy:
+    sourceStrategy:
+      from:
+        kind: DockerImage
+        name: {{ include "eap74.eapBuilderImage" . }}
+{{- end -}}

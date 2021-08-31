@@ -1,0 +1,8 @@
+{{- if and .Values.build.enabled (eq .Values.build.output.kind "ImageStreamTag") -}}
+{{- include "wildfly-common.imagestream" (list . "eap74.metadata.labels") }}
+
+{{- if eq .Values.build.mode "s2i" }}
+---
+{{- include "wildfly-common.imagestream-s2i-build-artifacts" (list . "eap74.metadata.labels") }}
+{{- end -}}
+{{- end -}}
