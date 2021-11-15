@@ -13,21 +13,12 @@ build:
 
   ## Git URI, Ref, and ContextDir
   uri: https://github.com/redhat-developer/s2i-dotnetcore-ex
-  ref: dotnetcore-3.1
+  ref: dotnet-6.0
   contextDir:
 
   ## Project to build and deploy
   ## More information: see DOTNET_STARTUP_PROJECT envvar from the https://github.com/redhat-developer/s2i-dotnetcore image
   startupProject: app
-
-  ## The ImageStreamTag of the desired builder image
-  imageStreamTag:
-    ## Name of the ImageStreamTag
-    name: dotnet:3.1
-    ## Is this ImageStreamTag in the same namespace you are releasing to?
-    useReleaseNamespace: false
-    ## Namespace containing the ImageStreamTag, is useReleaseNamespace == false
-    namespace: openshift
 
   ## Specifies where the image will be pushed to once built
   ## More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html

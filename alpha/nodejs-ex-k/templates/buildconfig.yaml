@@ -16,7 +16,7 @@ spec:
     sourceStrategy:
       from:
         kind: DockerImage
-        name: registry.redhat.io/ubi8/nodejs-10:latest
+        name: registry.redhat.io/ubi8/nodejs-14:latest
       env:
       - name: NPM_MIRROR
         value: 

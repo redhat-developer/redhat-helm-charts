@@ -39,24 +39,6 @@
                     "type": ["string", "null"],
                     "description": "Context directory within your Git repo to use as the root for the build"
                 },
-                "imageStreamTag": {
-                    "type": "object",
-                    "description": "Values related to the s2i builder's ImageStreamTag",
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "description": "Name of the ImageStreamTag"
-                        },
-                        "useReleaseNamespace": {
-                            "type": "boolean",
-                            "description": "Determines if the ImageStreamTag is in the namespace you are releasing to"
-                        },
-                        "namespace": {
-                            "type": "string",
-                            "description": "The namespace that contains the ImageStreamTag"
-                        }
-                    }
-                },
                 "output": {
                     "type": "object",
                     "description": "Specifies where the image will be pushed to once built. More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html",

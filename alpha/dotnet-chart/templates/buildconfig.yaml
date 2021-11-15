@@ -26,13 +26,8 @@ spec:
     type: Source
     sourceStrategy:
       from:
-        kind: ImageStreamTag
-        name: {{ .Values.build.imageStreamTag.name }}
-  {{- if .Values.build.imageStreamTag.useReleaseNamespace }}
-        namespace: {{ .Release.Namespace }}
-  {{- else }}
-        namespace: {{ .Values.build.imageStreamTag.namespace }}
-  {{- end }}
+        kind: DockerImage
+        name: registry.redhat.io/ubi8/dotnet-60:latest
   {{- if .Values.build.pullSecret }}
       pullSecret:
         name: {{ .Values.build.pullSecret }}
