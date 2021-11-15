@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   dotnet:
   - apiVersion: v2
-    created: "2021-09-21T23:33:29.263320841-07:00"
+    created: "2021-11-08T03:01:23.030936474Z"
     description: A Helm chart to build and deploy .NET applications
     digest: cd6f9d75d35e8a4f09695047aec97548a5404a1fb392ac9ad9f7e94194d1db34
     keywords:
@@ -15,7 +15,7 @@ entries:
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-09-21T23:33:29.289124014-07:00"
+    created: "2021-11-08T03:01:23.066233414Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -51,7 +51,7 @@ entries:
   ibm-cpq-prod:
   - apiVersion: v2
     appVersion: 10.0.0.20
-    created: "2021-09-21T23:33:29.363691998-07:00"
+    created: "2021-11-08T03:01:23.141585767Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -102,7 +102,7 @@ entries:
     version: 4.0.3
   - apiVersion: v2
     appVersion: 10.0.0.15
-    created: "2021-09-21T23:33:29.345326967-07:00"
+    created: "2021-11-08T03:01:23.12267385Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -149,7 +149,7 @@ entries:
     version: 4.0.1
   - apiVersion: v2
     appVersion: 10.0.0.12
-    created: "2021-09-21T23:33:29.326194415-07:00"
+    created: "2021-11-08T03:01:23.103430883Z"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -190,7 +190,7 @@ entries:
     version: 4.0.0
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2021-09-21T23:33:29.307954796-07:00"
+    created: "2021-11-08T03:01:23.083763934Z"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -232,7 +232,7 @@ entries:
   ibm-mongodb-enterprise-helm:
   - apiVersion: v2
     appVersion: 4.4.0
-    created: "2021-09-21T23:33:29.365268176-07:00"
+    created: "2021-11-08T03:01:23.142637183Z"
     description: 'IBM Helm Chart to deploy MongoDB Enterprise on OpenShift Container
       Platform hosted on IBM Power systems.  Documentation For additional details
       regarding install parameters see here https://docs.mongodb.com/manual/administration/install-enterprise/  License
@@ -255,7 +255,7 @@ entries:
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.7
-    created: "2021-09-21T23:33:29.37006785-07:00"
+    created: "2021-11-08T03:01:23.148246874Z"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -289,7 +289,7 @@ entries:
     version: 2.0.7
   - apiVersion: v2
     appVersion: 2.0.4
-    created: "2021-09-21T23:33:29.368471748-07:00"
+    created: "2021-11-08T03:01:23.146577354Z"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -323,7 +323,7 @@ entries:
     version: 2.0.4
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2021-09-21T23:33:29.366934259-07:00"
+    created: "2021-11-08T03:01:23.144277315Z"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -358,7 +358,7 @@ entries:
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-09-21T23:33:29.421826657-07:00"
+    created: "2021-11-08T03:01:23.203797443Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -397,7 +397,7 @@ entries:
     version: 6.0.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-09-21T23:33:29.407764658-07:00"
+    created: "2021-11-08T03:01:23.189525494Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -435,7 +435,7 @@ entries:
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-09-21T23:33:29.395381768-07:00"
+    created: "2021-11-08T03:01:23.175368386Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -473,7 +473,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-09-21T23:33:29.382332587-07:00"
+    created: "2021-11-08T03:01:23.161720346Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -511,7 +511,7 @@ entries:
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-09-21T23:33:29.475367826-07:00"
+    created: "2021-11-08T03:01:23.258173634Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -550,7 +550,7 @@ entries:
     version: 6.0.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-09-21T23:33:29.461728051-07:00"
+    created: "2021-11-08T03:01:23.243676185Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -588,7 +588,7 @@ entries:
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-09-21T23:33:29.449012901-07:00"
+    created: "2021-11-08T03:01:23.229917672Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -626,7 +626,7 @@ entries:
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-09-21T23:33:29.435674469-07:00"
+    created: "2021-11-08T03:01:23.216988605Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -664,7 +664,7 @@ entries:
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2021-09-21T23:33:29.477623301-07:00"
+    created: "2021-11-08T03:01:23.261536981Z"
     description: 'IBM Operator Catalog enablement deploys custom CatalogSources and
       ImageContentSourcePolicy  resources to enable consistent Catalog experience
       to deploy and maintain IBM products.  The operators are publically available,
@@ -693,7 +693,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-09-21T23:33:29.476484946-07:00"
+    created: "2021-11-08T03:01:23.259754017Z"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -725,8 +725,39 @@ entries:
     version: 1.0.0
   ibm-seas:
   - apiVersion: v2
+    appVersion: 6.0.3.0
+    created: "2021-11-08T03:01:23.274473939Z"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: ^1.2.18
+    description: 'A Helm chart to deploy IBM Sterling External Authentication Server
+      on a containerized platform. Documentation For additional details regarding
+      install parameters check SEAS Helm Chart documentation at https://www.ibm.com/docs/en/external-auth-server/6.0.3
+      License By installing this product you accept the following license terms: http://www-03.ibm.com/software/sla/sladb.nsf'
+    digest: 0341f0a5f30d1eb949482c638ff75f8bee00a7c74c75951f0201aa00695ec931
+    home: https://www.ibm.com/docs/en/external-auth-server/6.0.3
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-seas.png
+    keywords:
+    - amd64
+    - DevOps
+    - Commercial
+    - Limited
+    - IKS
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.19.0'
+    maintainers:
+    - name: IBM
+    name: ibm-seas
+    type: application
+    urls:
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-seas-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: 6.0.2.0.03
-    created: "2021-09-21T23:33:29.482799161-07:00"
+    created: "2021-11-08T03:01:23.267683538Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -760,7 +791,7 @@ entries:
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-09-21T23:33:29.50782661-07:00"
+    created: "2021-11-08T03:01:23.305714073Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -795,8 +826,39 @@ entries:
     version: 2.0.0
   ibm-ssp-cm:
   - apiVersion: v2
+    appVersion: 6.0.3.0
+    created: "2021-11-08T03:01:23.317881409Z"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: ^1.2.18
+    description: 'A Helm chart to deploy IBM Sterling Secure Proxy - Configuration
+      Manager on a containerized platform. Documentation For additional details regarding
+      install parameters check CM Helm Chart documentation at https://www.ibm.com/docs/en/secure-proxy/6.0.3
+      License By installing this product you accept the following license terms: http://www-03.ibm.com/software/sla/sladb.nsf'
+    digest: 3d0ab21dc8c8cabecf4dc8dedc1d7977e8396e0fbe643d169c90eaddb9cc8a2b
+    home: https://www.ibm.com/docs/en/secure-proxy/6.0.3
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-ssp.png
+    keywords:
+    - amd64
+    - DevOps
+    - Commercial
+    - Limited
+    - IKS
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.19.0'
+    maintainers:
+    - name: IBM
+    name: ibm-ssp-cm
+    type: application
+    urls:
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-cm-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: 6.0.2.0.03
-    created: "2021-09-21T23:33:29.513947799-07:00"
+    created: "2021-11-08T03:01:23.312402488Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -829,8 +891,39 @@ entries:
     version: 1.1.3
   ibm-ssp-engine:
   - apiVersion: v2
+    appVersion: 6.0.3.0
+    created: "2021-11-08T03:01:23.330103806Z"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: ^1.2.18
+    description: 'A Helm chart to deploy IBM Sterling Secure Proxy - Engine on a containerized
+      platform. Documentation For additional details regarding install parameters
+      check Engine Helm Chart documentation at https://www.ibm.com/docs/en/secure-proxy/6.0.3
+      License By installing this product you accept the following license terms: http://www-03.ibm.com/software/sla/sladb.nsf'
+    digest: defbddd5e113d3d7a0c57c8fe0a4de0b046df1e007649a55fe03244e88cae25e
+    home: https://www.ibm.com/docs/en/secure-proxy/6.0.3
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-ssp.png
+    keywords:
+    - amd64
+    - DevOps
+    - Commercial
+    - Limited
+    - IKS
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.19.0'
+    maintainers:
+    - name: IBM
+    name: ibm-ssp-engine
+    type: application
+    urls:
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-engine-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: 6.0.2.0.03
-    created: "2021-09-21T23:33:29.518814312-07:00"
+    created: "2021-11-08T03:01:23.324488906Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -863,8 +956,39 @@ entries:
     version: 1.1.3
   ibm-ssp-ps:
   - apiVersion: v2
+    appVersion: 6.0.3.0
+    created: "2021-11-08T03:01:23.341586377Z"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: ^1.2.18
+    description: 'A Helm chart to deploy IBM Sterling Secure Proxy - Perimeter Server
+      on a containerized platform. Documentation For additional details regarding
+      install parameters check Perimeter Server Helm Chart documentation at https://www.ibm.com/docs/en/secure-proxy/6.0.3
+      License By installing this product you accept the following license terms: http://www-03.ibm.com/software/sla/sladb.nsf'
+    digest: 2797e1452b758fecde79e11eeb684fd2e56adf7bd7a89857f3fd278801e24cb4
+    home: https://www.ibm.com/docs/en/secure-proxy/6.0.3
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-ssp.png
+    keywords:
+    - amd64
+    - DevOps
+    - Commercial
+    - Limited
+    - IKS
+    - RHOCP
+    - Other
+    kubeVersion: '>=1.19.0'
+    maintainers:
+    - name: IBM
+    name: ibm-ssp-ps
+    type: application
+    urls:
+    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-ps-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: 6.0.2.0.03
-    created: "2021-09-21T23:33:29.524485885-07:00"
+    created: "2021-11-08T03:01:23.336285641Z"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -897,7 +1021,7 @@ entries:
     version: 1.1.3
   nodejs:
   - apiVersion: v2
-    created: "2021-09-21T23:33:29.525244603-07:00"
+    created: "2021-11-08T03:01:23.342369591Z"
     description: A Helm chart to build and deploy Node.js applications
     digest: eeb75da3ec2e4d63fcc69aaa51d5d5a6fe0573414ac8d7341f73faed7c439ac4
     keywords:
@@ -910,7 +1034,7 @@ entries:
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-09-21T23:33:29.526575864-07:00"
+    created: "2021-11-08T03:01:23.34373636Z"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
@@ -920,7 +1044,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-09-21T23:33:29.526121331-07:00"
+    created: "2021-11-08T03:01:23.343287366Z"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
@@ -930,7 +1054,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-09-21T23:33:29.525663676-07:00"
+    created: "2021-11-08T03:01:23.342782543Z"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
@@ -940,7 +1064,7 @@ entries:
     version: 0.1.1
   quarkus:
   - apiVersion: v2
-    created: "2021-09-21T23:33:29.52896277-07:00"
+    created: "2021-11-08T03:01:23.346320031Z"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 6d8f1b945c037f1f252e532430c21ef723bc11fab369ef26d316fff69c4ffade
     keywords:
@@ -951,7 +1075,7 @@ entries:
     - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
-    created: "2021-09-21T23:33:29.528119471-07:00"
+    created: "2021-11-08T03:01:23.345410441Z"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 28a4c48bb9882edf04e916a643ff5936d72e60cc033e2e359b730b01b605ffac
     keywords:
@@ -962,7 +1086,7 @@ entries:
     - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2021-09-21T23:33:29.527306927-07:00"
+    created: "2021-11-08T03:01:23.34450045Z"
     description: A Helm chart to build and deploy Quarkus applications
     digest: dfa7f44698fc820e84f349929cd81c2ddbafb8d42e723df770e6ae7e72657b82
     keywords:
@@ -975,7 +1099,7 @@ entries:
   wildfly:
   - apiVersion: v2
     appVersion: "24.0"
-    created: "2021-09-21T23:33:29.531058066-07:00"
+    created: "2021-11-08T03:01:23.348537831Z"
     dependencies:
     - name: wildfly-common
       repository: file://../wildfly-common
@@ -994,7 +1118,7 @@ entries:
     version: 1.4.0
   - apiVersion: v2
     appVersion: "23.0"
-    created: "2021-09-21T23:33:29.53005372-07:00"
+    created: "2021-11-08T03:01:23.347486067Z"
     dependencies:
     - name: wildfly-common
       repository: file://../wildfly-common
@@ -1011,4 +1135,4 @@ entries:
     urls:
     - https://redhat-developer.github.io/redhat-helm-charts/charts/wildfly-1.3.0.tgz
     version: 1.3.0
-generated: "2021-09-21T23:33:29.261729299-07:00"
+generated: "2021-11-08T03:01:23.028545075Z"
