@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   dotnet:
   - apiVersion: v2
-    created: "2021-11-08T03:01:23.030936474Z"
+    created: "2021-12-08T21:36:12.748013235-08:00"
     description: A Helm chart to build and deploy .NET applications
     digest: cd6f9d75d35e8a4f09695047aec97548a5404a1fb392ac9ad9f7e94194d1db34
     keywords:
@@ -10,12 +10,12 @@ entries:
     - dotnet
     name: dotnet
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/dotnet-0.0.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/dotnet-0.0.1.tgz
     version: 0.0.1
   ibm-b2bi-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-11-08T03:01:23.066233414Z"
+    created: "2021-12-08T21:36:12.784899223-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -46,12 +46,59 @@ entries:
     name: ibm-b2bi-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-b2bi-prod-2.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-b2bi-prod-2.0.0.tgz
     version: 2.0.0
   ibm-cpq-prod:
   - apiVersion: v2
+    appVersion: 10.0.0.22
+    created: "2021-12-08T21:36:12.898028532-08:00"
+    dependencies:
+    - alias: sch
+      name: ibm-sch
+      repository: '@sch'
+      version: 1.2.15
+    description: |-
+      IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
+      To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
+      IBM® Sterling Configure, Price, Quote solution automates every step of the configure, price and quote process to help organizations easily create Web storefronts, offer dynamic catalog and pricing information,  and direct customers and partners to find, configure and order the right products and services.
+      This enables you to transform how you sell complex products and services by removing the internal complexity of multi-tiered selling within your organization and with your partners.
+
+      Documentation
+      Additional information about installation can be found at https://ibm.biz/BdqqUS.
+
+      License
+      Sterling Configure Price Quote Software is licensed under https://ibm.biz/Bdqqgd which must be accepted during the install of the Product.
+    digest: b08239bee981ce7d31a1289553a20beaa9314ba1cbb5ec807a534924b1bff85e
+    home: http://ibm.biz/cpq-home
+    icon: https://raw.githubusercontent.com/IBM/charts/master/logo/ibm-oms-logo.png
+    keywords:
+    - cpq
+    - ifs
+    - sterling
+    - yantra
+    - order
+    - fulfillment
+    - om
+    - amd64
+    - framework
+    - Commercial
+    - RHOCP
+    - All items
+    - Languages
+    - Databases
+    - Middleware
+    - CI/CD
+    - Other
+    kubeVersion: '>=1.17.0'
+    maintainers:
+    - name: IBM
+    name: ibm-cpq-prod
+    urls:
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-cpq-prod-4.0.4.tgz
+    version: 4.0.4
+  - apiVersion: v2
     appVersion: 10.0.0.20
-    created: "2021-11-08T03:01:23.141585767Z"
+    created: "2021-12-08T21:36:12.878297384-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -98,11 +145,11 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-cpq-prod-4.0.3.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-cpq-prod-4.0.3.tgz
     version: 4.0.3
   - apiVersion: v2
     appVersion: 10.0.0.15
-    created: "2021-11-08T03:01:23.12267385Z"
+    created: "2021-12-08T21:36:12.85536913-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -145,11 +192,11 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-cpq-prod-4.0.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-cpq-prod-4.0.1.tgz
     version: 4.0.1
   - apiVersion: v2
     appVersion: 10.0.0.12
-    created: "2021-11-08T03:01:23.103430883Z"
+    created: "2021-12-08T21:36:12.832131167-08:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -186,11 +233,11 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-cpq-prod-4.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-cpq-prod-4.0.0.tgz
     version: 4.0.0
   - apiVersion: v2
     appVersion: 10.0.0.10
-    created: "2021-11-08T03:01:23.083763934Z"
+    created: "2021-12-08T21:36:12.809317905-08:00"
     description: |-
       IBM Sterling Configure, Price, Quote (CPQ) solution enables you to quickly configure, price, quote and order the right products and services.
       To sell competitively in today’s multichannel environment, organizations need a way to easily manage product and service configuration and pricing rules that allow prospects, customers, sales staff, call center representatives and Business Partners to quickly find, configure and order the right products and services.
@@ -227,12 +274,12 @@ entries:
     - name: IBM
     name: ibm-cpq-prod
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-cpq-prod-3.1.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-cpq-prod-3.1.0.tgz
     version: 3.1.0
   ibm-mongodb-enterprise-helm:
   - apiVersion: v2
     appVersion: 4.4.0
-    created: "2021-11-08T03:01:23.142637183Z"
+    created: "2021-12-08T21:36:12.90111075-08:00"
     description: 'IBM Helm Chart to deploy MongoDB Enterprise on OpenShift Container
       Platform hosted on IBM Power systems.  Documentation For additional details
       regarding install parameters see here https://docs.mongodb.com/manual/administration/install-enterprise/  License
@@ -250,12 +297,12 @@ entries:
     - name: IBM
     name: ibm-mongodb-enterprise-helm
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-mongodb-enterprise-helm-0.2.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-mongodb-enterprise-helm-0.2.0.tgz
     version: 0.2.0
   ibm-object-storage-plugin:
   - apiVersion: v2
     appVersion: 2.0.7
-    created: "2021-11-08T03:01:23.148246874Z"
+    created: "2021-12-08T21:36:12.9130401-08:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -285,11 +332,11 @@ entries:
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.7.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-object-storage-plugin-2.0.7.tgz
     version: 2.0.7
   - apiVersion: v2
     appVersion: 2.0.4
-    created: "2021-11-08T03:01:23.146577354Z"
+    created: "2021-12-08T21:36:12.908871553-08:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -319,11 +366,11 @@ entries:
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.4.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-object-storage-plugin-2.0.4.tgz
     version: 2.0.4
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2021-11-08T03:01:23.144277315Z"
+    created: "2021-12-08T21:36:12.90419752-08:00"
     description: |
       Chart for deploying ibmcloud object storage plugin.
       IBM Cloud Object Storage is persistent, highly available storage
@@ -353,12 +400,12 @@ entries:
       name: IBM
     name: ibm-object-storage-plugin
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-object-storage-plugin-2.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-object-storage-plugin-2.0.0.tgz
     version: 2.0.0
   ibm-oms-ent-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-11-08T03:01:23.203797443Z"
+    created: "2021-12-08T21:36:12.979393332-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -393,11 +440,11 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-ent-prod-6.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-oms-ent-prod-6.0.0.tgz
     version: 6.0.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-11-08T03:01:23.189525494Z"
+    created: "2021-12-08T21:36:12.96150561-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -431,11 +478,11 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-ent-prod-5.1.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-oms-ent-prod-5.1.1.tgz
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-11-08T03:01:23.175368386Z"
+    created: "2021-12-08T21:36:12.945213622-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -469,11 +516,11 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-ent-prod-5.1.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-oms-ent-prod-5.1.0.tgz
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-11-08T03:01:23.161720346Z"
+    created: "2021-12-08T21:36:12.928853528-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -506,12 +553,12 @@ entries:
     name: ibm-oms-ent-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-ent-prod-5.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-oms-ent-prod-5.0.0.tgz
     version: 5.0.0
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-11-08T03:01:23.258173634Z"
+    created: "2021-12-08T21:36:13.050740571-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -546,11 +593,11 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-pro-prod-6.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-oms-pro-prod-6.0.0.tgz
     version: 6.0.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-11-08T03:01:23.243676185Z"
+    created: "2021-12-08T21:36:13.033938116-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -584,11 +631,11 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-pro-prod-5.1.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-oms-pro-prod-5.1.1.tgz
     version: 5.1.1
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-11-08T03:01:23.229917672Z"
+    created: "2021-12-08T21:36:13.017462802-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -622,11 +669,11 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-pro-prod-5.1.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-oms-pro-prod-5.1.0.tgz
     version: 5.1.0
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-11-08T03:01:23.216988605Z"
+    created: "2021-12-08T21:36:13.001099319-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -659,12 +706,12 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-oms-pro-prod-5.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-oms-pro-prod-5.0.0.tgz
     version: 5.0.0
   ibm-operator-catalog-enablement:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2021-11-08T03:01:23.261536981Z"
+    created: "2021-12-08T21:36:13.05568912-08:00"
     description: 'IBM Operator Catalog enablement deploys custom CatalogSources and
       ImageContentSourcePolicy  resources to enable consistent Catalog experience
       to deploy and maintain IBM products.  The operators are publically available,
@@ -689,11 +736,11 @@ entries:
     name: ibm-operator-catalog-enablement
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-operator-catalog-enablement-1.1.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-operator-catalog-enablement-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-11-08T03:01:23.259754017Z"
+    created: "2021-12-08T21:36:13.053411098-08:00"
     description: |
       IBM Operator Catalog enablement deploys custom CatalogSources for operators
       available to deploy and maintain IBM products.  The operators are publically
@@ -721,12 +768,12 @@ entries:
     name: ibm-operator-catalog-enablement
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-operator-catalog-enablement-1.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-operator-catalog-enablement-1.0.0.tgz
     version: 1.0.0
   ibm-seas:
   - apiVersion: v2
     appVersion: 6.0.3.0
-    created: "2021-11-08T03:01:23.274473939Z"
+    created: "2021-12-08T21:36:13.068119793-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -753,11 +800,11 @@ entries:
     name: ibm-seas
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-seas-1.2.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-seas-1.2.0.tgz
     version: 1.2.0
   - apiVersion: v2
     appVersion: 6.0.2.0.03
-    created: "2021-11-08T03:01:23.267683538Z"
+    created: "2021-12-08T21:36:13.063330577-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -786,12 +833,12 @@ entries:
     name: ibm-seas
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-seas-1.1.3.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-seas-1.1.3.tgz
     version: 1.1.3
   ibm-sfg-prod:
   - apiVersion: v2
     appVersion: 6.1.0.0
-    created: "2021-11-08T03:01:23.305714073Z"
+    created: "2021-12-08T21:36:13.098214166-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -822,12 +869,12 @@ entries:
     name: ibm-sfg-prod
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-sfg-prod-2.0.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-sfg-prod-2.0.0.tgz
     version: 2.0.0
   ibm-ssp-cm:
   - apiVersion: v2
     appVersion: 6.0.3.0
-    created: "2021-11-08T03:01:23.317881409Z"
+    created: "2021-12-08T21:36:13.110428136-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -854,11 +901,11 @@ entries:
     name: ibm-ssp-cm
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-cm-1.2.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-ssp-cm-1.2.0.tgz
     version: 1.2.0
   - apiVersion: v2
     appVersion: 6.0.2.0.03
-    created: "2021-11-08T03:01:23.312402488Z"
+    created: "2021-12-08T21:36:13.105333922-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -887,12 +934,12 @@ entries:
     name: ibm-ssp-cm
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-cm-1.1.3.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-ssp-cm-1.1.3.tgz
     version: 1.1.3
   ibm-ssp-engine:
   - apiVersion: v2
     appVersion: 6.0.3.0
-    created: "2021-11-08T03:01:23.330103806Z"
+    created: "2021-12-08T21:36:13.122511688-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -919,11 +966,11 @@ entries:
     name: ibm-ssp-engine
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-engine-1.2.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-ssp-engine-1.2.0.tgz
     version: 1.2.0
   - apiVersion: v2
     appVersion: 6.0.2.0.03
-    created: "2021-11-08T03:01:23.324488906Z"
+    created: "2021-12-08T21:36:13.117420356-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -952,12 +999,12 @@ entries:
     name: ibm-ssp-engine
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-engine-1.1.3.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-ssp-engine-1.1.3.tgz
     version: 1.1.3
   ibm-ssp-ps:
   - apiVersion: v2
     appVersion: 6.0.3.0
-    created: "2021-11-08T03:01:23.341586377Z"
+    created: "2021-12-08T21:36:13.134831942-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -984,11 +1031,11 @@ entries:
     name: ibm-ssp-ps
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-ps-1.2.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-ssp-ps-1.2.0.tgz
     version: 1.2.0
   - apiVersion: v2
     appVersion: 6.0.2.0.03
-    created: "2021-11-08T03:01:23.336285641Z"
+    created: "2021-12-08T21:36:13.130060281-08:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -1017,11 +1064,11 @@ entries:
     name: ibm-ssp-ps
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/ibm-ssp-ps-1.1.3.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/ibm-ssp-ps-1.1.3.tgz
     version: 1.1.3
   nodejs:
   - apiVersion: v2
-    created: "2021-11-08T03:01:23.342369591Z"
+    created: "2021-12-08T21:36:13.13660324-08:00"
     description: A Helm chart to build and deploy Node.js applications
     digest: eeb75da3ec2e4d63fcc69aaa51d5d5a6fe0573414ac8d7341f73faed7c439ac4
     keywords:
@@ -1029,42 +1076,42 @@ entries:
     - nodejs
     name: nodejs
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/nodejs-0.0.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/nodejs-0.0.1.tgz
     version: 0.0.1
   nodejs-ex-k:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-11-08T03:01:23.34373636Z"
+    created: "2021-12-08T21:36:13.141509811-08:00"
     description: A Helm chart for Kubernetes
     digest: 4340070f6b0d04ebb2ea4a10046b89c9f1706c62ae67bdc247ff6a59b9d035ec
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/nodejs-ex-k-0.2.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/nodejs-ex-k-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-11-08T03:01:23.343287366Z"
+    created: "2021-12-08T21:36:13.140135895-08:00"
     description: A Helm chart for Kubernetes
     digest: 9f8eca455f8379baddd6ab61bd5517373514bb99bedbbddffb98ad88ac9841cc
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/nodejs-ex-k-0.2.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/nodejs-ex-k-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-11-08T03:01:23.342782543Z"
+    created: "2021-12-08T21:36:13.138548858-08:00"
     description: A Helm chart for Kubernetes
     digest: 64b36fee719567e2aae8cb6186ba02a56dc62a90df71af7f90cc1d9d2cd1fb25
     name: nodejs-ex-k
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/nodejs-ex-k-0.1.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/nodejs-ex-k-0.1.1.tgz
     version: 0.1.1
   quarkus:
   - apiVersion: v2
-    created: "2021-11-08T03:01:23.346320031Z"
+    created: "2021-12-08T21:36:13.1474611-08:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 6d8f1b945c037f1f252e532430c21ef723bc11fab369ef26d316fff69c4ffade
     keywords:
@@ -1072,10 +1119,10 @@ entries:
     - quarkus
     name: quarkus
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.3.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/quarkus-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
-    created: "2021-11-08T03:01:23.345410441Z"
+    created: "2021-12-08T21:36:13.145306716-08:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 28a4c48bb9882edf04e916a643ff5936d72e60cc033e2e359b730b01b605ffac
     keywords:
@@ -1083,10 +1130,10 @@ entries:
     - quarkus
     name: quarkus
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.2.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/quarkus-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2021-11-08T03:01:23.34450045Z"
+    created: "2021-12-08T21:36:13.143256944-08:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: dfa7f44698fc820e84f349929cd81c2ddbafb8d42e723df770e6ae7e72657b82
     keywords:
@@ -1094,12 +1141,12 @@ entries:
     - quarkus
     name: quarkus
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/quarkus-0.0.1.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/quarkus-0.0.1.tgz
     version: 0.0.1
   wildfly:
   - apiVersion: v2
     appVersion: "24.0"
-    created: "2021-11-08T03:01:23.348537831Z"
+    created: "2021-12-08T21:36:13.154431917-08:00"
     dependencies:
     - name: wildfly-common
       repository: file://../wildfly-common
@@ -1114,11 +1161,11 @@ entries:
     name: wildfly
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/wildfly-1.4.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/wildfly-1.4.0.tgz
     version: 1.4.0
   - apiVersion: v2
     appVersion: "23.0"
-    created: "2021-11-08T03:01:23.347486067Z"
+    created: "2021-12-08T21:36:13.149803621-08:00"
     dependencies:
     - name: wildfly-common
       repository: file://../wildfly-common
@@ -1133,6 +1180,6 @@ entries:
     name: wildfly
     type: application
     urls:
-    - https://redhat-developer.github.io/redhat-helm-charts/charts/wildfly-1.3.0.tgz
+    - https://raw.githubusercontent.com/nvaibhav/redhat-helm-charts/master/charts/wildfly-1.3.0.tgz
     version: 1.3.0
-generated: "2021-11-08T03:01:23.028545075Z"
+generated: "2021-12-08T21:36:12.745086812-08:00"
