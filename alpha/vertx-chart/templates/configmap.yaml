@@ -1,0 +1,11 @@
+{{- if .Values.deploy.applicationProperties.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "vertx.name" . }}
+  labels:
+    {{- include "vertx.labels" . | nindent 4 }}
+data:
+  application.properties: |-
+    {{- tpl .Values.deploy.applicationProperties.properties . | nindent 4 }}
+{{- end }}

@@ -1,0 +1,35 @@
+{{- if .Values.deploy.route.enabled }}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ include "vertx.name" . }}
+  labels:
+    {{- include "vertx.labels" . | nindent 4 }}
+spec:
+  to:
+    kind: Service
+    name: {{ include "vertx.name" . }}
+  port:
+    targetPort: {{ tpl .Values.deploy.route.targetPort . }}
+{{- if .Values.deploy.route.tls.enabled }}
+  tls:
+    termination: {{ .Values.deploy.route.tls.termination }}
+    insecureEdgeTerminationPolicy: {{ .Values.deploy.route.tls.insecureEdgeTerminationPolicy }}
+  {{- if .Values.deploy.route.tls.key }}
+    key: |-
+      {{- .Values.deploy.route.tls.key | nindent 6 }}
+  {{- end }}
+  {{- if .Values.deploy.route.tls.destinationCACertificate }}
+    destinationCACertificate: |-
+      {{- .Values.deploy.route.tls.destinationCACertificate | nindent 6 }}
+  {{- end }}
+  {{- if .Values.deploy.route.tls.caCertificate }}
+    caCertificate: |-
+      {{- .Values.deploy.route.tls.caCertificate | nindent 6 }}
+  {{- end }}
+  {{- if .Values.deploy.route.tls.certificate }}
+    certificate: |-
+      {{- .Values.deploy.route.tls.certificate | nindent 6 }}
+  {{- end }}
+{{- end }}
+{{- end }}

@@ -1,0 +1,222 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+        "image": {
+            "type": "object",
+            "description": "Defines the image you want to build/deploy",
+            "properties": {
+                "name": {
+                    "type": ["string", "null"],
+                    "description": "Name of the image you want to build/deploy. Defaults to the release name."
+                },
+                "tag": {
+                    "type": "string",
+                    "description": "Tag that you want to build/deploy"
+                }
+            }
+        },
+        "build": {
+            "type": "object",
+            "description": "Values related to the build",
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Enable/disable the OCP Build"
+                },
+                "uri": {
+                    "type": "string",
+                    "description": "URI of GitHub repository"
+                },
+                "ref": {
+                    "type": "string",
+                    "description": "Git ref"
+                },
+                "contextDir": {
+                    "type": ["string", "null"],
+                    "description": "Context directory within your Git repo to use as the root for the build"
+                },
+                "jvm": {
+                    "type": "object",
+                    "description": "Values related to a jvm mode build",
+                    "properties": {
+                        "imageStreamTag": {
+                            "type": "object",
+                            "description": "Values related to the s2i builder's ImageStreamTag",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Name of the ImageStreamTag"
+                                },
+                                "useReleaseNamespace": {
+                                    "type": "boolean",
+                                    "description": "Determines if the ImageStreamTag is in the namespace you are releasing to"
+                                },
+                                "namespace": {
+                                    "type": "string",
+                                    "description": "The namespace that contains the ImageStreamTag"
+                                }
+                            }
+                        }
+                    }
+                },
+                "output": {
+                    "type": "object",
+                    "description": "Specifies where the image will be pushed to once built. More information: https://docs.openshift.com/container-platform/4.6/builds/managing-build-output.html",
+                    "properties": {
+                        "kind": {
+                            "type": "string",
+                            "description": "Determines how the image will be pushed",
+                            "enum": ["ImageStreamTag", "DockerImage"]
+                        },
+                        "pushSecret": {
+                            "type": ["string", "null"],
+                            "description": "Push secret name, used only if kind == 'DockerImage'"
+                        }
+                    }
+                },
+                "pullSecret": {
+                    "type": ["string", "null"],
+                    "description": "The image pull secret. More information: https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html"
+                },
+                "env": {
+                    "type": ["array", "null"],
+                    "description": "Freeform env field. More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/"
+                },
+                "resources": {
+                    "type": ["object", "null"],
+                    "description": "Freeform resources field. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+                }
+            }
+        },
+        "deploy": {
+            "type": "object",
+            "description": "Values related to the deployment of your application",
+            "properties": {
+                "replicas": {
+                    "type": "integer",
+                    "description": "Number of pod replicas to deploy"
+                },
+                "resources": {
+                    "type": ["object", "null"],
+                    "description": "Freeform resources field. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+                },
+                "serviceType": {
+                    "type": "string",
+                    "description": "The type of service to create. More information: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types"
+                },
+                "ports": {
+                    "type": "array",
+                    "description": "Freeform service ports field. More information: https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service"
+                },
+                "route": {
+                    "type": "object",
+                    "description": "Values for creating an OCP route",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "description": "Determines if the route should be created"
+                        },
+                        "targetPort": {
+                            "type": "string",
+                            "description": "The port on pods this route points to"
+                        },
+                        "tls": {
+                            "type": "object",
+                            "description": "Values for configuring TLS on an OCP route. More information: https://docs.openshift.com/container-platform/4.6/networking/routes/secured-routes.html",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "description": "Determines if TLS should be enabled"
+                                },
+                                "termination": {
+                                    "type": "string",
+                                    "description": "Indicates the termination type"
+                                },
+                                "insecureEdgeTerminationPolicy": {
+                                    "type": "string",
+                                    "description": "Indicates the desired behavior for insecure connections"
+                                },
+                                "key": {
+                                    "type": ["string", "null"],
+                                    "description": "Key file contents"
+                                },
+                                "caCertificate": {
+                                    "type": ["string", "null"],
+                                    "description": "Certificate authority certificate contents"
+                                },
+                                "certificate": {
+                                    "type": ["string", "null"],
+                                    "description": "Certificate contents"
+                                },
+                                "destinationCACertificate": {
+                                    "type": ["string", "null"],
+                                    "description": "Contents of the CA certificate of the final destination"
+                                }
+                            }
+                        }
+                    }
+                },
+                "livenessProbe": {
+                    "type": ["object", "null"],
+                    "description": "Freeform livenessProbe field. More information: https://docs.openshift.com/container-platform/4.6/applications/application-health.html#application-health-about_application-health"
+                },
+                "readinessProbe": {
+                    "type": ["object", "null"],
+                    "description": "Freeform readinessProbe field. More information: https://docs.openshift.com/container-platform/4.6/applications/application-health.html#application-health-about_application-health"
+                },
+                "env": {
+                    "type": ["array", "null"],
+                    "description": "Freeform env field. More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/"
+                },
+                "envFrom": {
+                    "type": ["array", "null"],
+                    "description": "Freeform envFrom field. More information: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#configure-all-key-value-pairs-in-a-configmap-as-container-environment-variables"
+                },
+                "applicationProperties": {
+                    "type": "object",
+                    "description": "Values for externalizing an application.properties file",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "description": "Determines if the application.properties file should be externalized in a ConfigMap"
+                        },
+                        "mountPath": {
+                            "type": "string",
+                            "description": "The location to mount the properties file to"
+                        },
+                        "properties": {
+                            "type": ["string", "null"],
+                            "description": "application.properties file contents"
+                        }
+                    }
+                },
+                "volumeMounts": {
+                    "type": ["array", "null"],
+                    "description": "Freeform volumeMounts field. More information: https://kubernetes.io/docs/concepts/storage/volumes/"
+                },
+                "volumes": {
+                    "type": ["array", "null"],
+                    "description": "Freeform volumes field. More information: https://kubernetes.io/docs/concepts/storage/volumes/"
+                },
+                "initContainers": {
+                    "type": ["array", "null"],
+                    "description": "Freeform initContainers field. More information: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/"
+                },
+                "extraContainers": {
+                    "type": ["array", "null"],
+                    "description": "Adds extra containers to your pod, provided as a list of pod templates. More information: https://kubernetes.io/docs/concepts/workloads/pods/#pod-templates"
+                }
+            }
+        },
+        "global": {
+            "type": "object",
+            "description": "Values that should be global across parent and dependent Helm charts",
+            "properties": {
+                "nameOverride": {
+                    "type": ["string", "null"],
+                    "description": "Overrides the release name. Impacts the image name (if image.name is left blank) and impacts the name of created OCP resources"
+                }
+            }
+        }
+    }
+ }

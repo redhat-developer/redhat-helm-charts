@@ -1,0 +1,7 @@
+{{- if .Release.IsInstall }}
+Your Vert.x app is building! To view the build logs, run:
+
+oc logs bc/{{ include "vertx.name" . }} --follow
+
+Note that your Deployment will report "ErrImagePull" and "ImagePullBackOff" until the build is complete. Once the build is complete, your image will be automatically rolled out.
+{{- end }}

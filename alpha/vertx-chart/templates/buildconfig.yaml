@@ -1,0 +1,50 @@
+{{- if .Values.build.enabled }}
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: {{ include "vertx.name" . }}
+  labels:
+    {{- include "vertx.labels" . | nindent 4 }}
+spec:
+  output:
+    to:
+      kind: {{ .Values.build.output.kind }}
+      name: {{ include "vertx.imageName" . }}
+{{- if and (eq .Values.build.output.kind "DockerImage") .Values.build.output.pushSecret }}
+    pushSecret:
+      name: {{ .Values.build.output.pushSecret }}
+{{- end }}
+  source:
+    type: Git
+    git:
+      uri: {{ .Values.build.uri }}
+      ref: {{ .Values.build.ref }}
+{{- if .Values.build.contextDir }}
+    contextDir: {{ .Values.build.contextDir }}
+{{- end }}
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: {{ .Values.build.jvm.imageStreamTag.name }}
+  {{- if .Values.build.jvm.imageStreamTag.useReleaseNamespace }}
+        namespace: {{ .Release.Namespace }}
+  {{- else }}
+        namespace: {{ .Values.build.jvm.imageStreamTag.namespace }}
+  {{- end }}
+  {{- if .Values.build.pullSecret }}
+      pullSecret:
+        name: {{ .Values.build.pullSecret }}
+  {{- end }}
+  {{- if .Values.build.env }}
+      env:
+        {{- tpl (toYaml .Values.build.env) . | nindent 8 }}
+  {{- end }}
+{{- if .Values.build.resources }}
+  resources:
+    {{- toYaml .Values.build.resources | nindent 4 }}
+{{- end }}
+  triggers:
+    - type: ConfigChange
+{{- end }}
