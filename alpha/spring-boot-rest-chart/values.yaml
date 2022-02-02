@@ -1,0 +1,7 @@
+spring-boot-example-app:
+  name: rest-http
+  version: 0.0.1
+  s2i:
+    source: 
+      repo: https://github.com/snowdrop/rest-http-example
+      ref: sb-2.5.x

@@ -1,0 +1,12 @@
+apiVersion: v2
+name: spring-boot-rest-http
+version: 0.0.1
+description: A Helm chart to build and deploy Spring Boot application with REST endpoints
+keywords:
+  - runtimes
+  - spring-boot 
+icon: https://avatars.githubusercontent.com/u/558276?s=400&u=19efc68c74844b2e092698a8a7a752921edcdc19&v=4
+dependencies:
+  - name: spring-boot-example-app
+    version: 0.0.3
+    repository: http://snowdrop.github.io/helm
