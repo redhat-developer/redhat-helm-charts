@@ -51,11 +51,11 @@ git clone https://github.com/redhat-developer/redhat-helm-charts
 cd redhat-helm-charts/stable/ibm-mongodb-enterprise-helm/
 ```
 
-Create a new project/namespace 
+Create a New Project
 
 ```
-oc new-project ibm --description="IBM ISDL" --display-name="ibm"
-oc project ibm
+export NAMESPACE=ibm
+oc new-project $NAMESPACE
 ```
 
 Update the following variables in values.yaml file -
@@ -72,7 +72,11 @@ Also update `global.persistence.claims.name` in values.yaml file -
 
 Update SCC in your Namespace, this would be required to allow mongodb container to be executed -
 
-`oc adm policy add-scc-to-user anyuid -z default mongod`
+```
+oc adm policy add-scc-to-group anyuid system:authenticated
+oc adm policy add-scc-to-user anyuid system:serviceaccount:$NAMESPACE:mongodb
+```
+
 
 Installing helm chart
 
@@ -96,6 +100,20 @@ test-ibm-mongodb-enterprise-helm-deployment-7d77767cf8-mspj4   1/1     Running  
 
 ```
 
+### Expose your deployment, outside OCP
+To expose your application outside OCP Cluster, expose the deployment -
+
+```
+[root@p1213-bastion templates]# oc expose deployment test-ibm-mongodb-enterprise-helm-deployment --type=NodePort --name=test-ibm
+service/test-ibm exposed
+[root@p1213-bastion templates]# oc get nodes
+NAME                                STATUS   ROLES           AGE   VERSION
+p1213-master.p1213.cecc.ihost.com   Ready    master,worker   13d   v1.19.0+a5a0987
+[root@p1213-bastion templates]# oc get svc
+NAME                                       TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                                                                                                     AGE
+test-ibm                                   NodePort       172.30.22.77     <none>        27017:31466/TCP                                                                                             14s
+test-ibm-mongodb-enterprise-helm-service   ClusterIP      172.30.78.82     <none>        27017/TCP                                                                                                   85m
+```
 
 ##### Common variables that could be modified on the helm chart
 
@@ -114,9 +132,9 @@ test-ibm-mongodb-enterprise-helm-deployment-7d77767cf8-mspj4   1/1     Running  
 | `values.autoscaling.targetCPUUtilizationPercentage`                                | Maximum CPU that the pod could utilize on the host                          |
 | `values.global.persistance.claims.name`											| Name of persistant volume claim                                             |
 | `values.global.persistance.accessMode`                                            | Accessmode of the persistant volume                                         |
-|																					  ReadWriteOnce — the volume can be mounted as read-write by a single node    |
-|																					  ReadOnlyMany — the volume can be mounted read-only by many nodes            |
-|																					  ReadWriteMany — the volume can be mounted as read-write by many nodes       |
+|																					  | ReadWriteOnce — the volume can be mounted as read-write by a single node    |
+|																					  | ReadOnlyMany — the volume can be mounted read-only by many nodes            |
+|																					  | ReadWriteMany — the volume can be mounted as read-write by many nodes       |
 | `values.global.persistance.capacity`                                              | Capacity to be allocated to persistant values claim based on  capacityUnit  |
 | `values.global.persistance.capacityUnit`											| Capacity Unit in Gigabytes or Megabytes                                     |
 | `values.global.persistance.claims.storageClassName`										| StorageClassName which is used for the persistant volume                    |

@@ -23,4 +23,4 @@ kubeVersion: '>=1.16.0-0'
 maintainers:
 - name: IBM
 name: ibm-mongodb-enterprise-helm 
-version: 0.2.0
+version: 0.3.0
