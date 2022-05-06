@@ -23,3 +23,4 @@ N/A
 | ----- | --------------- | ------------------- | -------------------------------------------- | ---------------- | ----------------------------------------------------------------------------------------- |
 | 0.1.0 | Mar, 2021       | >=1.16.0-0          | ibm-enterprise-mongodb-ppc64le	       | N/A              | This is the version for IBM's MongoDB Based Helm Chart				      |
 | 0.2.0 | May, 2021	  | >=1.16.0-0          | ibm-enterprise-mongodb-ppc64le               | N/A              | Fixes manual PVC name allotment							      |
+| 0.3.0 | Feb, 2022       | >=1.16.0-0          | ibm-enterprise-mongodb-ppc64le               | N/A              | Fixes non-root isues and updates README.md                                                          |
