@@ -8,7 +8,7 @@ jobs:
     name: Initial PR scan
     steps:
       - name: Comment PR
-        uses: github-actions-up-and-running/pr-comment@v1.0.1
+        uses: github-actions-up-and-running/pr-comment@f1f8ab2bf00dce6880a369ce08758a60c61d6c0b #v1.0.1
         with:
           message: "Thanks for submitting PR. In case of an emergency merge request, please send an email to `helm-catalog-support at redhat.com`. Otherwise please allow 24 hours for the feedback"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
